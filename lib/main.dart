@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'MainWidgets/all.dart';
+import 'Models/MainWidgets/all.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,13 +39,26 @@ class WidgetsPage extends StatelessWidget {
           widgetSection('Button', const ButtonExample()),
           widgetSection('Checkbox', const CheckboxExample()),
           widgetSection('Combobox', const ComboboxExample()),
-          widgetSection('Fieldset', const FieldsetExample()),
           widgetSection('Input', const InputExample()),
           widgetSection('Listbox', const ListboxExample()),
           widgetSection('Radio Group', const RadioGroupExample()),
-          widgetSection('Select', const SelectExample()),
           widgetSection('Switch', const SwitchExample()),
           widgetSection('Textarea', const TextareaExample()),
+          widgetSection('DatePicker', const DatePickerExample()),
+          widgetSection('TimePicker', const TimePickerExample()),
+          widgetSection('Toast Notification', const ToastNotificationExample()),
+          widgetSection('Carousel', const CarouselExample()),
+          widgetSection('Stepper', const StepperExample()),
+          widgetSection('Tooltip', const TooltipExample()),
+          widgetSection('DraggableScrollableSheet',
+              const DraggableScrollableSheetExample()),
+          widgetSection('LinearProgressIndicator',
+              const LinearProgressIndicatorExample()),
+          widgetSection('CircularProgressIndicator',
+              const CircularProgressIndicatorExample()),
+          widgetSection('Slider', const SliderExample()),
+          widgetSection('Slider', const ImageSliderExample()),
+          widgetSection('Navigation Menu', const NavigationMenu()),
         ],
       ),
     );
@@ -70,4 +83,3 @@ class WidgetsPage extends StatelessWidget {
     );
   }
 }
-

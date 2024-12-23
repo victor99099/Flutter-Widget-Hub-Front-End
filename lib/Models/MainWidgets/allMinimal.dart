@@ -372,3 +372,147 @@ class TextareaExample extends StatelessWidget {
     );
   }
 }
+
+
+class AccordionExample extends StatelessWidget {
+  const AccordionExample({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionTile(
+      title: Text('Accordion Header'),
+      children: [
+        Container(
+          padding: const EdgeInsets.all(16),
+          child: const Text('Accordion content goes here'),
+        ),
+      ],
+    );
+  }
+}
+
+class DatePickerExample extends StatelessWidget {
+  const DatePickerExample({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () async {
+        await showDatePicker(
+          context: context,
+          initialDate: DateTime.now(),
+          firstDate: DateTime(2000),
+          lastDate: DateTime(2100),
+        );
+      },
+      child: const Text('Pick a Date'),
+    );
+  }
+}
+
+class TimePickerExample extends StatelessWidget {
+  const TimePickerExample({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () async {
+        await showTimePicker(
+          context: context,
+          initialTime: TimeOfDay.now(),
+        );
+      },
+      child: const Text('Pick a Time'),
+    );
+  }
+}
+
+class ToastNotificationExample extends StatelessWidget {
+  const ToastNotificationExample({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        final snackBar = SnackBar(
+          content: const Text('This is a toast notification!'),
+          behavior: SnackBarBehavior.floating,
+        );
+        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+      },
+      child: const Text('Show Toast'),
+    );
+  }
+}
+
+class CarouselExample extends StatelessWidget {
+  const CarouselExample({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 200,
+      child: PageView.builder(
+        itemCount: 3,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: const EdgeInsets.all(8),
+            child: Center(
+              child: Text('Page ${index + 1}'),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class StepperExample extends StatefulWidget {
+  const StepperExample({Key? key}) : super(key: key);
+
+  @override
+  _StepperExampleState createState() => _StepperExampleState();
+}
+
+class _StepperExampleState extends State<StepperExample> {
+  int currentStep = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stepper(
+      currentStep: currentStep,
+      onStepContinue: currentStep < 2 ? () => setState(() => currentStep += 1) : null,
+      onStepCancel: currentStep > 0 ? () => setState(() => currentStep -= 1) : null,
+      steps: [
+        Step(
+          title: Text('Step 1'),
+          content: const Text('This is step 1 content'),
+          isActive: currentStep >= 0,
+        ),
+        Step(
+          title: Text('Step 2'),
+          content: const Text('This is step 2 content'),
+          isActive: currentStep >= 1,
+        ),
+        Step(
+          title: Text('Step 3'),
+          content: const Text('This is step 3 content'),
+          isActive: currentStep >= 2,
+        ),
+      ],
+    );
+  }
+}
+
+class TooltipExample extends StatelessWidget {
+  const TooltipExample({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Tooltip(
+      message: 'This is a tooltip!',
+      child: Icon(Icons.info),
+    );
+  }
+}
+
