@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterwidgethub/Views/MainScreens/mainScreen.dart';
 
 import 'Models/MainWidgets/all.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Widgets Demo',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const WidgetsPage(),
+      home: const MainScreen(),
     );
   }
 }
@@ -47,7 +48,6 @@ class WidgetsPage extends StatelessWidget {
           widgetSection('DatePicker', const DatePickerExample()),
           widgetSection('TimePicker', const TimePickerExample()),
           widgetSection('Toast Notification', const ToastNotificationExample()),
-          widgetSection('Carousel', const CarouselExample()),
           widgetSection('Stepper', const StepperExample()),
           widgetSection('Tooltip', const TooltipExample()),
           widgetSection('DraggableScrollableSheet',

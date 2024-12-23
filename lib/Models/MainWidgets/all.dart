@@ -3,25 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-// Modern Styles
-class ModernStyles {
-  static const BorderRadius borderRadius =
-      BorderRadius.all(Radius.circular(12));
-  static const Color baseColor = Colors.grey;
-  static const Color activeColor = Colors.blue;
-}
+import '../../Styles/styles.dart';
 
-ButtonStyle getElevatedButtonStyle() {
-  return ElevatedButton.styleFrom(
-    elevation: 4,
-    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-    shape: RoundedRectangleBorder(
-      borderRadius: ModernStyles.borderRadius,
-    ),
-    backgroundColor: ModernStyles.activeColor,
-    foregroundColor: Colors.white, // Text color
-  );
-}
+
 
 // Dropdown Menu
 class DropdownExample extends StatefulWidget {
@@ -334,25 +318,6 @@ class _ComboboxExampleState extends State<ComboboxExample> {
   }
 }
 
-// Fieldset Example
-class FieldsetExample extends StatelessWidget {
-  const FieldsetExample({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: ModernStyles.borderRadius,
-      ),
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
-        child: const Text('This is a fieldset container.'),
-      ),
-    );
-  }
-}
 
 // Input Example
 class InputExample extends StatelessWidget {
@@ -441,27 +406,6 @@ class _RadioGroupExampleState extends State<RadioGroupExample> {
   }
 }
 
-// Select Example
-class SelectExample extends StatelessWidget {
-  const SelectExample({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: ModernStyles.borderRadius,
-      ),
-      child: DropdownButton<String>(
-        items: ['Select 1', 'Select 2', 'Select 3']
-            .map((item) => DropdownMenuItem(value: item, child: Text(item)))
-            .toList(),
-        onChanged: (value) {},
-        hint: const Text('Choose an option'),
-      ),
-    );
-  }
-}
 
 // Switch Example
 class SwitchExample extends StatefulWidget {
@@ -616,28 +560,7 @@ class ToastNotificationExample extends StatelessWidget {
   }
 }
 
-// Carousel Example (PageView)
-class CarouselExample extends StatelessWidget {
-  const CarouselExample({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      child: PageView.builder(
-        itemCount: 3,
-        itemBuilder: (context, index) {
-          return Container(
-            margin: const EdgeInsets.all(8),
-            child: Center(
-              child: Text('Page ${index + 1}'),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
 
 // Stepper Example (Stepper Widget)
 class StepperExample extends StatefulWidget {
@@ -811,44 +734,7 @@ class _DraggableScrollableSheetExampleState
   }
 }
 
-// Draggable
-class DraggableExample extends StatelessWidget {
-  const DraggableExample({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Draggable<String>(
-          data: 'Item 1',
-          child: Card(
-            elevation: 4,
-            shape: RoundedRectangleBorder(
-              borderRadius: ModernStyles.borderRadius,
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text('Drag me!'),
-            ),
-          ),
-          feedback: Material(
-            color: Colors.transparent,
-            child: Card(
-              elevation: 4,
-              shape: RoundedRectangleBorder(
-                borderRadius: ModernStyles.borderRadius,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text('Item being dragged'),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
 
 // Slider
 class SliderExample extends StatefulWidget {
