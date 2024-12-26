@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutterwidgethub/Views/MainScreens/mainScreen.dart';
-
+import 'package:google_fonts/google_fonts.dart';
+import 'dart:html' as html;
 import 'Models/MainWidgets/all.dart';
 
 void main() {
-  runApp(const MyApp());
+  html.window.onBeforeUnload.listen((event) {
+    // Ensures the pointer binding doesn't mismatch the target element
+    html.document.body?.focus();
+  });
+  runApp(MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -14,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Widgets Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.blue, fontFamily: GoogleFonts.nunito().fontFamily),
       home: const MainScreen(),
     );
   }

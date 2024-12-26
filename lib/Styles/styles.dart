@@ -1,26 +1,31 @@
-// Modern Styles
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ModernStyles {
   // General Styling
-  static const BorderRadius borderRadius =
-      BorderRadius.all(Radius.circular(12));
+  static const BorderRadius borderRadius = BorderRadius.all(Radius.circular(12));
   static const Color baseColor = Colors.grey;
   static const Color activeColor = Colors.blue;
   static const Color backgroundColor = Colors.white;
 
-  // Text Styles
-  static const TextStyle headingTextStyle = TextStyle(
+  // Text Styles with Google Fonts
+  static final TextStyle headingTextStyle = GoogleFonts.roboto(
     fontSize: 24,
     fontWeight: FontWeight.bold,
     color: Colors.blue,
   );
-  static const TextStyle bodyTextStyle = TextStyle(
+  static final TextStyle bodyTextStyle = GoogleFonts.openSans(
     fontSize: 16,
     fontWeight: FontWeight.normal,
     color: Colors.black87,
   );
-  static const TextStyle subtitleTextStyle = TextStyle(
+  static final TextStyle buttonTextStyle = GoogleFonts.openSans(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    color: Colors.white,
+  );
+  static final TextStyle subtitleTextStyle = 
+  GoogleFonts.lato(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: Colors.grey,
@@ -50,9 +55,10 @@ class ModernStyles {
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: borderRadius,
-      borderSide: BorderSide(color: activeColor),
+      borderSide: BorderSide(color: activeColor,width: 4),
     ),
     hintStyle: TextStyle(color: Colors.grey),
+    hintText: "Enter",
     contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
   );
 
@@ -80,18 +86,23 @@ class ClassicStyles {
   static const Color activeColor = Colors.brown;
   static const Color backgroundColor = Colors.white;
 
-  // Text Styles
-  static const TextStyle headingTextStyle = TextStyle(
+  // Text Styles with Google Fonts
+  static final TextStyle headingTextStyle = GoogleFonts.ptSerif(
     fontSize: 22,
     fontWeight: FontWeight.w700,
     color: baseColor,
   );
-  static const TextStyle bodyTextStyle = TextStyle(
+  static final TextStyle bodyTextStyle = GoogleFonts.merriweather(
     fontSize: 16,
     fontWeight: FontWeight.normal,
-    color: Colors.black87,
+    color: Colors.brown,
   );
-  static const TextStyle subtitleTextStyle = TextStyle(
+  static final TextStyle buttonTextStyle = GoogleFonts.merriweather(
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+    color: Colors.white,
+  );
+  static final TextStyle subtitleTextStyle = GoogleFonts.courgette(
     fontSize: 14,
     fontWeight: FontWeight.w400,
     fontStyle: FontStyle.italic,
@@ -122,9 +133,10 @@ class ClassicStyles {
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: borderRadius,
-      borderSide: BorderSide(color: activeColor),
+      borderSide: BorderSide(color: activeColor,width: 4),
     ),
     hintStyle: TextStyle(color: Colors.grey),
+    hintText: "Enter",
     contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
   );
 
@@ -145,28 +157,31 @@ class ClassicStyles {
   );
 }
 
-
 class ElegantStyles {
   // General Styling
-  static const BorderRadius borderRadius =
-      BorderRadius.all(Radius.circular(16));
+  static const BorderRadius borderRadius = BorderRadius.all(Radius.circular(16));
   static const Color baseColor = Color(0xFF4A4A4A);
   static const Color activeColor = Color(0xFF6A5ACD); // Soft purple
   static const Color backgroundColor = Color(0xFFF9F9F9);
 
-  // Text Styles
-  static const TextStyle headingTextStyle = TextStyle(
+  // Text Styles with Google Fonts
+  static final TextStyle headingTextStyle = GoogleFonts.playfairDisplay(
     fontSize: 26,
     fontWeight: FontWeight.bold,
     color: baseColor,
     letterSpacing: 1.2,
   );
-  static const TextStyle bodyTextStyle = TextStyle(
+  static final TextStyle bodyTextStyle = GoogleFonts.nunito(
     fontSize: 18,
     fontWeight: FontWeight.w400,
     color: Color(0xFF2F2F2F),
   );
-  static const TextStyle subtitleTextStyle = TextStyle(
+  static final TextStyle buttonTextStyle = GoogleFonts.nunito(
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    color:Colors.white,
+  );
+  static final TextStyle subtitleTextStyle = GoogleFonts.dancingScript(
     fontSize: 16,
     fontWeight: FontWeight.w300,
     color: Colors.black54,
@@ -197,8 +212,9 @@ class ElegantStyles {
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: borderRadius,
-      borderSide: BorderSide(color: activeColor),
+      borderSide: BorderSide(color: activeColor,width: 4),
     ),
+    hintText: "Enter",
     hintStyle: TextStyle(color: Color(0xFF9E9E9E)),
     contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
   );
@@ -219,7 +235,6 @@ class ElegantStyles {
     boxShadow: boxShadow,
   );
 }
-
 
 ButtonStyle getElevatedButtonStyle() {
   return ElevatedButton.styleFrom(

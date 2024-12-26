@@ -1,15 +1,21 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutterwidgethub/Models/MainWidgets/all.dart';
 import 'package:flutterwidgethub/Views/MainScreens/MainScreenWidgets/leftmain.dart';
 import 'package:get/get.dart';
 
-class MainScreen extends StatelessWidget {
+import '../../Ccontrollers/PageController.dart';
+
+class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
   @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  @override
   Widget build(BuildContext context) {
+      CustomPageController pageController = Get.put(CustomPageController());
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 7, 28, 46),
       // appBar: AppBar(title: Text("Flutter Widget Hub"),),
@@ -29,27 +35,37 @@ class MainScreen extends StatelessWidget {
                 sigmaY: 10.0, // Vertical blur strength
               ),
               child: Container(
-                color: Colors.black.withOpacity(0.25), // Transparent overlay
+                color: const Color.fromARGB(255, 6, 14, 56)
+                    .withOpacity(0.8), // Transparent overlay
               ),
             ),
           ),
           Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25),
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.1,
+                height: MediaQuery.of(context).size.height * 0.12,
                 child: Row(
-                  children: [Text("Flutter Widget Hub",style: TextStyle(color: Colors.white,fontSize: 24, fontWeight: FontWeight.bold),)],
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Flutter Widget Hub",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ],
                 ),
               ),
               Opacity(
                 opacity: 0.5,
                 child: Divider(
-                   color: Colors.white,
-                        indent: 10,
-                        endIndent: 10,
-                        thickness: 2,
+                  color: Colors.white,
+                  indent: 10,
+                  endIndent: 10,
+                  thickness: 2,
                 ),
               ),
               Expanded(
@@ -57,7 +73,7 @@ class MainScreen extends StatelessWidget {
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width * 0.25,
-                      child: LeftMain().paddingOnly(left: 10),
+                      child: LeftMain().paddingOnly(left: 10, top: 5),
                     ),
                     Opacity(
                       opacity: 0.5,
@@ -69,10 +85,11 @@ class MainScreen extends StatelessWidget {
                       ),
                     ),
                     Flexible(
-                      child: Container(
-                          // color: Colors.green,
-                          // child: const Center(child: Text('Column 2')),
-                          ),
+                      child: Obx(
+                        () => Container(
+                          child: pageController.screens[pageController.SelectedPage.value],
+                        ),
+                      ),
                     ),
                   ],
                 ),

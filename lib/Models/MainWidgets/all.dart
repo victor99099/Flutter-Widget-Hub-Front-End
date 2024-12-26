@@ -23,12 +23,12 @@ class _DropdownExampleState extends State<DropdownExample> {
     return Card(
       elevation: 4,
       shape: RoundedRectangleBorder(
-        borderRadius: ModernStyles.borderRadius,
+        borderRadius: BorderRadius.circular(12),
       ),
       child: DropdownButtonFormField<String>(
         decoration: InputDecoration(
           border: OutlineInputBorder(
-            borderRadius: ModernStyles.borderRadius,
+            borderRadius: BorderRadius.circular(12),
             borderSide: BorderSide.none,
           ),
         ),
