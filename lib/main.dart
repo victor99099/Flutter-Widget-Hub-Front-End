@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutterwidgethub/Views/MainScreens/mainScreen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scrollable_date_picker/scrollable_date_picker.dart';
 import 'dart:html' as html;
 import 'Models/MainWidgets/all.dart';
 
-void main() {
+Future<void> main() async {
+   await initializeDateFormatting();
   html.window.onBeforeUnload.listen((event) {
     // Ensures the pointer binding doesn't mismatch the target element
     html.document.body?.focus();

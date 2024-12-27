@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterwidgethub/Ccontrollers/PageController.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
 import '../../Styles/styles.dart';

@@ -51,6 +51,42 @@ class TypeBox extends StatelessWidget {
     );
   }
 }
+class TypeBoxNoBody extends StatelessWidget {
+  final String Heading;
+  final String code;
+  final Widget widget;
+  TypeBoxNoBody(
+      {super.key,
+      required this.Heading,
+      required this.code,
+      required this.widget});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        SizedBox(
+          height: 20,
+        ),
+        Text(
+          Heading,
+          style: TextStyle(
+            letterSpacing: 1,
+            color: Colors.white,
+            fontSize: 16,
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        SingleCodeAndPreview(code: code, widget: widget),
+        SizedBox(
+          height: 20,
+        ),
+      ]),
+    );
+  }
+}
 
 class CodeDisplay extends StatelessWidget {
   final String code;

@@ -43,7 +43,6 @@ class CustomPageController extends GetxController{
       ListboxPage(),
       RadioPage(),
       SwitchPage(),
-      TextareaPage(),
       DatepickerPage(),
       TimepickerPage(),
       NotificationPage(),

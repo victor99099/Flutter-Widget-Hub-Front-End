@@ -1,33 +1,6 @@
 // Array of titles
 import 'package:flutter/material.dart';
-import 'package:flutterwidgethub/Styles/styles.dart';
 
-import '../../Views/SeparateWidgets/Button.dart';
-import '../../Views/SeparateWidgets/CheckBox.dart';
-import '../../Views/SeparateWidgets/ComboBox.dart';
-import '../../Views/SeparateWidgets/DatePicker.dart';
-import '../../Views/SeparateWidgets/Dialog.dart';
-import '../../Views/SeparateWidgets/Disclosure.dart';
-import '../../Views/SeparateWidgets/DraggableSheet.dart';
-import '../../Views/SeparateWidgets/DropDownMenu.dart';
-import '../../Views/SeparateWidgets/Form.dart';
-import '../../Views/SeparateWidgets/ImageSlider.dart';
-import '../../Views/SeparateWidgets/Input.dart';
-import '../../Views/SeparateWidgets/Listbox.dart';
-import '../../Views/SeparateWidgets/NavigationMenu.dart';
-import '../../Views/SeparateWidgets/Popover.dart';
-import '../../Views/SeparateWidgets/ProgessIndicator.dart';
-import '../../Views/SeparateWidgets/RadioGroup.dart';
-import '../../Views/SeparateWidgets/Slider.dart';
-import '../../Views/SeparateWidgets/Stepper.dart';
-import '../../Views/SeparateWidgets/Switch.dart';
-import '../../Views/SeparateWidgets/Tabs.dart';
-import '../../Views/SeparateWidgets/TextArea.dart';
-import '../../Views/SeparateWidgets/TimePicker.dart';
-import '../../Views/SeparateWidgets/ToastNotification.dart';
-import '../../Views/SeparateWidgets/ToolTip.dart';
-import '../../Views/SeparateWidgets/Transition.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 final Map<String, Color> widgetIconColors = {
   'Dropdown Menu': Colors.red,
@@ -44,7 +17,6 @@ final Map<String, Color> widgetIconColors = {
   'Listbox': Colors.deepOrange,
   'Radio Group': Colors.deepPurple,
   'Switch': Colors.lightGreen,
-  'Text-Area': Colors.lime,
   'Date Picker': Colors.orangeAccent,
   'Time Picker': Colors.yellow,
   'Toast Notification': Colors.redAccent,
@@ -72,7 +44,6 @@ final Map<String, IconData> widgetIcons = {
   'Listbox': Icons.list,
   'Radio Group': Icons.radio_button_unchecked,
   'Switch': Icons.toggle_on,
-  'Text-Area': Icons.text_fields,
   'Date Picker': Icons.calendar_today,
   'Time Picker': Icons.access_time,
   'Toast Notification': Icons.notification_important,
@@ -100,7 +71,7 @@ final List<String> widgetTitles = [
   'Listbox',
   'Radio Group',
   'Switch',
-  'Text-Area',
+  
   'Date Picker',
   'Time Picker',
   'Toast Notification',

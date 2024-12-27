@@ -64,6 +64,12 @@ dependencies:
   flutter_swipe_action_cell: ^3.1.5
   animated_toggle_switch: ^0.8.4
   slide_switcher: ^1.1.2
+  scroll_date_picker: ^3.8.0
+  scroll_wheel_date_picker: ^0.0.2+1
+  scrollable_date_picker: ^1.2.1
+  wheel_picker: ^0.1.1
+  elegant_notification: ^2.4.1
+  sliding_up_panel: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:
