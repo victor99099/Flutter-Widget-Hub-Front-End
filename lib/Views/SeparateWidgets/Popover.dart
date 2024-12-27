@@ -397,7 +397,7 @@ class Popover extends StatelessWidget {
               height: 20,
             ),
             Text(
-              "Styling for showDialog()",
+              "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
                   color: Colors.white,
