@@ -165,23 +165,23 @@ class DialogPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Dialog Box",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "In Flutter, a Dialog is a pop-up window that appears on top of the current screen to display content or get user input. It can be created using the showDialog function and typically includes options like buttons, text, and other widgets. The dialog is modal, meaning the user must interact with it before returning to the main content. Common dialog types include AlertDialog, SimpleDialog, and custom dialogs.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -189,7 +189,7 @@ class DialogPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -200,7 +200,7 @@ class DialogPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -220,11 +220,11 @@ class DialogPage extends StatelessWidget {
                       elevation: 0,
                       borderRadius: BorderRadius.circular(10),
                       child: TabBar(
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             letterSpacing: 1.5, fontWeight: FontWeight.w500),
-                        padding: EdgeInsets.only(top: 10),
-                        labelPadding: EdgeInsets.all(5),
-                        indicatorPadding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(top: 10),
+                        labelPadding: const EdgeInsets.all(5),
+                        indicatorPadding: const EdgeInsets.all(0),
                         dividerHeight: 0,
                         tabs: const [
                           Padding(
@@ -246,7 +246,7 @@ class DialogPage extends StatelessWidget {
                         unselectedLabelColor: Colors.white.withOpacity(0.5),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
@@ -429,10 +429,10 @@ void showNormalDialog(BuildContext context) {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling for showDialog()",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -440,16 +440,16 @@ void showNormalDialog(BuildContext context) {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: dialogOptions,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Styling for Alert Dialog",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -457,16 +457,16 @@ void showNormalDialog(BuildContext context) {
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: alertDialogOptions,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Styling for Simple Dialog",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -474,13 +474,13 @@ void showNormalDialog(BuildContext context) {
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: simpleDialogOptions,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -491,17 +491,17 @@ void showNormalDialog(BuildContext context) {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using awesome_dialog (Animated, Pre-Styled Dialogs)",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -518,27 +518,27 @@ void showAwesomeDialog(BuildContext context) {
   ).show();
 }
 ''', widget: DialogExample(func: () => showAwesomeDialog(context))),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "awesome_dialog"),
-            SizedBox(
+            const TerminalRun(package: "awesome_dialog"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:awesome_dialog/awesome_dialog.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using adaptive_dialog (Platform-Specific Dialogs)",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -551,27 +551,27 @@ void showAdaptiveDialog(BuildContext context) async {
   if (result == OkCancelResult.ok) print("Confirmed");
 }
 ''', widget: DialogExample(func: () => showAdaptiveDialog(context))),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "adaptive_dialog"),
-            SizedBox(
+            const TerminalRun(package: "adaptive_dialog"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:adaptive_dialog/adaptive_dialog.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using ndialog (Custom Widget Dialogs)",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -592,20 +592,20 @@ void showNDialog(BuildContext context) {
   ).show(context);
 }
 ''', widget: DialogExample(func: () => showNDialog(context))),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "ndialog"),
-            SizedBox(
+            const TerminalRun(package: "ndialog"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:ndialog/ndialog.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            ComparisonTable(
+            const ComparisonTable(
               headers: [
                 "Feature",
                 "awesome_dialog",
@@ -618,7 +618,7 @@ void showNDialog(BuildContext context) {
                 ["Card/Panel Style", "❌", "✅", "✅"],
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -630,7 +630,7 @@ void showNDialog(BuildContext context) {
 
 class DialogExample extends StatelessWidget {
   final VoidCallback func;
-  const DialogExample({
+  const DialogExample({super.key, 
     required this.func,
   });
   @override
@@ -701,8 +701,8 @@ void showAdaptiveDialog(BuildContext context) async {
 void showNDialog(BuildContext context) {
   NDialog(
     dialogStyle: DialogStyle(titleDivider: true),
-    title: Text("Custom Dialog"),
-    content: Column(
+    title: const Text("Custom Dialog"),
+    content: const Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Text("This is a highly customizable dialog."),
@@ -710,7 +710,7 @@ void showNDialog(BuildContext context) {
       ],
     ),
     actions: [
-      TextButton(onPressed: () => Navigator.pop(context), child: Text("Close")),
+      TextButton(onPressed: () => Navigator.pop(context), child: const Text("Close")),
     ],
   ).show(context);
 }

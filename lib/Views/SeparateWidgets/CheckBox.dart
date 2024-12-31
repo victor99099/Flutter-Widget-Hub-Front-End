@@ -184,23 +184,23 @@ class CheckboxPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "CheckBox",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "The Checkbox widget in Flutter is a material design control that allows users to make a binary choice (checked or unchecked). It is commonly used in forms, settings, or lists to represent a selection or a toggleable state.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -208,7 +208,7 @@ class CheckboxPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -219,7 +219,7 @@ class CheckboxPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -239,11 +239,11 @@ class CheckboxPage extends StatelessWidget {
                       elevation: 0,
                       borderRadius: BorderRadius.circular(10),
                       child: TabBar(
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             letterSpacing: 1.5, fontWeight: FontWeight.w500),
-                        padding: EdgeInsets.only(top: 10),
-                        labelPadding: EdgeInsets.all(5),
-                        indicatorPadding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(top: 10),
+                        labelPadding: const EdgeInsets.all(5),
+                        indicatorPadding: const EdgeInsets.all(0),
                         dividerHeight: 0,
                         tabs: const [
                           Padding(
@@ -265,7 +265,7 @@ class CheckboxPage extends StatelessWidget {
                         unselectedLabelColor: Colors.white.withOpacity(0.5),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
@@ -344,10 +344,10 @@ CheckboxListTile(
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -355,13 +355,13 @@ CheckboxListTile(
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: properties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -372,17 +372,17 @@ CheckboxListTile(
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using grouped_checkbox",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -425,27 +425,27 @@ class _GroupedCheckboxExampleState extends State<GroupedCheckboxExample> {
   }
 }
 ''', widget: GroupedCheckboxExample()),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "grouped_checkbox"),
-            SizedBox(
+            const TerminalRun(package: "grouped_checkbox"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:grouped_checkbox/grouped_checkbox.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using roundcheckbox",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -482,17 +482,17 @@ class _RoundCheckboxExampleState extends State<RoundCheckboxExample> {
   }
 }
 ''', widget: RoundCheckboxExample()),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "roundcheckbox"),
-            SizedBox(
+            const TerminalRun(package: "roundcheckbox"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:roundcheckbox/roundcheckbox.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -506,12 +506,11 @@ class CheckboxExample extends StatefulWidget {
   final Color color;
   final TextStyle bodyTextStyle;
   final BorderRadius borderRadius;
-  CheckboxExample(
-      {Key? key,
+  const CheckboxExample(
+      {super.key,
       required this.color,
       required this.bodyTextStyle,
-      required this.borderRadius})
-      : super(key: key);
+      required this.borderRadius});
 
   @override
   State<CheckboxExample> createState() => _CheckboxExampleState();
@@ -545,7 +544,7 @@ class _CheckboxExampleState extends State<CheckboxExample> {
 }
 
 class CheckboxWidget extends StatefulWidget {
-  const CheckboxWidget({Key? key}) : super(key: key);
+  const CheckboxWidget({super.key});
 
   @override
   State<CheckboxWidget> createState() => _CheckboxWidgetState();
@@ -558,7 +557,7 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
       child: CheckboxListTile(
@@ -566,7 +565,7 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
             style: GoogleFonts.nunito(
               fontSize: 18,
               fontWeight: FontWeight.w400,
-              color: Color(0xFF2F2F2F),
+              color: const Color(0xFF2F2F2F),
             )),
         value: isChecked,
         onChanged: (value) {
@@ -574,13 +573,15 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
             isChecked = value!;
           });
         },
-        activeColor: Color(0xFF6A5ACD),
+        activeColor: const Color(0xFF6A5ACD),
       ),
     );
   }
 }
 
 class GroupedCheckboxExample extends StatefulWidget {
+  const GroupedCheckboxExample({super.key});
+
   @override
   _GroupedCheckboxExampleState createState() => _GroupedCheckboxExampleState();
 }
@@ -593,11 +594,11 @@ class _GroupedCheckboxExampleState extends State<GroupedCheckboxExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(16)),
       ),
       child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: GroupedCheckbox<String>(
           itemList: items, // The list of items to display as checkboxes
           orientation:
@@ -620,6 +621,8 @@ class _GroupedCheckboxExampleState extends State<GroupedCheckboxExample> {
 }
 
 class RoundCheckboxExample extends StatefulWidget {
+  const RoundCheckboxExample({super.key});
+
   @override
   _RoundCheckboxExampleState createState() => _RoundCheckboxExampleState();
 }
@@ -631,11 +634,11 @@ class _RoundCheckboxExampleState extends State<RoundCheckboxExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(16)),
       ),
       child: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: RoundCheckBox(
           onTap: (selected) {
             setState(() {

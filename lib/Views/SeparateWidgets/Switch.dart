@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
-import 'package:flutterwidgethub/Ccontrollers/PageController.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:slide_switcher/slide_switcher.dart';
@@ -208,23 +207,23 @@ class SwitchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Switch",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "The Switch widget in Flutter is a toggle button that lets users switch between two states, ON and OFF. It is commonly used for settings or preferences.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -232,7 +231,7 @@ class SwitchPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -243,7 +242,7 @@ class SwitchPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -263,11 +262,11 @@ class SwitchPage extends StatelessWidget {
                       elevation: 0,
                       borderRadius: BorderRadius.circular(10),
                       child: TabBar(
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             letterSpacing: 1.5, fontWeight: FontWeight.w500),
-                        padding: EdgeInsets.only(top: 10),
-                        labelPadding: EdgeInsets.all(5),
-                        indicatorPadding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(top: 10),
+                        labelPadding: const EdgeInsets.all(5),
+                        indicatorPadding: const EdgeInsets.all(0),
                         dividerHeight: 0,
                         tabs: const [
                           Padding(
@@ -289,7 +288,7 @@ class SwitchPage extends StatelessWidget {
                         unselectedLabelColor: Colors.white.withOpacity(0.5),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
@@ -432,10 +431,10 @@ class _SwitchTileState extends State<SwitchTile> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -443,13 +442,13 @@ class _SwitchTileState extends State<SwitchTile> {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: properties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -460,17 +459,17 @@ class _SwitchTileState extends State<SwitchTile> {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using slide_switcher",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -521,27 +520,27 @@ class _SlideSwitcherExampleState extends State<SlideSwitcherExample> {
   }
 }
 ''', widget: SlideSwitcherExample()),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "slide_switcher"),
-            SizedBox(
+            const TerminalRun(package: "slide_switcher"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:slide_switcher/slide_switcher.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using animated_toggle_switch",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -594,17 +593,17 @@ class _AnimatedToggleSwitchWidgetState
   }
 }
 ''', widget: AnimatedToggleSwitchExample()),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "animated_toggle_switch"),
-            SizedBox(
+            const TerminalRun(package: "animated_toggle_switch"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:animated_toggle_switch/animated_toggle_switch.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -618,12 +617,11 @@ class SwitchExample extends StatefulWidget {
   final Color activeColor;
   final TextStyle bodyTextStyle;
   final BorderRadius borderRadius;
-  SwitchExample(
-      {Key? key,
+  const SwitchExample(
+      {super.key,
       required this.activeColor,
       required this.bodyTextStyle,
-      required this.borderRadius})
-      : super(key: key);
+      required this.borderRadius});
 
   @override
   State<SwitchExample> createState() => _SwitchExampleState();
@@ -640,7 +638,7 @@ class _SwitchExampleState extends State<SwitchExample> {
         borderRadius: widget.borderRadius,
       ),
       child: SwitchListTile(
-        trackOutlineColor: WidgetStatePropertyAll(Colors.black),
+        trackOutlineColor: const WidgetStatePropertyAll(Colors.black),
         activeColor: Colors.white,
         thumbColor: WidgetStatePropertyAll(widget.activeColor),
         title: Text(
@@ -659,7 +657,7 @@ class _SwitchExampleState extends State<SwitchExample> {
 }
 
 class SwitchTile extends StatefulWidget {
-  SwitchTile({Key? key}) : super(key: key);
+  const SwitchTile({super.key});
 
   @override
   State<SwitchTile> createState() => _SwitchTileState();
@@ -672,17 +670,17 @@ class _SwitchTileState extends State<SwitchTile> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(16)),
       ),
       child: SwitchListTile(
-        thumbColor: WidgetStatePropertyAll(Color(0xFF6A5ACD)),
+        thumbColor: const WidgetStatePropertyAll(Color(0xFF6A5ACD)),
         title: Text(
           'Enable Feature',
           style: GoogleFonts.nunito(
             fontSize: 18,
             fontWeight: FontWeight.w400,
-            color: Color(0xFF2F2F2F),
+            color: const Color(0xFF2F2F2F),
           ),
         ),
         value: isSwitched,
@@ -697,6 +695,8 @@ class _SwitchTileState extends State<SwitchTile> {
 }
 
 class AnimatedToggleSwitchExample extends StatefulWidget {
+  const AnimatedToggleSwitchExample({super.key});
+
   @override
   _AnimatedToggleSwitchExampleState createState() =>
       _AnimatedToggleSwitchExampleState();
@@ -746,6 +746,8 @@ class _AnimatedToggleSwitchExampleState
 }
 
 class SlideSwitcherExample extends StatefulWidget {
+  const SlideSwitcherExample({super.key});
+
   @override
   _SlideSwitcherExampleState createState() => _SlideSwitcherExampleState();
 }
@@ -764,13 +766,13 @@ class _SlideSwitcherExampleState extends State<SlideSwitcherExample> {
         children: [
           SlideSwitcher(
             containerBorderRadius: 12,
+            onSelect: (index) => setState(() => switcherIndex1 = index),
+            containerHeight: 40,
+            containerWight: 350,
             children: [
               Text('First'),
               Text('Second'),
             ],
-            onSelect: (index) => setState(() => switcherIndex1 = index),
-            containerHeight: 40,
-            containerWight: 350,
           ),
           const SizedBox(height: 20),
           if (switcherIndex1 == 0) ...[

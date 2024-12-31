@@ -11,23 +11,23 @@ class ComboboxPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "ComboBox",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "A ComboBox in Flutter is a UI widget that allows users to select one option from a dropdown list or enter a custom value. It typically combines a text input field with a dropdown button, enabling both freeform input and predefined option selection. Common implementations include the DropdownButton, DropdownMenu, or custom widgets using TextField and a list of options.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -35,7 +35,7 @@ class ComboboxPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -46,7 +46,7 @@ class ComboboxPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SingleCodeAndPreview(code: '''
@@ -101,18 +101,18 @@ class _ComboboxWidgetState extends State<ComboboxWidget> {
     );
   }
 }
-''', widget: ComboboxExample()),
-            SizedBox(
+''', widget: const ComboboxExample()),
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "get"),
-            SizedBox(
+            const TerminalRun(package: "get"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:get/get.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -123,20 +123,20 @@ class _ComboboxWidgetState extends State<ComboboxWidget> {
 }
 
 class ComboboxExample extends StatefulWidget {
-  const ComboboxExample({Key? key}) : super(key: key);
+  const ComboboxExample({super.key});
 
   @override
   State<ComboboxExample> createState() => _ComboboxExampleState();
 }
 
 class _ComboboxExampleState extends State<ComboboxExample> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   RxString selectedValue = 'Option 1'.obs;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 40, right: 40),
+      padding: const EdgeInsets.only(left: 40, right: 40),
       child: Card(
         elevation: 4,
         shape: RoundedRectangleBorder(
@@ -176,21 +176,21 @@ class _ComboboxExampleState extends State<ComboboxExample> {
 }
 
 class Combobox extends StatefulWidget {
-  const Combobox({Key? key}) : super(key: key);
+  const Combobox({super.key});
 
   @override
   State<Combobox> createState() => _ComboboxState();
 }
 
 class _ComboboxState extends State<Combobox> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   String selectedValue = 'Option 1';
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: TextField(

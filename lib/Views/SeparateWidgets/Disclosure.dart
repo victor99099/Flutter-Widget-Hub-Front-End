@@ -2,7 +2,6 @@ import 'package:accordion/accordion.dart';
 import 'package:collapsible/collapsible.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../Styles/styles.dart';
@@ -180,23 +179,23 @@ class DisclosurePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+        padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
         child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Disclosure",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 30,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 "The Disclosure widget in Flutter is used to show or hide content based on user interaction, often seen in collapsible panels or accordions. It allows for dynamic content display with animations.",
                 style: TextStyle(
                   color: Color(0xFFF0F0F0),
@@ -204,7 +203,7 @@ class DisclosurePage extends StatelessWidget {
                 ),
                 textAlign: TextAlign.justify,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
               Text(
@@ -215,7 +214,7 @@ class DisclosurePage extends StatelessWidget {
                     fontSize: 22,
                     fontWeight: FontWeight.w500),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -235,11 +234,11 @@ class DisclosurePage extends StatelessWidget {
                         elevation: 0,
                         borderRadius: BorderRadius.circular(10),
                         child: TabBar(
-                          labelStyle: TextStyle(
+                          labelStyle: const TextStyle(
                               letterSpacing: 1.5, fontWeight: FontWeight.w500),
-                          padding: EdgeInsets.only(top: 10),
-                          labelPadding: EdgeInsets.all(5),
-                          indicatorPadding: EdgeInsets.all(0),
+                          padding: const EdgeInsets.only(top: 10),
+                          labelPadding: const EdgeInsets.all(5),
+                          indicatorPadding: const EdgeInsets.all(0),
                           dividerHeight: 0,
                           tabs: const [
                             Padding(
@@ -261,39 +260,39 @@ class DisclosurePage extends StatelessWidget {
                           unselectedLabelColor: Colors.white.withOpacity(0.5),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         height: MediaQuery.of(context).size.height * 0.58,
                         child: TabBarView(
                           children: [
                             CodeAndPreview(
                                 code: '''
 Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(12)),
+  elevation: 4,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(12)),
+  ),
+  child: ExpansionTile(
+    childrenPadding: EdgeInsets.all(8),
+    title: Text(
+      'Tap to Expand',
+      style: GoogleFonts.openSans(
+       fontSize: 16,
+       fontWeight: FontWeight.normal,
+       color: Colors.black87,
       ),
-      child: ExpansionTile(
-        childrenPadding: EdgeInsets.all(8),
-        title: Text(
-          'Tap to Expand',
-          style: GoogleFonts.openSans(
-           fontSize: 16,
-           fontWeight: FontWeight.normal,
-           color: Colors.black87,
-          ),
+    ),
+    children: [
+      Text(
+        'Expanded content goes here',
+        style: GoogleFonts.lato(
+         fontSize: 14,
+         fontWeight: FontWeight.w400,
+         color: Colors.grey,
         ),
-        children: [
-          Text(
-            'Expanded content goes here',
-            style: GoogleFonts.lato(
-             fontSize: 14,
-             fontWeight: FontWeight.w400,
-             color: Colors.grey,
-            ),
-          )
-        ],
-      ),
-    )
+      )
+    ],
+  ),
+)
 ''',
                                 swidget: DisclosureExample(
                                   borderRadius: ModernStyles.borderRadius,
@@ -304,33 +303,33 @@ Card(
                             CodeAndPreview(
                                 code: '''
 Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(4)),
+  elevation: 4,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(4)),
+  ),
+  child: ExpansionTile(
+    childrenPadding: EdgeInsets.all(8),
+    title: Text(
+      'Tap to Expand',
+      style: GoogleFonts.merriweather(
+       fontSize: 16,
+       fontWeight: FontWeight.normal,
+       color: Colors.brown,
       ),
-      child: ExpansionTile(
-        childrenPadding: EdgeInsets.all(8),
-        title: Text(
-          'Tap to Expand',
-          style: GoogleFonts.merriweather(
-           fontSize: 16,
-           fontWeight: FontWeight.normal,
-           color: Colors.brown,
-          ),
-        ),
-        children: [
-          Text(
-            'Expanded content goes here',
-             style: GoogleFonts.courgette(
-             fontSize: 14,
-             fontWeight: FontWeight.w400,
-             fontStyle: FontStyle.italic,
-             color: Colors.grey,
-           ),
-          )
-        ],
-      ),
-    )
+    ),
+    children: [
+      Text(
+        'Expanded content goes here',
+         style: GoogleFonts.courgette(
+         fontSize: 14,
+         fontWeight: FontWeight.w400,
+         fontStyle: FontStyle.italic,
+         color: Colors.grey,
+       ),
+      )
+    ],
+  ),
+)
 ''',
                                 swidget: DisclosureExample(
                                   borderRadius: ClassicStyles.borderRadius,
@@ -341,32 +340,32 @@ Card(
                             CodeAndPreview(
                                 code: '''
 Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(16)),
+  elevation: 4,
+  shape: RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(16)),
+  ),
+  child: ExpansionTile(
+    childrenPadding: EdgeInsets.all(8),
+    title: Text(
+      'Tap to Expand',
+      style: GoogleFonts.nunito(
+        fontSize: 18,
+        fontWeight: FontWeight.w400,
+        color: Color(0xFF2F2F2F),
       ),
-      child: ExpansionTile(
-        childrenPadding: EdgeInsets.all(8),
-        title: Text(
-          'Tap to Expand',
-          style: GoogleFonts.nunito(
-            fontSize: 18,
-            fontWeight: FontWeight.w400,
-            color: Color(0xFF2F2F2F),
-          ),
+    ),
+    children: [
+      Text(
+        'Expanded content goes here',
+        style: GoogleFonts.dancingScript(
+          fontSize: 16,
+          fontWeight: FontWeight.w300,
+          color: Colors.black54,
         ),
-        children: [
-          Text(
-            'Expanded content goes here',
-            style: GoogleFonts.dancingScript(
-              fontSize: 16,
-              fontWeight: FontWeight.w300,
-              color: Colors.black54,
-            ),
-          )
-        ],
-      ),
-    ) 
+      )
+    ],
+  ),
+) 
 ''',
                                 swidget: DisclosureExample(
                                   borderRadius: ElegantStyles.borderRadius,
@@ -381,10 +380,10 @@ Card(
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 "Styling",
                 style: TextStyle(
                     letterSpacing: 1.5,
@@ -392,13 +391,13 @@ Card(
                     fontSize: 22,
                     fontWeight: FontWeight.w800),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               StyleSection(
                 options: options,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Text(
@@ -409,17 +408,17 @@ Card(
                     fontSize: 22,
                     fontWeight: FontWeight.w500),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 "◆  Using expansion_tile",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.w500),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SingleCodeAndPreview(code: '''
@@ -441,28 +440,28 @@ Card(
   ),
 )
 ''', widget: ExpansionTileCardExample()),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              TerminalRun(package: "expansion_tile_card"),
-              SizedBox(
+              const TerminalRun(package: "expansion_tile_card"),
+              const SizedBox(
                 height: 10,
               ),
-              ImportCopyContainer(
+              const ImportCopyContainer(
                 code:
                     "import 'package:expansion_tile_card/expansion_tile_card.dart';",
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 "◆  Using collapsible",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.w500),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SingleCodeAndPreview(code: '''
@@ -527,27 +526,27 @@ class _CollapsibleWidgetState extends State<CollapsibleWidget> {
     );
   }
 }''', widget: CollapsibleExample()),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              TerminalRun(package: "collapsible"),
-              SizedBox(
+              const TerminalRun(package: "collapsible"),
+              const SizedBox(
                 height: 10,
               ),
-              ImportCopyContainer(
+              const ImportCopyContainer(
                 code: "import 'package:collapsible/collapsible.dart';",
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 "◆  Using accordion",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.w500),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               SingleCodeAndPreview(code: '''
@@ -574,20 +573,20 @@ Card(
   ),
 )
 ''', widget: AccordionExample()),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              TerminalRun(package: "accordion"),
-              SizedBox(
+              const TerminalRun(package: "accordion"),
+              const SizedBox(
                 height: 10,
               ),
-              ImportCopyContainer(
+              const ImportCopyContainer(
                 code: "import 'package:accordion/accordion.dart';",
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              ComparisonTable(
+              const ComparisonTable(
                 headers: [
                   "Feature",
                   "Expansion_tile_card",
@@ -600,7 +599,7 @@ Card(
                   ["Card/Panel Style", "✅", "❌","❌"],
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
             ],
@@ -614,12 +613,12 @@ class DisclosureExample extends StatelessWidget {
   final BorderRadius borderRadius; // Accept the border radius directly
   final TextStyle textStyle; // Accept the input decoration directly
   final TextStyle subtitleTextStyle; // Accept the input decoration directly
-  DisclosureExample({
-    Key? key,
+  const DisclosureExample({
+    super.key,
     required this.borderRadius,
     required this.textStyle,
     required this.subtitleTextStyle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -629,7 +628,7 @@ class DisclosureExample extends StatelessWidget {
         borderRadius: borderRadius,
       ),
       child: ExpansionTile(
-        childrenPadding: EdgeInsets.all(8),
+        childrenPadding: const EdgeInsets.all(8),
         title: Text(
           'Tap to Expand',
           style: textStyle,
@@ -646,6 +645,8 @@ class DisclosureExample extends StatelessWidget {
 }
 
 class ExpansionTileCardExample extends StatelessWidget {
+  const ExpansionTileCardExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -653,13 +654,13 @@ class ExpansionTileCardExample extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      child: ExpansionTileCard(
+      child: const ExpansionTileCard(
         elevation: 0,
         title: Text('Tap to Expand'),
         subtitle: Text('See more details here'),
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Text(
                 'This is the expanded content. You can add anything here!'),
           ),
@@ -670,6 +671,8 @@ class ExpansionTileCardExample extends StatelessWidget {
 }
 
 class CollapsibleExample extends StatefulWidget {
+  const CollapsibleExample({super.key});
+
   @override
   _CollapsibleExampleState createState() => _CollapsibleExampleState();
 }
@@ -694,14 +697,14 @@ class _CollapsibleExampleState extends State<CollapsibleExample> {
               });
             },
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               color: Colors.blue,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Tap to ${_isCollapsed ? "Expand" : "Collapse"}',
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                   ),
                   Icon(
                     _isCollapsed ? Icons.arrow_drop_down : Icons.arrow_drop_up,
@@ -714,12 +717,12 @@ class _CollapsibleExampleState extends State<CollapsibleExample> {
           Collapsible(
             collapsed: _isCollapsed,
             axis: CollapsibleAxis.vertical,
-            duration: Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 300),
             curve: Curves.easeInOut,
             child: Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               color: Colors.blue[100],
-              child: Text(
+              child: const Text(
                 'This is the expanded content. You can add anything here!',
                 style: TextStyle(color: Colors.black),
               ),
@@ -732,6 +735,8 @@ class _CollapsibleExampleState extends State<CollapsibleExample> {
 }
 
 class AccordionExample extends StatelessWidget {
+  const AccordionExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -740,18 +745,18 @@ class AccordionExample extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Accordion(
-        headerPadding: EdgeInsets.all(8),
+        headerPadding: const EdgeInsets.all(8),
         maxOpenSections: 1,
         headerBackgroundColor: Colors.white,
         contentBackgroundColor: Colors.lightBlue[50],
         children: [
           AccordionSection(
-            header: Text('Section 1'),
-            content: Text('This is the content of Section 1'),
+            header: const Text('Section 1'),
+            content: const Text('This is the content of Section 1'),
           ),
           AccordionSection(
-            header: Text('Section 2'),
-            content: Text('This is the content of Section 2'),
+            header: const Text('Section 2'),
+            content: const Text('This is the content of Section 2'),
           ),
         ],
       ),

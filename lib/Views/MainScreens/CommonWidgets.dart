@@ -7,7 +7,7 @@ class TypeBox extends StatelessWidget {
   final String body;
   final String code;
   final Widget widget;
-  TypeBox(
+  const TypeBox(
       {super.key,
       required this.Heading,
       required this.body,
@@ -18,33 +18,33 @@ class TypeBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Text(
           Heading,
-          style: TextStyle(
+          style: const TextStyle(
             letterSpacing: 1,
             color: Colors.white,
             fontSize: 18,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         Text(
           body,
-          style: TextStyle(
+          style: const TextStyle(
             letterSpacing: 1,
             color: Colors.white,
             fontSize: 16,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         SingleCodeAndPreview(code: code, widget: widget),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
       ]),
@@ -55,7 +55,7 @@ class TypeBoxNoBody extends StatelessWidget {
   final String Heading;
   final String code;
   final Widget widget;
-  TypeBoxNoBody(
+  const TypeBoxNoBody(
       {super.key,
       required this.Heading,
       required this.code,
@@ -65,22 +65,22 @@ class TypeBoxNoBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Text(
           Heading,
-          style: TextStyle(
+          style: const TextStyle(
             letterSpacing: 1,
             color: Colors.white,
             fontSize: 16,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         SingleCodeAndPreview(code: code, widget: widget),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
       ]),
@@ -91,14 +91,14 @@ class TypeBoxNoBody extends StatelessWidget {
 class CodeDisplay extends StatelessWidget {
   final String code;
 
-  CodeDisplay({Key? key, required this.code}) : super(key: key);
+  const CodeDisplay({super.key, required this.code});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.5,
       height: MediaQuery.of(context).size.height * 0.58,
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(10),
@@ -111,13 +111,13 @@ class CodeDisplay extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               IconButton(
-                icon: Icon(Icons.copy),
+                icon: const Icon(Icons.copy),
                 color: Colors.white,
                 onPressed: () {
                   // Use Clipboard to copy code
                   Clipboard.setData(ClipboardData(text: code)).then((_) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Code copied to clipboard!')),
+                      const SnackBar(content: Text('Code copied to clipboard!')),
                     );
                   });
                 },
@@ -148,7 +148,7 @@ class CodeViewer extends StatelessWidget {
     // Generate highlighted code
     final result = _highlightCode(code);
 
-    return Container(
+    return SizedBox(
       width: double.infinity, // Set width to infinity for responsiveness
       child: SingleChildScrollView(
         child: Column(
@@ -157,7 +157,7 @@ class CodeViewer extends StatelessWidget {
             // Render the highlighted code with custom styles
             RichText(
               text: TextSpan(
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.black), // Default text color (black)
                 children: result,
               ),
@@ -186,7 +186,7 @@ class CodeViewer extends StatelessWidget {
     if (match.start > lastMatchEnd) {
       textSpans.add(TextSpan(
         text: code.substring(lastMatchEnd, match.start),
-        style: TextStyle(color: Colors.white, fontSize: fontSize),
+        style: const TextStyle(color: Colors.white, fontSize: fontSize),
       ));
     }
 
@@ -241,7 +241,7 @@ class CodeViewer extends StatelessWidget {
   if (lastMatchEnd < code.length) {
     textSpans.add(TextSpan(
       text: code.substring(lastMatchEnd),
-      style: TextStyle(color: Colors.white, fontSize: fontSize),
+      style: const TextStyle(color: Colors.white, fontSize: fontSize),
     ));
   }
 
@@ -293,13 +293,13 @@ class CopyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: Icon(Icons.copy),
+      icon: const Icon(Icons.copy),
       color: Colors.white,
       onPressed: () {
         // Use Clipboard to copy code
         Clipboard.setData(ClipboardData(text: code)).then((_) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Code copied to clipboard!')),
+            const SnackBar(content: Text('Code copied to clipboard!')),
           );
         });
       },
@@ -311,7 +311,7 @@ class CodeAndPreview extends StatefulWidget {
   final Widget swidget;
 
   final String code;
-  CodeAndPreview({super.key, required this.code, required this.swidget});
+  const CodeAndPreview({super.key, required this.code, required this.swidget});
 
   @override
   State<CodeAndPreview> createState() => _CodeAndPreviewState();
@@ -325,7 +325,7 @@ class _CodeAndPreviewState extends State<CodeAndPreview> {
       children: [
         Positioned(
           top: 30,
-          right: 80,
+          right: MediaQuery.of(context).size.width * 0.058,
           child: Container(
             decoration: BoxDecoration(
               shape: BoxShape.rectangle,
@@ -384,7 +384,7 @@ class StyleSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return DataTable(
       showBottomBorder: true,
-      border: TableBorder(
+      border: const TableBorder(
           verticalInside: BorderSide(color: Colors.white),
           top: BorderSide(color: Colors.white)),
       columns: const [
@@ -411,12 +411,12 @@ class StyleSection extends StatelessWidget {
         return DataRow(cells: [
           DataCell(Text(
             option["Property"]!,
-            style: TextStyle(color: Colors.white, fontSize: 16),
+            style: const TextStyle(color: Colors.white, fontSize: 16),
           )),
           DataCell(Text(option["Possible Values"]!,
-              style: TextStyle(color: Colors.white))),
+              style: const TextStyle(color: Colors.white))),
           DataCell(Text(option["Description"]!,
-              style: TextStyle(color: Colors.white))),
+              style: const TextStyle(color: Colors.white))),
         ]);
       }).toList(),
     );
@@ -426,7 +426,7 @@ class StyleSection extends StatelessWidget {
 class SingleCodeAndPreview extends StatefulWidget {
   final String code;
   final Widget widget;
-  SingleCodeAndPreview({super.key, required this.code, required this.widget});
+  const SingleCodeAndPreview({super.key, required this.code, required this.widget});
 
   @override
   State<SingleCodeAndPreview> createState() => _SingleCodeAndPreviewState();
@@ -446,14 +446,14 @@ class _SingleCodeAndPreviewState extends State<SingleCodeAndPreview> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
               height: MediaQuery.of(context).size.height * 0.58,
               width: MediaQuery.of(context).size.width,
               child: Stack(
                 children: [
                   Positioned(
                     top: 30,
-                    right: 80,
+                    right:MediaQuery.of(context).size.width * 0.058,
                     child: Container(
                       decoration: BoxDecoration(
                         shape: BoxShape.rectangle,
@@ -491,7 +491,7 @@ class _SingleCodeAndPreviewState extends State<SingleCodeAndPreview> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 50,
                   ),
                   isCodeView
@@ -500,7 +500,7 @@ class _SingleCodeAndPreviewState extends State<SingleCodeAndPreview> {
                           child: widget.widget,
                         ).paddingOnly(left: 20, right: 20)
                       : Container(
-                          padding: EdgeInsets.only(top: 20),
+                          padding: const EdgeInsets.only(top: 20),
                           child: CodeDisplay(
                             code: widget.code,
                           ),
@@ -518,15 +518,15 @@ class ComparisonTable extends StatelessWidget {
   final List<List<String>> body;
 
   const ComparisonTable({
-    Key? key,
+    super.key,
     required this.headers,
     required this.body,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Table(
-      border: TableBorder.all(color: Color.fromARGB(255, 99, 185, 211)),
+      border: TableBorder.all(color: const Color.fromARGB(255, 99, 185, 211)),
       columnWidths: _getColumnWidths(),
       children: [
         _buildTableHeader(),
@@ -539,7 +539,7 @@ class ComparisonTable extends StatelessWidget {
   Map<int, TableColumnWidth> _getColumnWidths() {
     return Map.fromIterable(
       List.generate(headers.length, (index) => index),
-      value: (_) => FlexColumnWidth(1), // Equal width for each column
+      value: (_) => const FlexColumnWidth(1), // Equal width for each column
     );
   }
 
@@ -597,7 +597,7 @@ class ImportCopyContainer extends StatelessWidget {
         children: [
           Text(
             code,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ).paddingOnly(left: 20),
           CopyButton(
             code: code,
@@ -627,29 +627,37 @@ class TerminalRun extends StatelessWidget {
           RichText(
               text: TextSpan(
                   text: "Run in terminal - ",
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w400),
                   children: [
-                TextSpan(
+                const TextSpan(
                     text: "   flutter",
                     style: TextStyle(
-                        color: const Color.fromARGB(255, 255, 234, 49),
+                        color: Color.fromARGB(255, 255, 234, 49),
                         fontSize: 16,
                         fontWeight: FontWeight.w900)),
                 TextSpan(
-                    text: "   pub add ${package}",
-                    style: TextStyle(
-                        color: const Color.fromARGB(255, 5, 15, 58),
+                    text: "   pub add $package",
+                    style: const TextStyle(
+                        color: Color.fromARGB(255, 5, 15, 58),
                         fontSize: 16,
                         fontWeight: FontWeight.w800))
               ])).paddingOnly(left: 20),
           CopyButton(
-            code: "flutter pub add ${package}",
+            code: "flutter pub add $package",
           ).paddingOnly(right: 20),
         ],
       ),
     );
   }
+}
+
+
+double GetWidthValue(value){
+  return value/1366 ;
+}
+double GetHeighValue(value){
+  return value/768 ;
 }

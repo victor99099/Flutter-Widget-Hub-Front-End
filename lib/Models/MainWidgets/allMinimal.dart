@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class DropdownExample extends StatefulWidget {
-  const DropdownExample({Key? key}) : super(key: key);
+  const DropdownExample({super.key});
 
   @override
   State<DropdownExample> createState() => _DropdownExampleState();
@@ -32,19 +32,21 @@ class _DropdownExampleState extends State<DropdownExample> {
 
 // Disclosure Example
 class DisclosureExample extends StatelessWidget {
-  const DisclosureExample({Key? key}) : super(key: key);
+  const DisclosureExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ExpansionTile(
-      title: const Text('Tap to Expand'),
-      children: [const Text('Expanded content goes here')],
+    return const ExpansionTile(
+      title: Text('Tap to Expand'),
+      children: [Text('Expanded content goes here')],
     );
   }
 }
 
 // Dialog Example
 class DialogExample extends StatelessWidget {
+  const DialogExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -69,7 +71,7 @@ class DialogExample extends StatelessWidget {
 
 // Popover Example
 class PopoverExample extends StatelessWidget {
-  const PopoverExample({Key? key}) : super(key: key);
+  const PopoverExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +87,7 @@ class PopoverExample extends StatelessWidget {
 
 // Tabs Example
 class TabsExample extends StatelessWidget {
-  const TabsExample({Key? key}) : super(key: key);
+  const TabsExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +96,7 @@ class TabsExample extends StatelessWidget {
       child: Column(
         children: [
           const TabBar(tabs: [Tab(text: 'Tab 1'), Tab(text: 'Tab 2')]),
-          Container(
+          SizedBox(
             height: 100,
             child: const TabBarView(
                 children: [Text('Content 1'), Text('Content 2')]),
@@ -107,7 +109,7 @@ class TabsExample extends StatelessWidget {
 
 // Transition Example
 class TransitionExample extends StatelessWidget {
-  const TransitionExample({Key? key}) : super(key: key);
+  const TransitionExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -131,13 +133,13 @@ class TransitionExample extends StatelessWidget {
 
 // Form Example
 class FormExample extends StatelessWidget {
-  const FormExample({Key? key}) : super(key: key);
+  const FormExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return Form(
-      key: _formKey,
+      key: formKey,
       child: Column(
         children: [
           TextFormField(
@@ -147,7 +149,7 @@ class FormExample extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
+              if (formKey.currentState!.validate()) {
                 ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Form is valid')));
               }
@@ -162,7 +164,7 @@ class FormExample extends StatelessWidget {
 
 // Button Example
 class ButtonExample extends StatelessWidget {
-  const ButtonExample({Key? key}) : super(key: key);
+  const ButtonExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -175,7 +177,7 @@ class ButtonExample extends StatelessWidget {
 
 // Checkbox Example
 class CheckboxExample extends StatefulWidget {
-  const CheckboxExample({Key? key}) : super(key: key);
+  const CheckboxExample({super.key});
 
   @override
   State<CheckboxExample> createState() => _CheckboxExampleState();
@@ -200,14 +202,14 @@ class _CheckboxExampleState extends State<CheckboxExample> {
 
 // Combobox Example
 class ComboboxExample extends StatefulWidget {
-  const ComboboxExample({Key? key}) : super(key: key);
+  const ComboboxExample({super.key});
 
   @override
   State<ComboboxExample> createState() => _ComboboxExampleState();
 }
 
 class _ComboboxExampleState extends State<ComboboxExample> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   String selectedValue = 'Option 1';
   @override
   Widget build(BuildContext context) {
@@ -238,7 +240,7 @@ class _ComboboxExampleState extends State<ComboboxExample> {
 
 // Fieldset Example
 class FieldsetExample extends StatelessWidget {
-  const FieldsetExample({Key? key}) : super(key: key);
+  const FieldsetExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -252,19 +254,19 @@ class FieldsetExample extends StatelessWidget {
 
 // Input Example
 class InputExample extends StatelessWidget {
-  const InputExample({Key? key}) : super(key: key);
+  const InputExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      decoration: const InputDecoration(labelText: 'Enter text'),
+    return const TextField(
+      decoration: InputDecoration(labelText: 'Enter text'),
     );
   }
 }
 
 // Listbox Example
 class ListboxExample extends StatelessWidget {
-  const ListboxExample({Key? key}) : super(key: key);
+  const ListboxExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -281,7 +283,7 @@ class ListboxExample extends StatelessWidget {
 
 // Radio Group Example
 class RadioGroupExample extends StatefulWidget {
-  const RadioGroupExample({Key? key}) : super(key: key);
+  const RadioGroupExample({super.key});
 
   @override
   State<RadioGroupExample> createState() => _RadioGroupExampleState();
@@ -321,7 +323,7 @@ class _RadioGroupExampleState extends State<RadioGroupExample> {
 
 // Select Example
 class SelectExample extends StatelessWidget {
-  const SelectExample({Key? key}) : super(key: key);
+  const SelectExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -337,7 +339,7 @@ class SelectExample extends StatelessWidget {
 
 // Switch Example
 class SwitchExample extends StatefulWidget {
-  const SwitchExample({Key? key}) : super(key: key);
+  const SwitchExample({super.key});
 
   @override
   State<SwitchExample> createState() => _SwitchExampleState();
@@ -362,25 +364,25 @@ class _SwitchExampleState extends State<SwitchExample> {
 
 // Textarea Example
 class TextareaExample extends StatelessWidget {
-  const TextareaExample({Key? key}) : super(key: key);
+  const TextareaExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return const TextField(
       maxLines: 5,
-      decoration: const InputDecoration(labelText: 'Enter long text'),
+      decoration: InputDecoration(labelText: 'Enter long text'),
     );
   }
 }
 
 
 class AccordionExample extends StatelessWidget {
-  const AccordionExample({Key? key}) : super(key: key);
+  const AccordionExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      title: Text('Accordion Header'),
+      title: const Text('Accordion Header'),
       children: [
         Container(
           padding: const EdgeInsets.all(16),
@@ -392,7 +394,7 @@ class AccordionExample extends StatelessWidget {
 }
 
 class DatePickerExample extends StatelessWidget {
-  const DatePickerExample({Key? key}) : super(key: key);
+  const DatePickerExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -411,7 +413,7 @@ class DatePickerExample extends StatelessWidget {
 }
 
 class TimePickerExample extends StatelessWidget {
-  const TimePickerExample({Key? key}) : super(key: key);
+  const TimePickerExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -428,14 +430,14 @@ class TimePickerExample extends StatelessWidget {
 }
 
 class ToastNotificationExample extends StatelessWidget {
-  const ToastNotificationExample({Key? key}) : super(key: key);
+  const ToastNotificationExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        final snackBar = SnackBar(
-          content: const Text('This is a toast notification!'),
+        final snackBar = const SnackBar(
+          content: Text('This is a toast notification!'),
           behavior: SnackBarBehavior.floating,
         );
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -446,11 +448,11 @@ class ToastNotificationExample extends StatelessWidget {
 }
 
 class CarouselExample extends StatelessWidget {
-  const CarouselExample({Key? key}) : super(key: key);
+  const CarouselExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: PageView.builder(
         itemCount: 3,
@@ -468,7 +470,7 @@ class CarouselExample extends StatelessWidget {
 }
 
 class StepperExample extends StatefulWidget {
-  const StepperExample({Key? key}) : super(key: key);
+  const StepperExample({super.key});
 
   @override
   _StepperExampleState createState() => _StepperExampleState();
@@ -485,17 +487,17 @@ class _StepperExampleState extends State<StepperExample> {
       onStepCancel: currentStep > 0 ? () => setState(() => currentStep -= 1) : null,
       steps: [
         Step(
-          title: Text('Step 1'),
+          title: const Text('Step 1'),
           content: const Text('This is step 1 content'),
           isActive: currentStep >= 0,
         ),
         Step(
-          title: Text('Step 2'),
+          title: const Text('Step 2'),
           content: const Text('This is step 2 content'),
           isActive: currentStep >= 1,
         ),
         Step(
-          title: Text('Step 3'),
+          title: const Text('Step 3'),
           content: const Text('This is step 3 content'),
           isActive: currentStep >= 2,
         ),
@@ -505,11 +507,11 @@ class _StepperExampleState extends State<StepperExample> {
 }
 
 class TooltipExample extends StatelessWidget {
-  const TooltipExample({Key? key}) : super(key: key);
+  const TooltipExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Tooltip(
+    return const Tooltip(
       message: 'This is a tooltip!',
       child: Icon(Icons.info),
     );

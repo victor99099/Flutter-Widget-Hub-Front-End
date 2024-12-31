@@ -193,23 +193,23 @@ class TabsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Tabs",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "In Flutter, Tab widgets are used to create tabbed navigation interfaces. They consist of a TabBar that displays the tabs and a TabBarView that shows the content for the selected tab. The TabController manages the active tab and allows for smooth transitions between them. This system is ideal for organizing content into separate sections that users can easily switch between. Tabs can display text, icons, or both, making it flexible for different UI needs.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -217,7 +217,7 @@ class TabsPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -228,7 +228,7 @@ class TabsPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -248,11 +248,11 @@ class TabsPage extends StatelessWidget {
                       elevation: 0,
                       borderRadius: BorderRadius.circular(10),
                       child: TabBar(
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             letterSpacing: 1.5, fontWeight: FontWeight.w500),
-                        padding: EdgeInsets.only(top: 10),
-                        labelPadding: EdgeInsets.all(5),
-                        indicatorPadding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(top: 10),
+                        labelPadding: const EdgeInsets.all(5),
+                        indicatorPadding: const EdgeInsets.all(0),
                         dividerHeight: 0,
                         tabs: const [
                           Padding(
@@ -274,7 +274,7 @@ class TabsPage extends StatelessWidget {
                         unselectedLabelColor: Colors.white.withOpacity(0.5),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
@@ -506,10 +506,10 @@ class Tabs extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling for TabBar()",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -517,16 +517,16 @@ class Tabs extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: tabBarOptions,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling for TabBarView()",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -534,13 +534,13 @@ class Tabs extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: tabViewOptions,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -551,17 +551,17 @@ class Tabs extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using popover",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -629,17 +629,17 @@ class Tabs extends StatelessWidget {
   }
 }
 ''', widget: ButtonsTabBarExample().paddingOnly(top:100)),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "popover"),
-            SizedBox(
+            const TerminalRun(package: "popover"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:popover/popover.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -656,13 +656,12 @@ class TabsExample extends StatelessWidget {
   final Color activeColor;
   final Color baseColor;
   const TabsExample(
-      {Key? key,
+      {super.key,
       required this.bodyTextStyle,
       required this.subtitleTextStyle,
       required this.borderRadius,
       required this.activeColor,
-      required this.baseColor})
-      : super(key: key);
+      required this.baseColor});
 
   @override
   Widget build(BuildContext context) {
@@ -782,6 +781,8 @@ class TabsExample extends StatelessWidget {
 // }
 
 class ButtonsTabBarExample extends StatelessWidget {
+  const ButtonsTabBarExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -794,10 +795,10 @@ class ButtonsTabBarExample extends StatelessWidget {
             child: ButtonsTabBar(
               backgroundColor: Colors.blue,
               unselectedBackgroundColor: Colors.grey[300],
-              unselectedLabelStyle: TextStyle(color: Colors.black),
+              unselectedLabelStyle: const TextStyle(color: Colors.black),
               labelStyle:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              tabs: [
+                  const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              tabs: const [
                 Tab(icon: Icon(Icons.home), text: "Home"),
                 Tab(icon: Icon(Icons.star), text: "Favorites"),
                 Tab(icon: Icon(Icons.person), text: "Profile"),
@@ -808,7 +809,7 @@ class ButtonsTabBarExample extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(12)),
             height: 120,
-            child: TabBarView(
+            child: const TabBarView(
               children: [
                 Center(child: Text('Home Tab Content')),
                 Center(child: Text('Favorites Tab Content')),

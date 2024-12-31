@@ -104,23 +104,23 @@ class _DropDownPageState extends State<DropDownPage> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Drop Down Menu",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Dropdown menus in Flutter provide an easy way to create custom, interactive components with full support for accessibility and keyboard navigation. They enable seamless selection from a list of options, making them ideal for user-friendly interfaces.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -128,7 +128,7 @@ class _DropDownPageState extends State<DropDownPage> {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -139,7 +139,7 @@ class _DropDownPageState extends State<DropDownPage> {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -159,11 +159,11 @@ class _DropDownPageState extends State<DropDownPage> {
                       elevation: 0,
                       borderRadius: BorderRadius.circular(10),
                       child: TabBar(
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             letterSpacing: 1.5, fontWeight: FontWeight.w500),
-                        padding: EdgeInsets.only(top: 10),
-                        labelPadding: EdgeInsets.all(5),
-                        indicatorPadding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(top: 10),
+                        labelPadding: const EdgeInsets.all(5),
+                        indicatorPadding: const EdgeInsets.all(0),
                         dividerHeight: 0,
                         tabs: const [
                           Padding(
@@ -185,7 +185,7 @@ class _DropDownPageState extends State<DropDownPage> {
                         unselectedLabelColor: Colors.white.withOpacity(0.5),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
@@ -367,10 +367,10 @@ class _DropdownMenuState extends State<DropdownMenu> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -378,13 +378,13 @@ class _DropdownMenuState extends State<DropdownMenu> {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: options,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -395,17 +395,17 @@ class _DropdownMenuState extends State<DropdownMenu> {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using flutter_dropdown",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(
@@ -435,7 +435,7 @@ class FlutterDropdownExample extends StatelessWidget {
   }
 }''',
                 widget: FlutterDropdownExample()),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -449,7 +449,7 @@ class FlutterDropdownExample extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   RichText(
-                      text: TextSpan(
+                      text: const TextSpan(
                           text: "Run in terminal - ",
                           style: TextStyle(
                               color: Colors.white,
@@ -459,33 +459,33 @@ class FlutterDropdownExample extends StatelessWidget {
                         TextSpan(
                             text: "   flutter",
                             style: TextStyle(
-                                color: const Color.fromARGB(255, 255, 234, 49),
+                                color: Color.fromARGB(255, 255, 234, 49),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w900)),
                         TextSpan(
                             text: "   pub add flutter_dropdown",
                             style: TextStyle(
-                                color: const Color.fromARGB(255, 5, 15, 58),
+                                color: Color.fromARGB(255, 5, 15, 58),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w800))
                       ])).paddingOnly(left: 20),
-                  CopyButton(
+                  const CopyButton(
                     code: "flutter pub add flutter_dropdown",
                   ).paddingOnly(right: 20),
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using dropdown_button2",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(
@@ -534,7 +534,7 @@ class _DropdownButton_2State extends State<DropdownButton_2> {
   }
 }''',
                 widget: DropdownButton_2()),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -548,7 +548,7 @@ class _DropdownButton_2State extends State<DropdownButton_2> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   RichText(
-                      text: TextSpan(
+                      text: const TextSpan(
                           text: "Run in terminal - ",
                           style: TextStyle(
                               color: Colors.white,
@@ -558,26 +558,26 @@ class _DropdownButton_2State extends State<DropdownButton_2> {
                         TextSpan(
                             text: "   flutter",
                             style: TextStyle(
-                                color: const Color.fromARGB(255, 255, 234, 49),
+                                color: Color.fromARGB(255, 255, 234, 49),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w900)),
                         TextSpan(
                             text: "   pub add dropdown_button2",
                             style: TextStyle(
-                                color: const Color.fromARGB(255, 5, 15, 58),
+                                color: Color.fromARGB(255, 5, 15, 58),
                                 fontSize: 16,
                                 fontWeight: FontWeight.w800))
                       ])).paddingOnly(left: 20),
-                  CopyButton(
+                  const CopyButton(
                     code: "flutter pub add dropdown_button2",
                   ).paddingOnly(right: 20),
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Comparison",
               style: TextStyle(
                   color: Colors.white,
@@ -585,10 +585,10 @@ class _DropdownButton_2State extends State<DropdownButton_2> {
                   fontWeight: FontWeight.w500),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            ComparisonTable(
+            const ComparisonTable(
               headers: [
                 "Feature",
                 "flutter_dropdown",
@@ -602,7 +602,7 @@ class _DropdownButton_2State extends State<DropdownButton_2> {
               ],
             ),
            
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -693,12 +693,12 @@ class DropdownExample extends StatefulWidget {
   final BorderRadius borderRadius; // Accept the border radius directly
   final InputDecoration inputDecoration; // Accept the border radius directly
   final TextStyle textStyle; // Accept the input decoration directly
-  DropdownExample({
-    Key? key,
+  const DropdownExample({
+    super.key,
     required this.borderRadius,
     required this.textStyle,
     required this.inputDecoration,
-  }) : super(key: key);
+  });
 
   @override
   State<DropdownExample> createState() => _DropdownExampleState();
@@ -740,6 +740,8 @@ class _DropdownExampleState extends State<DropdownExample> {
 }
 
 class FlutterDropdownExample extends StatelessWidget {
+  const FlutterDropdownExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -749,8 +751,8 @@ class FlutterDropdownExample extends StatelessWidget {
           borderRadius: BorderRadius.circular(12), side: BorderSide.none),
       child: DropDown<String>(
         showUnderline: false,
-        items: ["Option 1", "Option 2", "Option 3"],
-        hint: Text("Select an option"),
+        items: const ["Option 1", "Option 2", "Option 3"],
+        hint: const Text("Select an option"),
         onChanged: (value) {
           print("Selected: $value");
         },
@@ -761,6 +763,8 @@ class FlutterDropdownExample extends StatelessWidget {
 }
 
 class DropdownButton_2 extends StatefulWidget {
+  const DropdownButton_2({super.key});
+
   @override
   State<DropdownButton_2> createState() => _DropdownButton_2State();
 }
@@ -775,13 +779,13 @@ class _DropdownButton_2State extends State<DropdownButton_2> {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12), side: BorderSide.none),
       child: DropdownButton2(
-        underline: SizedBox(),
+        underline: const SizedBox(),
         isExpanded: true,
-        hint: Text(
+        hint: const Text(
           'Select an Option',
           style: TextStyle(fontSize: 16),
         ),
-        items: [
+        items: const [
           DropdownMenuItem(value: "Option 1", child: Text("Option 1")),
           DropdownMenuItem(value: "Option 2", child: Text("Option 2")),
           DropdownMenuItem(value: "Option 3", child: Text("Option 3")),
@@ -793,7 +797,7 @@ class _DropdownButton_2State extends State<DropdownButton_2> {
         value: selectedValue,
         onChanged: (value) {
           setState(() {
-            selectedValue = value as String?;
+            selectedValue = value;
           });
 
           print("Selected: $value");

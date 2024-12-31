@@ -9,7 +9,7 @@ import '../../Styles/styles.dart';
 
 // Dropdown Menu
 class DropdownExample extends StatefulWidget {
-  const DropdownExample({Key? key}) : super(key: key);
+  const DropdownExample({super.key});
 
   @override
   State<DropdownExample> createState() => _DropdownExampleState();
@@ -48,18 +48,18 @@ class _DropdownExampleState extends State<DropdownExample> {
 
 // Disclosure (ExpansionTile)
 class DisclosureExample extends StatelessWidget {
-  const DisclosureExample({Key? key}) : super(key: key);
+  const DisclosureExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return const Card(
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: ExpansionTile(
-        title: const Text('Tap to Expand'),
-        children: [const Text('Expanded content goes here')],
+        title: Text('Tap to Expand'),
+        children: [Text('Expanded content goes here')],
       ),
     );
   }
@@ -67,6 +67,8 @@ class DisclosureExample extends StatelessWidget {
 
 // Dialog (AlertDialog)
 class DialogExample extends StatelessWidget {
+  const DialogExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -93,13 +95,13 @@ class DialogExample extends StatelessWidget {
 
 // Popover (PopupMenuButton)
 class PopoverExample extends StatelessWidget {
-  const PopoverExample({Key? key}) : super(key: key);
+  const PopoverExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: PopupMenuButton<String>(
@@ -115,7 +117,7 @@ class PopoverExample extends StatelessWidget {
 
 // Tabs (TabBar & TabBarView)
 class TabsExample extends StatelessWidget {
-  const TabsExample({Key? key}) : super(key: key);
+  const TabsExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -123,11 +125,11 @@ class TabsExample extends StatelessWidget {
       length: 2,
       child: Column(
         children: [
-          Material(
+          const Material(
             elevation: 4,
             borderRadius: ModernStyles.borderRadius,
             child: TabBar(
-              tabs: const [
+              tabs: [
                 Tab(text: 'Tab 1'),
                 Tab(text: 'Tab 2'),
               ],
@@ -139,7 +141,7 @@ class TabsExample extends StatelessWidget {
               unselectedLabelColor: ModernStyles.baseColor,
             ),
           ),
-          Container(
+          SizedBox(
             height: 100,
             child: const TabBarView(
               children: [
@@ -156,7 +158,7 @@ class TabsExample extends StatelessWidget {
 
 // Transition (PageRouteBuilder with FadeTransition)
 class TransitionExample extends StatelessWidget {
-  const TransitionExample({Key? key}) : super(key: key);
+  const TransitionExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -183,18 +185,18 @@ class TransitionExample extends StatelessWidget {
 
 // Form (TextFormField)
 class FormExample extends StatelessWidget {
-  const FormExample({Key? key}) : super(key: key);
+  const FormExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return Form(
-      key: _formKey,
+      key: formKey,
       child: Column(
         children: [
           Card(
             elevation: 4,
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
               borderRadius: ModernStyles.borderRadius,
             ),
             child: TextFormField(
@@ -213,7 +215,7 @@ class FormExample extends StatelessWidget {
           ElevatedButton(
             style: getElevatedButtonStyle(),
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
+              if (formKey.currentState!.validate()) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Form is valid')),
                 );
@@ -229,7 +231,7 @@ class FormExample extends StatelessWidget {
 
 // Button (ElevatedButton)
 class ButtonExample extends StatelessWidget {
-  const ButtonExample({Key? key}) : super(key: key);
+  const ButtonExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -243,7 +245,7 @@ class ButtonExample extends StatelessWidget {
 
 // Checkbox (CheckboxListTile)
 class CheckboxExample extends StatefulWidget {
-  const CheckboxExample({Key? key}) : super(key: key);
+  const CheckboxExample({super.key});
 
   @override
   State<CheckboxExample> createState() => _CheckboxExampleState();
@@ -256,7 +258,7 @@ class _CheckboxExampleState extends State<CheckboxExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: CheckboxListTile(
@@ -275,21 +277,21 @@ class _CheckboxExampleState extends State<CheckboxExample> {
 
 // Combobox Example
 class ComboboxExample extends StatefulWidget {
-  const ComboboxExample({Key? key}) : super(key: key);
+  const ComboboxExample({super.key});
 
   @override
   State<ComboboxExample> createState() => _ComboboxExampleState();
 }
 
 class _ComboboxExampleState extends State<ComboboxExample> {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
   String selectedValue = 'Option 1';
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: TextField(
@@ -321,17 +323,17 @@ class _ComboboxExampleState extends State<ComboboxExample> {
 
 // Input Example
 class InputExample extends StatelessWidget {
-  const InputExample({Key? key}) : super(key: key);
+  const InputExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return const Card(
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: TextField(
-        decoration: const InputDecoration(labelText: 'Enter text'),
+        decoration: InputDecoration(labelText: 'Enter text'),
       ),
     );
   }
@@ -339,13 +341,13 @@ class InputExample extends StatelessWidget {
 
 // Listbox Example
 class ListboxExample extends StatelessWidget {
-  const ListboxExample({Key? key}) : super(key: key);
+  const ListboxExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: ListView(
@@ -362,7 +364,7 @@ class ListboxExample extends StatelessWidget {
 
 // Radio Group Example
 class RadioGroupExample extends StatefulWidget {
-  const RadioGroupExample({Key? key}) : super(key: key);
+  const RadioGroupExample({super.key});
 
   @override
   State<RadioGroupExample> createState() => _RadioGroupExampleState();
@@ -375,7 +377,7 @@ class _RadioGroupExampleState extends State<RadioGroupExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: Column(
@@ -409,7 +411,7 @@ class _RadioGroupExampleState extends State<RadioGroupExample> {
 
 // Switch Example
 class SwitchExample extends StatefulWidget {
-  const SwitchExample({Key? key}) : super(key: key);
+  const SwitchExample({super.key});
 
   @override
   State<SwitchExample> createState() => _SwitchExampleState();
@@ -422,7 +424,7 @@ class _SwitchExampleState extends State<SwitchExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: SwitchListTile(
@@ -440,18 +442,18 @@ class _SwitchExampleState extends State<SwitchExample> {
 
 // Textarea Example
 class TextareaExample extends StatelessWidget {
-  const TextareaExample({Key? key}) : super(key: key);
+  const TextareaExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return const Card(
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: TextField(
         maxLines: 5,
-        decoration: const InputDecoration(labelText: 'Enter long text'),
+        decoration: InputDecoration(labelText: 'Enter long text'),
       ),
     );
   }
@@ -459,7 +461,7 @@ class TextareaExample extends StatelessWidget {
 
 // DatePicker Example
 class DatePickerExample extends StatefulWidget {
-  const DatePickerExample({Key? key}) : super(key: key);
+  const DatePickerExample({super.key});
 
   @override
   State<DatePickerExample> createState() => _DatePickerExampleState();
@@ -472,7 +474,7 @@ class _DatePickerExampleState extends State<DatePickerExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: ListTile(
@@ -502,7 +504,7 @@ class _DatePickerExampleState extends State<DatePickerExample> {
 
 // TimePicker Example
 class TimePickerExample extends StatefulWidget {
-  const TimePickerExample({Key? key}) : super(key: key);
+  const TimePickerExample({super.key});
 
   @override
   State<TimePickerExample> createState() => _TimePickerExampleState();
@@ -515,7 +517,7 @@ class _TimePickerExampleState extends State<TimePickerExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: ListTile(
@@ -542,15 +544,15 @@ class _TimePickerExampleState extends State<TimePickerExample> {
 
 // Toast Notification Example (SnackBar)
 class ToastNotificationExample extends StatelessWidget {
-  const ToastNotificationExample({Key? key}) : super(key: key);
+  const ToastNotificationExample({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: getElevatedButtonStyle(),
       onPressed: () {
-        final snackBar = SnackBar(
-          content: const Text('This is a toast notification!'),
+        final snackBar = const SnackBar(
+          content: Text('This is a toast notification!'),
           behavior: SnackBarBehavior.floating,
         );
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -564,7 +566,7 @@ class ToastNotificationExample extends StatelessWidget {
 
 // Stepper Example (Stepper Widget)
 class StepperExample extends StatefulWidget {
-  const StepperExample({Key? key}) : super(key: key);
+  const StepperExample({super.key});
 
   @override
   _StepperExampleState createState() => _StepperExampleState();
@@ -577,7 +579,7 @@ class _StepperExampleState extends State<StepperExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: Stepper(
@@ -588,17 +590,17 @@ class _StepperExampleState extends State<StepperExample> {
             currentStep > 0 ? () => setState(() => currentStep -= 1) : null,
         steps: [
           Step(
-            title: Text('Step 1'),
+            title: const Text('Step 1'),
             content: const Text('This is step 1 content'),
             isActive: currentStep >= 0,
           ),
           Step(
-            title: Text('Step 2'),
+            title: const Text('Step 2'),
             content: const Text('This is step 2 content'),
             isActive: currentStep >= 1,
           ),
           Step(
-            title: Text('Step 3'),
+            title: const Text('Step 3'),
             content: const Text('This is step 3 content'),
             isActive: currentStep >= 2,
           ),
@@ -610,11 +612,11 @@ class _StepperExampleState extends State<StepperExample> {
 
 // Tooltip Example (Tooltip)
 class TooltipExample extends StatelessWidget {
-  const TooltipExample({Key? key}) : super(key: key);
+  const TooltipExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Tooltip(
+    return const Tooltip(
       message: 'This is a tooltip!',
       child: Icon(Icons.info, color: ModernStyles.activeColor),
     );
@@ -623,21 +625,21 @@ class TooltipExample extends StatelessWidget {
 
 // LinearProgressIndicator
 class LinearProgressIndicatorExample extends StatelessWidget {
-  const LinearProgressIndicatorExample({Key? key}) : super(key: key);
+  const LinearProgressIndicatorExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return const Card(
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Column(
           children: [
-            const Text('Loading...'),
-            const SizedBox(height: 16),
+            Text('Loading...'),
+            SizedBox(height: 16),
             LinearProgressIndicator(
               backgroundColor: ModernStyles.baseColor,
               color: ModernStyles.activeColor,
@@ -651,21 +653,21 @@ class LinearProgressIndicatorExample extends StatelessWidget {
 
 // CircularProgressIndicator
 class CircularProgressIndicatorExample extends StatelessWidget {
-  const CircularProgressIndicatorExample({Key? key}) : super(key: key);
+  const CircularProgressIndicatorExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return const Card(
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: Column(
           children: [
-            const Text('Loading...'),
-            const SizedBox(height: 16),
+            Text('Loading...'),
+            SizedBox(height: 16),
             CircularProgressIndicator(
               backgroundColor: ModernStyles.baseColor,
               color: ModernStyles.activeColor,
@@ -678,7 +680,7 @@ class CircularProgressIndicatorExample extends StatelessWidget {
 }
 
 class DraggableScrollableSheetExample extends StatefulWidget {
-  const DraggableScrollableSheetExample({Key? key}) : super(key: key);
+  const DraggableScrollableSheetExample({super.key});
 
   @override
   _DraggableScrollableSheetExampleState createState() =>
@@ -687,8 +689,6 @@ class DraggableScrollableSheetExample extends StatefulWidget {
 
 class _DraggableScrollableSheetExampleState
     extends State<DraggableScrollableSheetExample> {
-  // Controller to manage the state of the DraggableScrollableSheet
-  final ScrollController _scrollController = ScrollController();
 
   // Method to show the DraggableScrollableSheet
   void _showSheet() {
@@ -738,7 +738,7 @@ class _DraggableScrollableSheetExampleState
 
 // Slider
 class SliderExample extends StatefulWidget {
-  const SliderExample({Key? key}) : super(key: key);
+  const SliderExample({super.key});
 
   @override
   _SliderExampleState createState() => _SliderExampleState();
@@ -751,7 +751,7 @@ class _SliderExampleState extends State<SliderExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: Padding(
@@ -784,7 +784,7 @@ class _SliderExampleState extends State<SliderExample> {
 
 
 class ImageSliderExample extends StatefulWidget {
-  const ImageSliderExample({Key? key}) : super(key: key);
+  const ImageSliderExample({super.key});
 
   @override
   State<ImageSliderExample> createState() => _ImageSliderExampleState();
@@ -831,12 +831,12 @@ class _ImageSliderExampleState extends State<ImageSliderExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: Container(
         height: 250, // Set height for the image slider
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           borderRadius: ModernStyles.borderRadius,
         ),
         child: Stack(
@@ -860,7 +860,7 @@ class _ImageSliderExampleState extends State<ImageSliderExample> {
               top: 100,
               left: 10,
               child: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_left,
                   color: Colors.white,
                   size: 30,
@@ -877,7 +877,7 @@ class _ImageSliderExampleState extends State<ImageSliderExample> {
               top: 100,
               right: 10,
               child: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_right,
                   color: Colors.white,
                   size: 30,
@@ -917,7 +917,7 @@ class _ImageSliderExampleState extends State<ImageSliderExample> {
 }
 
 class NavigationMenu extends StatefulWidget {
-  const NavigationMenu({Key? key}) : super(key: key);
+  const NavigationMenu({super.key});
 
   @override
   State<NavigationMenu> createState() => _NavigationMenuState();
@@ -930,7 +930,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
     final controller = Get.put(NavigationController());
     return Card(
       elevation: 4, // Elevation for subtle shadow
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius, // Rounded corners for the card
       ),
       child: Padding(
@@ -957,7 +957,7 @@ class _NavigationMenuState extends State<NavigationMenu> {
                   elevation: 0,
                   selectedIndex: controller.selectedIndex.value,
                   onDestinationSelected: (index) => controller.selectedIndex.value = index,
-                  destinations: [
+                  destinations: const [
                     NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
                     NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
                     NavigationDestination(icon: Icon(Iconsax.heart), label: 'WishList'),
@@ -978,10 +978,10 @@ class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
   final screens = [
-    Container(child: Text("First Screen"),), // Home screen
-    Container(child: Text("Second Screen"),), // Home screen
-    Container(child: Text("Third Screen"),), // Home screen
-    Container(child: Text("Fourth Screen"),), // Home screen
+    Container(child: const Text("First Screen"),), // Home screen
+    Container(child: const Text("Second Screen"),), // Home screen
+    Container(child: const Text("Third Screen"),), // Home screen
+    Container(child: const Text("Fourth Screen"),), // Home screen
 
   ];
 }

@@ -10,23 +10,23 @@ class TransitionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Page Transitions",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "In Flutter, page transitions are animations between screens. Default transitions match the platform, but custom ones can be made using PageRouteBuilder or packages like animations.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -34,7 +34,7 @@ class TransitionPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -45,7 +45,7 @@ class TransitionPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SingleCodeAndPreview(code: '''
@@ -63,11 +63,11 @@ Navigator.push(
     },
   ),
 );
-''', widget: FadeTransitionExample()),
-            SizedBox(
+''', widget: const FadeTransitionExample()),
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Types of Transitions",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -75,7 +75,7 @@ Navigator.push(
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TypeBox(
@@ -98,7 +98,7 @@ Navigator.push(
   ),
 );
 ''',
-                widget: FadeTransitionExample()),
+                widget: const FadeTransitionExample()),
             TypeBox(
                 Heading: "2 - Slide Transition",
                 body:
@@ -122,7 +122,7 @@ Navigator.push(
   ),
 )
 ''',
-                widget: SlideTransitionExample()),
+                widget: const SlideTransitionExample()),
             TypeBox(
                 Heading: "3 - Rotation Transition",
                 body: "The new page rotates as it appears.",
@@ -141,7 +141,7 @@ Navigator.push(
   ),
 );
 ''',
-                widget: RotationTransitionExample()),
+                widget: const RotationTransitionExample()),
             TypeBox(
                 Heading: "4 - Scale Transition",
                 body:
@@ -161,9 +161,9 @@ Navigator.push(
   ),
 );
 ''',
-                widget: ScaleTransitionExample()),
+                widget: const ScaleTransitionExample()),
             
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
           ],
@@ -178,7 +178,7 @@ class TypeBox extends StatelessWidget {
   final String body;
   final String code;
   final Widget widget;
-  TypeBox(
+  const TypeBox(
       {super.key,
       required this.Heading,
       required this.body,
@@ -189,33 +189,33 @@ class TypeBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Text(
           Heading,
-          style: TextStyle(
+          style: const TextStyle(
             letterSpacing: 1,
             color: Colors.white,
             fontSize: 18,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         Text(
           body,
-          style: TextStyle(
+          style: const TextStyle(
             letterSpacing: 1,
             color: Colors.white,
             fontSize: 16,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         SingleCodeAndPreview(code: code, widget: widget),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
       ]),
@@ -224,7 +224,7 @@ class TypeBox extends StatelessWidget {
 }
 
 class FadeTransitionExample extends StatelessWidget {
-  const FadeTransitionExample({Key? key}) : super(key: key);
+  const FadeTransitionExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -252,7 +252,7 @@ class FadeTransitionExample extends StatelessWidget {
 }
 
 class SlideTransitionExample extends StatelessWidget {
-  const SlideTransitionExample({Key? key}) : super(key: key);
+  const SlideTransitionExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -269,7 +269,7 @@ class SlideTransitionExample extends StatelessWidget {
             transitionsBuilder: (_, animation, __, child) {
               return SlideTransition(
                   position: animation.drive(
-                      Tween(begin: Offset(1.0, 0.0), end: Offset.zero)
+                      Tween(begin: const Offset(1.0, 0.0), end: Offset.zero)
                           .chain(CurveTween(curve: Curves.ease))),
                   child: child);
               //Replace with any other type of transition
@@ -283,7 +283,7 @@ class SlideTransitionExample extends StatelessWidget {
 }
 
 class ScaleTransitionExample extends StatelessWidget {
-  const ScaleTransitionExample({Key? key}) : super(key: key);
+  const ScaleTransitionExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -310,7 +310,7 @@ class ScaleTransitionExample extends StatelessWidget {
 }
 
 class RotationTransitionExample extends StatelessWidget {
-  const RotationTransitionExample({Key? key}) : super(key: key);
+  const RotationTransitionExample({super.key});
 
   @override
   Widget build(BuildContext context) {

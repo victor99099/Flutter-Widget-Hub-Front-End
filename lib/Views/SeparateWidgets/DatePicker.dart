@@ -152,23 +152,23 @@ class DatepickerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "DatePicker",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "The core date picker in Flutter is the showDatePicker function, which displays a material design calendar interface for selecting a date.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -176,7 +176,7 @@ class DatepickerPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -187,7 +187,7 @@ class DatepickerPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SingleCodeAndPreview(code: '''
@@ -247,11 +247,11 @@ class _DatePickerState extends State<DatePicker> {
     );
   }
 }
-''', widget: DatePickerExample()),
-            SizedBox(
+''', widget: const DatePickerExample()),
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -259,13 +259,13 @@ class _DatePickerState extends State<DatePicker> {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: datePickerOptions,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -276,17 +276,17 @@ class _DatePickerState extends State<DatePicker> {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using scroll_date_picker",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -322,18 +322,18 @@ class _ScrollDatePickerWidgetState extends State<ScrollDatePickerWidget> {
   }
 }
 ''', widget: ScrollDatePickerWidget()),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "scroll_date_picker"),
-            SizedBox(
+            const TerminalRun(package: "scroll_date_picker"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code:
                   "import 'package:scroll_date_picker/scroll_date_picker.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -344,7 +344,7 @@ class _ScrollDatePickerWidgetState extends State<ScrollDatePickerWidget> {
 }
 
 class DatePickerExample extends StatefulWidget {
-  const DatePickerExample({Key? key}) : super(key: key);
+  const DatePickerExample({super.key});
 
   @override
   State<DatePickerExample> createState() => _DatePickerExampleState();
@@ -364,7 +364,7 @@ class _DatePickerExampleState extends State<DatePickerExample> {
         title: Text(
             'Selected Date: ${selectedDate.year}-${selectedDate.month.toString().padLeft(2, '0')}-${selectedDate.day.toString().padLeft(2, '0')}'),
         trailing: ElevatedButton(
-          style: ButtonStyle(
+          style: const ButtonStyle(
             backgroundColor: WidgetStatePropertyAll(Colors.blue),
             foregroundColor: WidgetStatePropertyAll(Colors.white),
             padding: WidgetStatePropertyAll(
@@ -401,6 +401,8 @@ class _DatePickerExampleState extends State<DatePickerExample> {
 }
 
 class ScrollDatePickerWidget extends StatefulWidget {
+  const ScrollDatePickerWidget({super.key});
+
   @override
   _ScrollDatePickerWidgetState createState() => _ScrollDatePickerWidgetState();
 }

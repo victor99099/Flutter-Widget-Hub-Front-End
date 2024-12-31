@@ -12,18 +12,18 @@ class TextareaPage extends StatelessWidget {
 }
 
 class TextareaExample extends StatelessWidget {
-  const TextareaExample({Key? key}) : super(key: key);
+  const TextareaExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return const Card(
       elevation: 4,
       shape: RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: TextField(
         maxLines: 5,
-        decoration: const InputDecoration(labelText: 'Enter long text'),
+        decoration: InputDecoration(labelText: 'Enter long text'),
       ),
     );
   }

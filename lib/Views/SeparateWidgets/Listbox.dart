@@ -1,8 +1,6 @@
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
-import 'package:flutterwidgethub/Ccontrollers/PageController.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -141,23 +139,23 @@ class ListboxPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "ListBox",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "The ListView widget in Flutter is a scrollable list of widgets arranged linearly, either vertically or horizontally. It is commonly used to display a large number of items in a scrolling view, efficiently loading only the items that are visible on the screen at a time. The ListView can be customized with various properties like padding, itemExtent, controller, and physics to enhance its appearance and behavior.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -165,7 +163,7 @@ class ListboxPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -176,7 +174,7 @@ class ListboxPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -196,11 +194,11 @@ class ListboxPage extends StatelessWidget {
                       elevation: 0,
                       borderRadius: BorderRadius.circular(10),
                       child: TabBar(
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             letterSpacing: 1.5, fontWeight: FontWeight.w500),
-                        padding: EdgeInsets.only(top: 10),
-                        labelPadding: EdgeInsets.all(5),
-                        indicatorPadding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(top: 10),
+                        labelPadding: const EdgeInsets.all(5),
+                        indicatorPadding: const EdgeInsets.all(0),
                         dividerHeight: 0,
                         tabs: const [
                           Padding(
@@ -222,7 +220,7 @@ class ListboxPage extends StatelessWidget {
                         unselectedLabelColor: Colors.white.withOpacity(0.5),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
@@ -371,10 +369,10 @@ class Listbox extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -382,13 +380,13 @@ class Listbox extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: listViewOptions,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -399,17 +397,17 @@ class Listbox extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using flutter_swipe_action_cell",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -456,18 +454,18 @@ class SwipeActionList extends StatelessWidget {
   }
 }
 ''', widget: SwipeActionList()),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "flutter_swipe_action_cell"),
-            SizedBox(
+            const TerminalRun(package: "flutter_swipe_action_cell"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code:
                   "import 'package:flutter_swipe_action_cell/core/cell.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -480,9 +478,8 @@ class SwipeActionList extends StatelessWidget {
 class ListboxExample extends StatelessWidget {
   final BorderRadius borderRadius;
   final TextStyle bodyTextStyle;
-  ListboxExample(
-      {Key? key, required this.bodyTextStyle, required this.borderRadius})
-      : super(key: key);
+  const ListboxExample(
+      {super.key, required this.bodyTextStyle, required this.borderRadius});
 
   @override
   Widget build(BuildContext context) {
@@ -516,13 +513,13 @@ class ListboxExample extends StatelessWidget {
 }
 
 class Listbox extends StatelessWidget {
-  const Listbox({Key? key}) : super(key: key);
+  const Listbox({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(16)),
       ),
       child: ListView(
@@ -533,21 +530,21 @@ class Listbox extends StatelessWidget {
                   style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xFF2F2F2F),
+                    color: const Color(0xFF2F2F2F),
                   ))),
           ListTile(
               title: Text('Item 2',
                   style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xFF2F2F2F),
+                    color: const Color(0xFF2F2F2F),
                   ))),
           ListTile(
               title: Text('Item 3',
                   style: GoogleFonts.nunito(
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xFF2F2F2F),
+                    color: const Color(0xFF2F2F2F),
                   ))),
         ],
       ),
@@ -558,11 +555,13 @@ class Listbox extends StatelessWidget {
 class SwipeActionList extends StatelessWidget {
   final List<String> items = ['item 1', 'item 2', 'item 3'];
 
+  SwipeActionList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: ListView.builder(
@@ -587,7 +586,7 @@ class SwipeActionList extends StatelessWidget {
             child: Card(
               elevation: 5,
               child: ListTile(
-                contentPadding: EdgeInsets.all(16),
+                contentPadding: const EdgeInsets.all(16),
                 title: Text(items[index]),
               ),
             ),

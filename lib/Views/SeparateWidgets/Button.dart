@@ -306,23 +306,23 @@ class ButtonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Buttons",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "In Flutter, the Button widget is used to trigger an action when pressed by the user. It serves as a crucial interactive component in building UI for mobile applications. Flutter offers a variety of button types, each designed for specific use cases, ensuring flexibility in terms of design and functionality. All button widgets in Flutter inherit from the ButtonBase class and are typically highly customizable in terms of appearance, shape, color, elevation, and behavior",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -330,10 +330,10 @@ class ButtonPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Types of Buttons",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -366,11 +366,11 @@ TextButton(
   ),
 )
 ''',
-                widget: TextButtonWidget()),
-            SizedBox(
+                widget: const TextButtonWidget()),
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -378,13 +378,13 @@ TextButton(
                   fontSize: 18,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             StyleSection(
               options: TextButtonProperties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TypeBox(
@@ -414,11 +414,11 @@ ElevatedButton(
   ),
 )
 ''',
-                widget: ElevatedButtonWidget()),
-            SizedBox(
+                widget: const ElevatedButtonWidget()),
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -426,13 +426,13 @@ ElevatedButton(
                   fontSize: 18,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             StyleSection(
               options: ElevatedProperties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TypeBox(
@@ -461,11 +461,11 @@ OutlinedButton(
   ),
 ),
 ''',
-                widget: OutlinedButtonWidget()),
-            SizedBox(
+                widget: const OutlinedButtonWidget()),
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -473,13 +473,13 @@ OutlinedButton(
                   fontSize: 18,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             StyleSection(
               options: OutlinedProperties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TypeBox(
@@ -498,11 +498,11 @@ IconButton(
   icon: Icon(Icons.download, color: Colors.white), // White icon color
 ),
 ''',
-                widget: IconButtonWidget()),
-                SizedBox(
+                widget: const IconButtonWidget()),
+                const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -510,16 +510,16 @@ IconButton(
                   fontSize: 18,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             StyleSection(
               options: IconButtonProperties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
           ],
@@ -535,8 +535,7 @@ class ButtonExample extends StatelessWidget {
   final ButtonStyle buttonStyle;
   final TextStyle buttonTextStyle;
   const ButtonExample(
-      {Key? key, required this.buttonStyle, required this.buttonTextStyle})
-      : super(key: key);
+      {super.key, required this.buttonStyle, required this.buttonTextStyle});
 
   @override
   Widget build(BuildContext context) {
@@ -549,12 +548,12 @@ class ButtonExample extends StatelessWidget {
 }
 
 class ElevatedButtonWidget extends StatelessWidget {
-  const ElevatedButtonWidget({Key? key}) : super(key: key);
+  const ElevatedButtonWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ButtonStyle(
+      style: const ButtonStyle(
         elevation: WidgetStatePropertyAll(4),
         padding: WidgetStatePropertyAll(
             EdgeInsets.symmetric(horizontal: 24, vertical: 16)),
@@ -578,12 +577,12 @@ class ElevatedButtonWidget extends StatelessWidget {
 }
 
 class TextButtonWidget extends StatelessWidget {
-  const TextButtonWidget({Key? key}) : super(key: key);
+  const TextButtonWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      style: ButtonStyle(
+      style: const ButtonStyle(
         padding: WidgetStatePropertyAll(
             EdgeInsets.symmetric(horizontal: 24, vertical: 16)),
         shape: WidgetStatePropertyAll(RoundedRectangleBorder(
@@ -607,12 +606,12 @@ class TextButtonWidget extends StatelessWidget {
 }
 
 class OutlinedButtonWidget extends StatelessWidget {
-  const OutlinedButtonWidget({Key? key}) : super(key: key);
+  const OutlinedButtonWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      style: ButtonStyle(
+      style: const ButtonStyle(
         padding: WidgetStatePropertyAll(
             EdgeInsets.symmetric(horizontal: 24, vertical: 16)),
         shape: WidgetStatePropertyAll(RoundedRectangleBorder(
@@ -638,12 +637,12 @@ class OutlinedButtonWidget extends StatelessWidget {
 }
 
 class IconButtonWidget extends StatelessWidget {
-  const IconButtonWidget({Key? key}) : super(key: key);
+  const IconButtonWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      style: ButtonStyle(
+      style: const ButtonStyle(
         elevation: WidgetStatePropertyAll(4), // Adding elevation for depth
         padding: WidgetStatePropertyAll(
             EdgeInsets.all(12)), // Icon button usually has small padding
@@ -652,7 +651,7 @@ class IconButtonWidget extends StatelessWidget {
         foregroundColor: WidgetStatePropertyAll(Colors.white), // Icon color
       ),
       onPressed: () {},
-      icon: Icon(Icons.download, color: Colors.white), // White icon color
+      icon: const Icon(Icons.download, color: Colors.white), // White icon color
     );
   }
 }

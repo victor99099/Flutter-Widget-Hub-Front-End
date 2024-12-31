@@ -112,23 +112,23 @@ class TooltipPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "ToolTips",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "The Tooltip widget in Flutter provides a text label that appears when the user long-presses or hovers over a widget. It is commonly used to give additional context or describe the functionality of a widget. Tooltips enhance the user experience by providing helpful hints without cluttering the UI.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -136,7 +136,7 @@ class TooltipPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -147,7 +147,7 @@ class TooltipPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SingleCodeAndPreview(code: '''
@@ -162,11 +162,11 @@ class TooltipExample extends StatelessWidget {
     );
   }
 }
-''', widget: TooltipExample()),
-            SizedBox(
+''', widget: const TooltipExample()),
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -174,13 +174,13 @@ class TooltipExample extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: tooltipProperties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -191,11 +191,11 @@ class TooltipExample extends StatelessWidget {
 }
 
 class TooltipExample extends StatelessWidget {
-  const TooltipExample({Key? key}) : super(key: key);
+  const TooltipExample({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Tooltip(
+    return const Tooltip(
       message: 'This is a tooltip!',
       child: Icon(Icons.info, color: ModernStyles.activeColor,size: 50,),
     );

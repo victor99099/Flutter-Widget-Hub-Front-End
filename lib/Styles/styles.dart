@@ -32,13 +32,13 @@ class ModernStyles {
   );
 
   // Button Style
-  static final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    backgroundColor: activeColor,
-    foregroundColor: Colors.white,
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-    shape: RoundedRectangleBorder(
+  static final ButtonStyle buttonStyle = ButtonStyle(
+    backgroundColor: WidgetStatePropertyAll(activeColor),
+    foregroundColor: WidgetStatePropertyAll(Colors.white),
+    padding: const WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 16, vertical: 12)),
+    shape: const WidgetStatePropertyAll(RoundedRectangleBorder(
       borderRadius: borderRadius,
-    ),
+    )),
   );
 
   // Input Decoration
@@ -110,13 +110,13 @@ class ClassicStyles {
   );
 
   // Button Style
-  static final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    backgroundColor: activeColor,
-    foregroundColor: Colors.white,
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-    shape: RoundedRectangleBorder(
+  static final ButtonStyle buttonStyle = ButtonStyle(
+    backgroundColor: WidgetStatePropertyAll(activeColor),
+    foregroundColor: WidgetStatePropertyAll(Colors.white),
+    padding: const WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 16, vertical: 8)),
+    shape: const WidgetStatePropertyAll(RoundedRectangleBorder(
       borderRadius: borderRadius,
-    ),
+    )),
   );
 
   // Input Decoration
@@ -174,7 +174,7 @@ class ElegantStyles {
   static final TextStyle bodyTextStyle = GoogleFonts.nunito(
     fontSize: 18,
     fontWeight: FontWeight.w400,
-    color: Color(0xFF2F2F2F),
+    color: const Color(0xFF2F2F2F),
   );
   static final TextStyle buttonTextStyle = GoogleFonts.nunito(
     fontSize: 18,
@@ -188,14 +188,14 @@ class ElegantStyles {
   );
 
   // Button Style
-  static final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    backgroundColor: activeColor,
-    foregroundColor: Colors.white,
-    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-    shape: RoundedRectangleBorder(
+  static final ButtonStyle buttonStyle = ButtonStyle(
+    backgroundColor: WidgetStatePropertyAll(activeColor),
+    foregroundColor: WidgetStatePropertyAll(Colors.white),
+    padding: const WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 20, vertical: 12)),
+    shape: const WidgetStatePropertyAll(RoundedRectangleBorder(
       borderRadius: borderRadius,
-    ),
-    elevation: 5,
+    )),
+    elevation: WidgetStatePropertyAll(5),
   );
 
   // Input Decoration
@@ -240,7 +240,7 @@ ButtonStyle getElevatedButtonStyle() {
   return ElevatedButton.styleFrom(
     elevation: 4,
     padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-    shape: RoundedRectangleBorder(
+    shape: const RoundedRectangleBorder(
       borderRadius: ModernStyles.borderRadius,
     ),
     backgroundColor: ModernStyles.activeColor,

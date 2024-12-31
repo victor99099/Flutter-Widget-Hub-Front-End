@@ -18,7 +18,6 @@ import 'package:flutterwidgethub/Views/SeparateWidgets/Slider.dart';
 import 'package:flutterwidgethub/Views/SeparateWidgets/Stepper.dart';
 import 'package:flutterwidgethub/Views/SeparateWidgets/Switch.dart';
 import 'package:flutterwidgethub/Views/SeparateWidgets/Tabs.dart';
-import 'package:flutterwidgethub/Views/SeparateWidgets/TextArea.dart';
 import 'package:flutterwidgethub/Views/SeparateWidgets/TimePicker.dart';
 import 'package:flutterwidgethub/Views/SeparateWidgets/ToastNotification.dart';
 import 'package:flutterwidgethub/Views/SeparateWidgets/ToolTip.dart';
@@ -29,16 +28,16 @@ class CustomPageController extends GetxController{
   RxInt SelectedPage = 0.obs;
 
   final screens = [
-      DropDownPage(),
+      const DropDownPage(),
       DisclosurePage(),
       DialogPage(),
       PopoverPage(),
       TabsPage(),
-      TransitionPage(),
+      const TransitionPage(),
       FormPage(),
       ButtonPage(),
       CheckboxPage(),
-      ComboboxPage(),
+      const ComboboxPage(),
       InputPage(),
       ListboxPage(),
       RadioPage(),
@@ -48,11 +47,11 @@ class CustomPageController extends GetxController{
       NotificationPage(),
       StepperPage(),
       TooltipPage(),
-      DraggablesheetPage(),
-      IndicatorPage(),
-      SliderPage(),
-      ImagesliderPage(),
-      NavigationPage()
+       DraggablesheetPage(),
+       IndicatorPage(),
+       SliderPage(),
+      const ImagesliderPage(),
+       NavigationPage()
 
   ];
 }

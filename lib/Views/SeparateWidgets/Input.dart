@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../Styles/styles.dart';
 import '../MainScreens/CommonWidgets.dart';
 
 class InputPage extends StatelessWidget {
@@ -129,23 +127,23 @@ class InputPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Inputs",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "In Flutter, input fields are used to capture user input, and there are several types available for different use cases. ",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -153,10 +151,10 @@ class InputPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Types of Inputs",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -192,11 +190,11 @@ class BasicTextField extends StatelessWidget {
   }
 }
 ''',
-                widget: BasicTextFieldExample()),
-            SizedBox(
+                widget: const BasicTextFieldExample()),
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -204,13 +202,13 @@ class BasicTextField extends StatelessWidget {
                   fontSize: 18,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             StyleSection(
               options: TextFieldProperties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TypeBox(
@@ -249,11 +247,11 @@ class TextFormFieldWidget extends StatelessWidget {
   }
 }
 ''',
-                widget: TextFormFieldExample()),
-            SizedBox(
+                widget: const TextFormFieldExample()),
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -261,13 +259,13 @@ class TextFormFieldWidget extends StatelessWidget {
                   fontSize: 18,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             StyleSection(
               options: TextFormFieldProperties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             TypeBox(
@@ -316,8 +314,8 @@ class _PasswordInputState extends State<PasswordInput> {
   }
 }
 ''',
-                widget: PasswordInputExample()),
-            SizedBox(
+                widget: const PasswordInputExample()),
+            const SizedBox(
               height: 20,
             ),
             TypeBox(
@@ -350,8 +348,8 @@ class MultilineTextInput extends StatelessWidget {
 }
 
 ''',
-                widget: MultilineTextInputExample()),
-            SizedBox(
+                widget: const MultilineTextInputExample()),
+            const SizedBox(
               height: 20,
             ),
             TypeBox(
@@ -383,11 +381,11 @@ class NumberInputExample extends StatelessWidget {
   }
 }
 ''',
-                widget: NumberInputExample()),
-            SizedBox(
+                widget: const NumberInputExample()),
+            const SizedBox(
               height: 20,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
           ],
@@ -400,7 +398,7 @@ class NumberInputExample extends StatelessWidget {
 
 
 class BasicTextFieldExample extends StatelessWidget {
-  const BasicTextFieldExample({Key? key}) : super(key: key);
+  const BasicTextFieldExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -409,10 +407,10 @@ class BasicTextFieldExample extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+      child: const Padding(
+        padding: EdgeInsets.all(8.0),
         child: TextField(
-          decoration: const InputDecoration(
+          decoration: InputDecoration(
             labelText: 'Enter text',
             border: OutlineInputBorder(),
           ),
@@ -423,7 +421,7 @@ class BasicTextFieldExample extends StatelessWidget {
 }
 
 class TextFormFieldExample extends StatelessWidget {
-  const TextFormFieldExample({Key? key}) : super(key: key);
+  const TextFormFieldExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -454,7 +452,7 @@ class TextFormFieldExample extends StatelessWidget {
 }
 
 class PasswordInputExample extends StatefulWidget {
-  const PasswordInputExample({Key? key}) : super(key: key);
+  const PasswordInputExample({super.key});
 
   @override
   State<PasswordInputExample> createState() => _PasswordInputExampleState();
@@ -476,7 +474,7 @@ class _PasswordInputExampleState extends State<PasswordInputExample> {
           obscureText: _obscureText,
           decoration: InputDecoration(
             labelText: 'Enter password',
-            border: OutlineInputBorder(),
+            border: const OutlineInputBorder(),
             suffixIcon: IconButton(
               icon: Icon(
                 _obscureText ? Icons.visibility : Icons.visibility_off,
@@ -495,7 +493,7 @@ class _PasswordInputExampleState extends State<PasswordInputExample> {
 }
 
 class MultilineTextInputExample extends StatelessWidget {
-  const MultilineTextInputExample({Key? key}) : super(key: key);
+  const MultilineTextInputExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -504,11 +502,11 @@ class MultilineTextInputExample extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+      child: const Padding(
+        padding: EdgeInsets.all(8.0),
         child: TextField(
           maxLines: 5,
-          decoration: const InputDecoration(
+          decoration: InputDecoration(
             labelText: 'Enter multiline text',
             border: OutlineInputBorder(),
           ),
@@ -519,7 +517,7 @@ class MultilineTextInputExample extends StatelessWidget {
 }
 
 class NumberInputExample extends StatelessWidget {
-  const NumberInputExample({Key? key}) : super(key: key);
+  const NumberInputExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -528,11 +526,11 @@ class NumberInputExample extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
+      child: const Padding(
+        padding: EdgeInsets.all(8.0),
         child: TextField(
           keyboardType: TextInputType.number,
-          decoration: const InputDecoration(
+          decoration: InputDecoration(
             labelText: 'Enter number',
             border: OutlineInputBorder(),
           ),

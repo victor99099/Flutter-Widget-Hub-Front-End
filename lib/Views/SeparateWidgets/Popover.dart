@@ -168,23 +168,23 @@ class PopoverPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Popover",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "A Popover widget in Flutter is a floating UI element that appears above the main interface, typically used to show additional information or a menu when triggered by a user action (e.g., tapping a button). It is commonly styled like a popup card with optional arrow indicators pointing to the triggering widget. Popovers are useful for lightweight contextual interactions without navigating to a new screen.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -192,7 +192,7 @@ class PopoverPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -203,7 +203,7 @@ class PopoverPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -223,11 +223,11 @@ class PopoverPage extends StatelessWidget {
                       elevation: 0,
                       borderRadius: BorderRadius.circular(10),
                       child: TabBar(
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             letterSpacing: 1.5, fontWeight: FontWeight.w500),
-                        padding: EdgeInsets.only(top: 10),
-                        labelPadding: EdgeInsets.all(5),
-                        indicatorPadding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(top: 10),
+                        labelPadding: const EdgeInsets.all(5),
+                        indicatorPadding: const EdgeInsets.all(0),
                         dividerHeight: 0,
                         tabs: const [
                           Padding(
@@ -249,7 +249,7 @@ class PopoverPage extends StatelessWidget {
                         unselectedLabelColor: Colors.white.withOpacity(0.5),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
@@ -393,10 +393,10 @@ class Popover extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -404,13 +404,13 @@ class Popover extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: popupMenuOptions,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -421,17 +421,17 @@ class Popover extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using popover",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -487,17 +487,17 @@ class PopoverCard extends StatelessWidget {
   }
 }
 ''', widget: PopoverCardExample()),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "popover"),
-            SizedBox(
+            const TerminalRun(package: "popover"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:popover/popover.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -512,11 +512,10 @@ class PopoverExample extends StatelessWidget {
   final BorderRadius borderRadius;
   final Color color;
   const PopoverExample(
-      {Key? key,
+      {super.key,
       required this.bodyTextStyle,
       required this.borderRadius,
-      required this.color})
-      : super(key: key);
+      required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -549,6 +548,8 @@ class PopoverExample extends StatelessWidget {
 
 
 class PopoverCardExample extends StatelessWidget {
+  const PopoverCardExample({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -568,7 +569,7 @@ class PopoverCardExample extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Option 1',
@@ -580,7 +581,7 @@ class PopoverCardExample extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: Padding(
+                  child: const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text('Option 2', style: TextStyle(fontSize: 16)),
                   ),
@@ -594,7 +595,7 @@ class PopoverCardExample extends StatelessWidget {
             arrowWidth: 20,
           );
         },
-        child: Padding(
+        child: const Padding(
           padding: EdgeInsets.all(16.0),
           child: Icon(Icons.more_vert),
         ),
@@ -604,6 +605,8 @@ class PopoverCardExample extends StatelessWidget {
 }
 
 class PortalCardExample extends StatefulWidget {
+  const PortalCardExample({super.key});
+
   @override
   State<PortalCardExample> createState() => _PortalCardExampleState();
 }
@@ -626,7 +629,7 @@ class _PortalCardExampleState extends State<PortalCardExample> {
               onTap: () {
                 setState(() => isOpen = !isOpen);
               },
-              child: Padding(
+              child: const Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Icon(Icons.more_vert),
               ),
@@ -647,7 +650,7 @@ class _PortalCardExampleState extends State<PortalCardExample> {
                       onTap: () {
                         setState(() => isOpen = false);
                       },
-                      child: Padding(
+                      child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('Option 1'),
                       ),
@@ -656,7 +659,7 @@ class _PortalCardExampleState extends State<PortalCardExample> {
                       onTap: () {
                         setState(() => isOpen = false);
                       },
-                      child: Padding(
+                      child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text('Option 2'),
                       ),
@@ -664,7 +667,7 @@ class _PortalCardExampleState extends State<PortalCardExample> {
                   ],
                 ),
               ),
-              child: SizedBox.shrink(), // Empty space for portal placement
+              child: const SizedBox.shrink(), // Empty space for portal placement
             ),
           ],
         ),

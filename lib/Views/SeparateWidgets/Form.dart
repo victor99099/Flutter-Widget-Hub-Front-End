@@ -52,23 +52,23 @@ class FormPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Forms",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "The Form widget in Flutter is a container for grouping and validating multiple form fields (like TextFormField). It provides a structure for user input and handles form validation efficiently. Using a GlobalKey<FormState>, developers can check if the form is valid, reset its fields, or save data. It is typically used in combination with widgets like TextFormField and buttons for creating interactive and user-friendly input forms.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -76,7 +76,7 @@ class FormPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -87,7 +87,7 @@ class FormPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -107,11 +107,11 @@ class FormPage extends StatelessWidget {
                       elevation: 0,
                       borderRadius: BorderRadius.circular(10),
                       child: TabBar(
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             letterSpacing: 1.5, fontWeight: FontWeight.w500),
-                        padding: EdgeInsets.only(top: 10),
-                        labelPadding: EdgeInsets.all(5),
-                        indicatorPadding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(top: 10),
+                        labelPadding: const EdgeInsets.all(5),
+                        indicatorPadding: const EdgeInsets.all(0),
                         dividerHeight: 0,
                         tabs: const [
                           Padding(
@@ -133,7 +133,7 @@ class FormPage extends StatelessWidget {
                         unselectedLabelColor: Colors.white.withOpacity(0.5),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
@@ -385,10 +385,10 @@ class FormWidget extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -396,13 +396,13 @@ class FormWidget extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: properties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -418,18 +418,17 @@ class FormExample extends StatelessWidget {
   final ButtonStyle buttonStyle;
   final TextStyle buttonTextStyle;
   const FormExample(
-      {Key? key,
+      {super.key,
       required this.buttonTextStyle,
       required this.borderRadius,
       required this.inputDecoration,
-      required this.buttonStyle})
-      : super(key: key);
+      required this.buttonStyle});
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return Form(
-      key: _formKey,
+      key: formKey,
       child: Column(
         children: [
           Card(
@@ -447,7 +446,7 @@ class FormExample extends StatelessWidget {
           ElevatedButton(
             style: buttonStyle,
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
+              if (formKey.currentState!.validate()) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Form is valid')),
                 );
@@ -465,20 +464,22 @@ class FormExample extends StatelessWidget {
 }
 
 class FormWidget extends StatelessWidget {
+  const FormWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+    final GlobalKey<FormState> formKey = GlobalKey<FormState>();
     return Form(
-      key: _formKey,
+      key: formKey,
       child: Column(
         children: [
           Card(
             elevation: 4,
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(16)),
             ),
             child: TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 filled: true,
                 fillColor: Color(0xFFF2F2F2),
                 border: OutlineInputBorder(
@@ -504,7 +505,7 @@ class FormWidget extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           ElevatedButton(
-            style: ButtonStyle(
+            style: const ButtonStyle(
                 backgroundColor: WidgetStatePropertyAll(Color(0xFF6A5ACD)),
                 foregroundColor: WidgetStatePropertyAll(Colors.white),
                 padding: WidgetStatePropertyAll(
@@ -515,7 +516,7 @@ class FormWidget extends StatelessWidget {
                   ),
                 )),
             onPressed: () {
-              if (_formKey.currentState!.validate()) {
+              if (formKey.currentState!.validate()) {
                 ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Form is valid')),
                 );

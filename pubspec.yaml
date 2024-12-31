@@ -70,6 +70,21 @@ dependencies:
   wheel_picker: ^0.1.1
   elegant_notification: ^2.4.1
   sliding_up_panel: ^2.0.0+1
+  sliding_up_panel2: ^3.3.0+1
+  liquid_progress_indicator_v2: ^0.5.0
+  input_slider: ^0.3.1
+  interactive_slider: ^0.4.0
+  squiggly_slider: ^1.0.5
+  sleek_circular_slider: ^2.0.1
+  fan_carousel_image_slider: ^1.0.1
+  google_nav_bar: ^5.0.7
+  molten_navigationbar_flutter: ^1.0.1
+  scroll_bottom_navigation_bar: ^4.0.0
+  motion_tab_bar_v2: ^0.3.0
+  fluid_bottom_nav_bar: ^1.4.0
+  spincircle_bottom_bar: ^2.0.0
+  pandabar: ^0.1.2
+  ionicons: ^0.2.2
 
 dev_dependencies:
   flutter_test:
@@ -98,7 +113,12 @@ flutter:
     - assets/example.png
     - assets/example2.png
     - assets/example3.png
+    - assets/eample.jpg
+    - assets/example2.jpg
+    - assets/example3.jpg
     - assets/Background.jpeg
+    - assets/WidgetHubLogo.png
+    - assets/shortLogoWhite.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -102,23 +102,23 @@ class TimepickerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "TimePicker",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "The time picker in Flutter is accessed using the showTimePicker function, which displays a material design interface for selecting a time.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -126,7 +126,7 @@ class TimepickerPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -137,7 +137,7 @@ class TimepickerPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SingleCodeAndPreview(code: '''
@@ -194,11 +194,11 @@ class _TimePickerExampleState extends State<TimePickerExample> {
     );
   }
 }
-''', widget: TimePickerExample()),
-            SizedBox(
+''', widget: const TimePickerExample()),
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -206,13 +206,13 @@ class _TimePickerExampleState extends State<TimePickerExample> {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: timePickerOptions,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -223,17 +223,17 @@ class _TimePickerExampleState extends State<TimePickerExample> {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using wheel_picker",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -346,18 +346,18 @@ class _WheelPickerExampleState extends State<WheelPickerExample> {
     );
   }
 }
-''', widget: WheelPickerExample()),
-            SizedBox(
+''', widget: const WheelPickerExample()),
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "wheel_picker"),
-            SizedBox(
+            const TerminalRun(package: "wheel_picker"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code: "import 'package:wheel_picker/wheel_picker.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -368,7 +368,7 @@ class _WheelPickerExampleState extends State<WheelPickerExample> {
 }
 
 class TimePickerExample extends StatefulWidget {
-  const TimePickerExample({Key? key}) : super(key: key);
+  const TimePickerExample({super.key});
 
   @override
   State<TimePickerExample> createState() => _TimePickerExampleState();
@@ -387,7 +387,7 @@ class _TimePickerExampleState extends State<TimePickerExample> {
       child: ListTile(
         title: Text('Selected Time: ${selectedTime.format(context)}'),
         trailing: ElevatedButton(
-          style: ButtonStyle(
+          style: const ButtonStyle(
             backgroundColor: WidgetStatePropertyAll(Colors.blue),
             foregroundColor: WidgetStatePropertyAll(Colors.white),
             padding: WidgetStatePropertyAll(

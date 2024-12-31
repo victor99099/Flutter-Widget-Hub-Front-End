@@ -110,23 +110,23 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Toast Notifications",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Toast notifications in Flutter are small, non-intrusive messages that appear temporarily at the bottom of the screen to provide feedback or updates to users. They typically auto-dismiss after a short duration and do not interrupt user interactions. To show a toast, Flutter packages like fluttertoast or fluttertoast_plus can be used, allowing customization of duration, position, and message style. Toasts are often used for displaying success, error, or informational messages in a subtle way.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -134,7 +134,7 @@ class NotificationPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -145,7 +145,7 @@ class NotificationPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -165,11 +165,11 @@ class NotificationPage extends StatelessWidget {
                       elevation: 0,
                       borderRadius: BorderRadius.circular(10),
                       child: TabBar(
-                        labelStyle: TextStyle(
+                        labelStyle: const TextStyle(
                             letterSpacing: 1.5, fontWeight: FontWeight.w500),
-                        padding: EdgeInsets.only(top: 10),
-                        labelPadding: EdgeInsets.all(5),
-                        indicatorPadding: EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(top: 10),
+                        labelPadding: const EdgeInsets.all(5),
+                        indicatorPadding: const EdgeInsets.all(0),
                         dividerHeight: 0,
                         tabs: const [
                           Padding(
@@ -191,7 +191,7 @@ class NotificationPage extends StatelessWidget {
                         unselectedLabelColor: Colors.white.withOpacity(0.5),
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
@@ -338,10 +338,10 @@ class ToastNotification extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -349,13 +349,13 @@ class ToastNotification extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: snackBarOptions,
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             Text(
@@ -366,17 +366,17 @@ class ToastNotification extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "◆  Using elegant_notification",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleCodeAndPreview(code: '''
@@ -418,22 +418,22 @@ class CustomNotification extends StatelessWidget {
     );
   }
 }
-''', widget: CustomNotification()),
-            SizedBox(
+''', widget: const CustomNotification()),
+            const SizedBox(
               height: 10,
             ),
-            TerminalRun(package: "elegant_notification"),
-            SizedBox(
+            const TerminalRun(package: "elegant_notification"),
+            const SizedBox(
               height: 10,
             ),
-            ImportCopyContainer(
+            const ImportCopyContainer(
               code:
                   "import 'package:elegant_notification/elegant_notification.dart';",
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Text(
+            const Text(
               "Types of Elegant Notifications",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -482,7 +482,7 @@ class InfoNotification extends StatelessWidget {
   }
 }
 ''',
-                widget: InfoNotification()),
+                widget: const InfoNotification()),
             TypeBoxNoBody(
                 Heading: "2 - Success",
                 code: '''
@@ -527,7 +527,7 @@ class SuccessNotification extends StatelessWidget {
   }
 }
 ''',
-                widget: SuccessNotification()),
+                widget: const SuccessNotification()),
             TypeBoxNoBody(
                 Heading: "3 - Error",
                 code: '''
@@ -568,8 +568,8 @@ class ErrorNotification extends StatelessWidget {
   }
 }
 ''',
-                widget: ErrorNotification()),
-            SizedBox(
+                widget: const ErrorNotification()),
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -583,8 +583,7 @@ class ToastNotificationExample extends StatelessWidget {
   final TextStyle buttonTextStyle;
   final Color activeColor;
   const ToastNotificationExample(
-      {Key? key, required this.activeColor, required this.buttonTextStyle})
-      : super(key: key);
+      {super.key, required this.activeColor, required this.buttonTextStyle});
 
   @override
   Widget build(BuildContext context) {
@@ -610,7 +609,7 @@ class ToastNotificationExample extends StatelessWidget {
 }
 
 class ToastNotification extends StatelessWidget {
-  const ToastNotification({Key? key}) : super(key: key);
+  const ToastNotification({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -629,7 +628,7 @@ class ToastNotification extends StatelessWidget {
       ),
       onPressed: () {
         final snackBar = SnackBar(
-          backgroundColor: Color(0xFF6A5ACD),
+          backgroundColor: const Color(0xFF6A5ACD),
           content: Text('This is a toast notification!',
               style: GoogleFonts.nunito(
                 fontSize: 18,
@@ -651,7 +650,7 @@ class ToastNotification extends StatelessWidget {
 }
 
 class CustomNotification extends StatelessWidget {
-  const CustomNotification({Key? key}) : super(key: key);
+  const CustomNotification({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -670,9 +669,9 @@ class CustomNotification extends StatelessWidget {
       ),
       onPressed: () {
         ElegantNotification(
-          title: Text("New version"),
-          description: Text("A new version is available to you please update."),
-          icon: Icon(
+          title: const Text("New version"),
+          description: const Text("A new version is available to you please update."),
+          icon: const Icon(
             Icons.access_alarm,
             color: Colors.orange,
           ),
@@ -690,7 +689,7 @@ class CustomNotification extends StatelessWidget {
 }
 
 class InfoNotification extends StatelessWidget {
-  const InfoNotification({Key? key}) : super(key: key);
+  const InfoNotification({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -709,9 +708,9 @@ class InfoNotification extends StatelessWidget {
       ),
       onPressed: () {
         ElegantNotification.info(
-          title: Text("Info"),
-          description: Text("This account will be updated once you exit"),
-          icon: Icon(
+          title: const Text("Info"),
+          description: const Text("This account will be updated once you exit"),
+          icon: const Icon(
             Icons.access_alarm,
             color: Colors.orange,
           ),
@@ -728,7 +727,7 @@ class InfoNotification extends StatelessWidget {
 }
 
 class ErrorNotification extends StatelessWidget {
-  const ErrorNotification({Key? key}) : super(key: key);
+  const ErrorNotification({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -749,8 +748,8 @@ class ErrorNotification extends StatelessWidget {
         ElegantNotification.error(
           width: 360,
           position: Alignment.topRight,
-          title: Text('Error'),
-          description: Text('Error example notification'),
+          title: const Text('Error'),
+          description: const Text('Error example notification'),
           onDismiss: () {},
         ).show(context);
       },
@@ -765,7 +764,7 @@ class ErrorNotification extends StatelessWidget {
 }
 
 class SuccessNotification extends StatelessWidget {
-  const SuccessNotification({Key? key}) : super(key: key);
+  const SuccessNotification({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -784,8 +783,8 @@ class SuccessNotification extends StatelessWidget {
       ),
       onPressed: () {
         ElegantNotification.success(
-          title: Text("Update"),
-          description: Text("Your data has been updated"),
+          title: const Text("Update"),
+          description: const Text("Your data has been updated"),
           onDismiss: () {
             print('Message when the notification is dismissed');
           },

@@ -11,14 +11,16 @@ Future<void> main() async {
     // Ensures the pointer binding doesn't mismatch the target element
     html.document.body?.focus();
   });
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      
       title: 'Flutter Widgets Demo',
       theme: ThemeData(primarySwatch: Colors.blue, fontFamily: GoogleFonts.nunito().fontFamily),
       home: const MainScreen(),
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
 }
 
 class WidgetsPage extends StatelessWidget {
-  const WidgetsPage({Key? key}) : super(key: key);
+  const WidgetsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

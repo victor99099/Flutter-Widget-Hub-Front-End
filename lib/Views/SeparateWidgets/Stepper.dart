@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutterwidgethub/Ccontrollers/PageController.dart';
 import 'package:flutterwidgethub/Views/MainScreens/CommonWidgets.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -144,23 +143,23 @@ class StepperPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 20, top: 15, right: 30),
+      padding: const EdgeInsets.only(left: 20, top: 15, right: 30),
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Stepper",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 30,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "The Stepper widget in Flutter is a vertical or horizontal navigation control that allows users to go through a sequence of steps. It displays steps with titles, content, and controls to move between them. It supports customizing the stepper's appearance, behavior, and control buttons. Each step can have different states such as 'indexed', 'editing', or 'complete', and the user can navigate through them by tapping, continuing, or canceling actions. The Stepper is commonly used for multi-step forms or processes.",
               style: TextStyle(
                 color: Color(0xFFF0F0F0),
@@ -168,7 +167,7 @@ class StepperPage extends StatelessWidget {
               ),
               textAlign: TextAlign.justify,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
@@ -179,7 +178,7 @@ class StepperPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             SingleCodeAndPreview(code:'''
@@ -198,7 +197,7 @@ class _StepperWidgetState extends State<StepperWidget> {
     return Card(
       elevation: 4,
       shape: RoundedRectangleBorder(
-        borderRadius: ModernStyles.borderRadius,
+        borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
       child: Stepper(
         currentStep: currentStep,
@@ -227,11 +226,11 @@ class _StepperWidgetState extends State<StepperWidget> {
     );
   }
 }
-''', widget: StepperExample()),
-            SizedBox(
+''', widget: const StepperExample()),
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling For Stepper()",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -239,16 +238,16 @@ class _StepperWidgetState extends State<StepperWidget> {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: stepperProperties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Styling for Step()",
               style: TextStyle(
                   letterSpacing: 1.5,
@@ -256,13 +255,13 @@ class _StepperWidgetState extends State<StepperWidget> {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             StyleSection(
               options: stepProperties,
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
           ],
@@ -273,7 +272,7 @@ class _StepperWidgetState extends State<StepperWidget> {
 }
 
 class StepperExample extends StatefulWidget {
-  const StepperExample({Key? key}) : super(key: key);
+  const StepperExample({super.key});
 
   @override
   _StepperExampleState createState() => _StepperExampleState();
@@ -286,7 +285,7 @@ class _StepperExampleState extends State<StepperExample> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: ModernStyles.borderRadius,
       ),
       child: Stepper(
@@ -297,17 +296,17 @@ class _StepperExampleState extends State<StepperExample> {
             currentStep > 0 ? () => setState(() => currentStep -= 1) : null,
         steps: [
           Step(
-            title: Text('Step 1'),
+            title: const Text('Step 1'),
             content: const Text('This is step 1 content'),
             isActive: currentStep >= 0,
           ),
           Step(
-            title: Text('Step 2'),
+            title: const Text('Step 2'),
             content: const Text('This is step 2 content'),
             isActive: currentStep >= 1,
           ),
           Step(
-            title: Text('Step 3'),
+            title: const Text('Step 3'),
             content: const Text('This is step 3 content'),
             isActive: currentStep >= 2,
           ),

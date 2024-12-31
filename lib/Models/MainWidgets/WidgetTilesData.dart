@@ -71,7 +71,6 @@ final List<String> widgetTitles = [
   'Listbox',
   'Radio Group',
   'Switch',
-  
   'Date Picker',
   'Time Picker',
   'Toast Notification',
