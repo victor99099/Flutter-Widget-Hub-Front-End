@@ -278,7 +278,9 @@ class TabsPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 5,
+                              name: "Tabs",
                               code: '''
 class Tabs extends StatelessWidget {
   @override
@@ -351,7 +353,9 @@ class Tabs extends StatelessWidget {
                                   borderRadius: ModernStyles.borderRadius,
                                   activeColor: ModernStyles.activeColor,
                                   baseColor: ModernStyles.baseColor)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 5,
+                              name: "Tabs",
                               code: '''
 class Tabs extends StatelessWidget {
   @override
@@ -426,7 +430,9 @@ class Tabs extends StatelessWidget {
                                   borderRadius: ClassicStyles.borderRadius,
                                   activeColor: ClassicStyles.activeColor,
                                   baseColor: ClassicStyles.baseColor)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 5,
+                              name: "Tabs",
                               code: '''
 class Tabs extends StatelessWidget {
   @override
@@ -628,7 +634,7 @@ class Tabs extends StatelessWidget {
     );
   }
 }
-''', widget: ButtonsTabBarExample().paddingOnly(top:100)),
+''', widget: const ButtonsTabBarExample().paddingOnly(top: 100)),
             const SizedBox(
               height: 10,
             ),
@@ -709,7 +715,7 @@ class TabsExample extends StatelessWidget {
           ),
         ],
       ),
-    ).paddingOnly(top:100);
+    ).paddingOnly(top: 100);
   }
 }
 
@@ -796,8 +802,8 @@ class ButtonsTabBarExample extends StatelessWidget {
               backgroundColor: Colors.blue,
               unselectedBackgroundColor: Colors.grey[300],
               unselectedLabelStyle: const TextStyle(color: Colors.black),
-              labelStyle:
-                  const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+              labelStyle: const TextStyle(
+                  color: Colors.white, fontWeight: FontWeight.bold),
               tabs: const [
                 Tab(icon: Icon(Icons.home), text: "Home"),
                 Tab(icon: Icon(Icons.star), text: "Favorites"),

@@ -181,7 +181,10 @@ class StepperPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            SingleCodeAndPreview(code:'''
+            const SingleCodeAndPreviewWithSave(
+              name: "Stepper",
+              number: 28,
+              code:'''
 class StepperWidget extends StatefulWidget {
   const StepperWidget({Key? key}) : super(key: key);
 
@@ -226,7 +229,7 @@ class _StepperWidgetState extends State<StepperWidget> {
     );
   }
 }
-''', widget: const StepperExample()),
+''', widget: StepperExample()),
             const SizedBox(
               height: 20,
             ),

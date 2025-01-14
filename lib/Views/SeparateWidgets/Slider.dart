@@ -156,7 +156,10 @@ class SliderPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreviewWithSave(
+                name: "Slider",
+                number: 33,
+                code: '''
 class SliderWidget extends StatefulWidget {
   const SliderWidget({super.key});
 
@@ -246,7 +249,7 @@ class _SliderWidgetState extends State<SliderWidget> {
               const SizedBox(
                 height: 10,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreview(code: '''
 class InputSliderWidget extends StatefulWidget {
   const InputSliderWidget({super.key});
 
@@ -314,7 +317,7 @@ class _InputSliderWidgetState extends State<InputSliderWidget> {
               const SizedBox(
                 height: 10,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreview(code: '''
 class InteractiveSliderWidget extends StatefulWidget {
   const InteractiveSliderWidget({super.key});
 
@@ -376,7 +379,7 @@ class _InteractiveSliderWidgetState extends State<InteractiveSliderWidget> {
               const SizedBox(
                 height: 10,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreview(code: '''
 class SquigglySliderWidget extends StatefulWidget {
   const SquigglySliderWidget({super.key});
 
@@ -451,7 +454,7 @@ class _SquigglySliderWidgetState extends State<SquigglySliderWidget> {
               const SizedBox(
                 height: 10,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreview(code: '''
 class SleekCircularSliderWidget extends StatefulWidget {
   const SleekCircularSliderWidget({super.key});
 
@@ -569,6 +572,56 @@ class _SliderExampleState extends State<SliderExample> {
     );
   }
 }
+class SliderExample2 extends StatefulWidget {
+  final Color activeColor;
+  const SliderExample2({super.key, required this.activeColor});
+
+  @override
+  _SliderExample2State createState() => _SliderExample2State();
+}
+
+class _SliderExample2State extends State<SliderExample2> {
+  double _sliderValue = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 300,
+      height: 170,
+      child: Card(
+        elevation: 4,
+        shape: const RoundedRectangleBorder(
+          borderRadius: ModernStyles.borderRadius,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              const Text('Adjust value:'),
+              const SizedBox(height: 3),
+              Slider(
+                thumbColor: widget.activeColor,
+                activeColor: widget.activeColor,
+                value: _sliderValue,
+                min: 0,
+                max: 100,
+                divisions: 100,
+                label: _sliderValue.round().toString(),
+                onChanged: (double value) {
+                  setState(() {
+                    _sliderValue = value;
+                  });
+                },
+              ),
+              const SizedBox(height: 3),
+              Text('Current value: ${_sliderValue.toStringAsFixed(2)}'),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class InputSliderExample extends StatefulWidget {
   const InputSliderExample({super.key});
@@ -604,7 +657,7 @@ class _InputSliderExampleState extends State<InputSliderExample> {
                 max: 100.0,
                 decimalPlaces: 0,
                 defaultValue: 50.0,
-                leading: Text("Percentage:"),
+                leading: const Text("Percentage:"),
               ),
             ],
           ),
@@ -730,7 +783,7 @@ class _SleekCircularSliderExampleState
               const Text('Adjust value:'),
               const SizedBox(height: 3),
               SleekCircularSlider(
-                appearance: CircularSliderAppearance(
+                appearance: const CircularSliderAppearance(
                   spinnerMode: false,
                 ),
                 onChange: (double value) {

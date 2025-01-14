@@ -121,11 +121,11 @@ class TabsExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return const DefaultTabController(
       length: 2,
       child: Column(
         children: [
-          const Material(
+          Material(
             elevation: 4,
             borderRadius: ModernStyles.borderRadius,
             child: TabBar(
@@ -143,7 +143,7 @@ class TabsExample extends StatelessWidget {
           ),
           SizedBox(
             height: 100,
-            child: const TabBarView(
+            child: TabBarView(
               children: [
                 Center(child: Text('Content for Tab 1')),
                 Center(child: Text('Content for Tab 2')),
@@ -551,7 +551,7 @@ class ToastNotificationExample extends StatelessWidget {
     return ElevatedButton(
       style: getElevatedButtonStyle(),
       onPressed: () {
-        final snackBar = const SnackBar(
+        const snackBar = SnackBar(
           content: Text('This is a toast notification!'),
           behavior: SnackBarBehavior.floating,
         );

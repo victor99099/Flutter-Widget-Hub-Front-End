@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
 import 'package:get/get.dart';
@@ -224,7 +223,9 @@ class ListboxPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "List Box",
+                              Number: 22,
                               code: '''
 class Listbox extends StatelessWidget {
   const Listbox({Key? key}) : super(key: key);
@@ -270,7 +271,9 @@ class Listbox extends StatelessWidget {
                                 bodyTextStyle: ModernStyles.bodyTextStyle,
                                 borderRadius: ModernStyles.borderRadius,
                               )),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "List Box",
+                              Number: 22,
                               code: '''
 class Listbox extends StatelessWidget {
   const Listbox({Key? key}) : super(key: key);
@@ -316,7 +319,9 @@ class Listbox extends StatelessWidget {
                                 bodyTextStyle: ClassicStyles.bodyTextStyle,
                                 borderRadius: ClassicStyles.borderRadius,
                               )),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "List Box",
+                              Number: 22,
                               code: '''
 class Listbox extends StatelessWidget {
   const Listbox({Key? key}) : super(key: key);

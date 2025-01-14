@@ -167,9 +167,11 @@ class NavigationPage extends StatelessWidget {
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.58,
-                        child: TabBarView(
+                        child: const TabBarView(
                           children: [
-                            CodeAndPreview(
+                            CodeAndPreviewWithSave(
+                                Number: 36,
+                                name: "Navigation Menu",
                                 code: '''
 class NavigationController extends GetxController {
   RxInt selectedIndex = 0.obs;
@@ -232,7 +234,9 @@ class ModernNavigationBarWidget extends StatelessWidget {
                                 swidget: NavigationMenu(
                                     borderRadius: ModernStyles.borderRadius,
                                     activeColor: ModernStyles.activeColor)),
-                            CodeAndPreview(
+                            CodeAndPreviewWithSave(
+                                Number: 36,
+                                name: "Navigation Menu",
                                 code: '''
 class NavigationController extends GetxController {
   RxInt selectedIndex = 0.obs;
@@ -295,7 +299,9 @@ class ClassicNavigationBarWidget extends StatelessWidget {
                                 swidget: NavigationMenu(
                                     borderRadius: ClassicStyles.borderRadius,
                                     activeColor: ClassicStyles.activeColor)),
-                            CodeAndPreview(
+                            CodeAndPreviewWithSave(
+                                Number: 36,
+                                name: "Navigation Menu",
                                 code: '''
 class NavigationController extends GetxController {
   RxInt selectedIndex = 0.obs;
@@ -406,7 +412,7 @@ class ElegantNavigationBarWidget extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreview(code: '''
 Card(
   elevation: 4,
   shape: RoundedRectangleBorder(
@@ -459,7 +465,7 @@ Card(
               const SizedBox(
                 height: 10,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreview(code: '''
 class CollapsibleWidget extends StatefulWidget {
   @override
   _CollapsibleWidgetState createState() => _CollapsibleWidgetState();
@@ -554,7 +560,7 @@ class _CollapsibleWidgetState extends State<CollapsibleWidget> {
               const SizedBox(
                 height: 10,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreview(code: '''
 Card(
   elevation: 4,
   shape: RoundedRectangleBorder(
@@ -586,8 +592,7 @@ Card(
                 height: 10,
               ),
               const ImportCopyContainer(
-                code:
-                    "import 'package:pandabar/pandabar.dart';",
+                code: "import 'package:pandabar/pandabar.dart';",
               ),
               const SizedBox(
                 height: 10,
@@ -817,7 +822,7 @@ class _GoogleNavBarState extends State<GoogleNavBar> {
                   },
                   curve: Curves.easeOutExpo, // tab animation curves
                   duration:
-                      Duration(milliseconds: 400), // tab animation duration
+                      const Duration(milliseconds: 400), // tab animation duration
                   gap: 8, // the tab button gap between icon and text
                   color: const Color.fromARGB(
                       255, 114, 114, 114), // unselected icon color
@@ -825,9 +830,9 @@ class _GoogleNavBarState extends State<GoogleNavBar> {
                   iconSize: 24, // tab button icon size
                   tabBackgroundColor: Colors.blue
                       .withOpacity(0.1), // selected tab background color
-                  padding: EdgeInsets.symmetric(
+                  padding: const EdgeInsets.symmetric(
                       horizontal: 20, vertical: 5), // navigation bar padding
-                  tabs: [
+                  tabs: const [
                     GButton(
                       icon: Iconsax.home,
                       text: 'Home',
@@ -906,13 +911,13 @@ class _MoltenNavigationMenuState extends State<MoltenNavigationMenu> {
               },
               tabs: [
                 MoltenTab(
-                  icon: Icon(Icons.search),
+                  icon: const Icon(Icons.search),
                 ),
                 MoltenTab(
-                  icon: Icon(Icons.home),
+                  icon: const Icon(Icons.home),
                 ),
                 MoltenTab(
-                  icon: Icon(Icons.person),
+                  icon: const Icon(Icons.person),
                 ),
               ],
             ),
@@ -974,23 +979,20 @@ class _PandaBarNavigationMenuState extends State<PandaBarNavigationMenu> {
                 buttonData: [
                   PandaBarButtonData(
                       id: 0, icon: Icons.dashboard, title: 'Grey'),
+                  PandaBarButtonData(id: 1, icon: Icons.book, title: 'Blue'),
                   PandaBarButtonData(
-                      id: 1, icon: Icons.book, title: 'Blue'),
-                  PandaBarButtonData(
-                      id: 2,
-                      icon: Icons.account_balance_wallet,
-                      title: 'Red'),
+                      id: 2, icon: Icons.account_balance_wallet, title: 'Red'),
                   PandaBarButtonData(
                       id: 3, icon: Icons.notifications, title: 'Yellow'),
                 ],
                 onChange: (clickedIndex) {
                   setState(() {
-                    controller.selectedIndex.value = clickedIndex ;
+                    controller.selectedIndex.value = clickedIndex;
                   });
                 },
                 onFabButtonPressed: () {
                   setState(() {
-                    controller.selectedIndex.value = 4 ;
+                    controller.selectedIndex.value = 4;
                   });
                 },
               ),

@@ -48,7 +48,7 @@ class TransitionPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreview(code: '''
 Navigator.push(
   context,
   PageRouteBuilder(
@@ -63,7 +63,7 @@ Navigator.push(
     },
   ),
 );
-''', widget: const FadeTransitionExample()),
+''', widget: FadeTransitionExample()),
             const SizedBox(
               height: 20,
             ),
@@ -78,7 +78,9 @@ Navigator.push(
             const SizedBox(
               height: 20,
             ),
-            TypeBox(
+            const TypeBoxWithSave(
+                name: "Fade Transition",
+                number: 6,
                 Heading: "1 - Fade Transition",
                 body:
                     "The one showed above, where the new page fades in and out.",
@@ -98,8 +100,10 @@ Navigator.push(
   ),
 );
 ''',
-                widget: const FadeTransitionExample()),
-            TypeBox(
+                widget: FadeTransitionExample()),
+            const TypeBoxWithSave(
+                name: "Slide Transition",
+                number: 7,
                 Heading: "2 - Slide Transition",
                 body:
                     "The new page slides in from a specified direction (e.g., from the left, right, top, or bottom).",
@@ -122,8 +126,10 @@ Navigator.push(
   ),
 )
 ''',
-                widget: const SlideTransitionExample()),
-            TypeBox(
+                widget: SlideTransitionExample()),
+            const TypeBoxWithSave(
+                name: "Rotation Transition",
+                number: 8,
                 Heading: "3 - Rotation Transition",
                 body: "The new page rotates as it appears.",
                 code: '''
@@ -141,8 +147,10 @@ Navigator.push(
   ),
 );
 ''',
-                widget: const RotationTransitionExample()),
-            TypeBox(
+                widget: RotationTransitionExample()),
+            const TypeBoxWithSave(
+                name: "Scale Transition",
+                number: 9,
                 Heading: "4 - Scale Transition",
                 body:
                     "The new page scales in from a point, often used to zoom in the content.",
@@ -161,64 +169,13 @@ Navigator.push(
   ),
 );
 ''',
-                widget: const ScaleTransitionExample()),
-            
+                widget: ScaleTransitionExample()),
             const SizedBox(
               height: 40,
             ),
           ],
         ),
       ),
-    );
-  }
-}
-
-class TypeBox extends StatelessWidget {
-  final String Heading;
-  final String body;
-  final String code;
-  final Widget widget;
-  const TypeBox(
-      {super.key,
-      required this.Heading,
-      required this.body,
-      required this.code,
-      required this.widget});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        const SizedBox(
-          height: 20,
-        ),
-        Text(
-          Heading,
-          style: const TextStyle(
-            letterSpacing: 1,
-            color: Colors.white,
-            fontSize: 18,
-          ),
-        ),
-        const SizedBox(
-          height: 5,
-        ),
-        Text(
-          body,
-          style: const TextStyle(
-            letterSpacing: 1,
-            color: Colors.white,
-            fontSize: 16,
-          ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        SingleCodeAndPreview(code: code, widget: widget),
-        const SizedBox(
-          height: 20,
-        ),
-      ]),
     );
   }
 }
@@ -336,3 +293,119 @@ class RotationTransitionExample extends StatelessWidget {
   }
 }
 
+class FadeTransitionExample2 extends StatelessWidget {
+  final ButtonStyle buttonStyle;
+  const FadeTransitionExample2({super.key, required this.buttonStyle});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: buttonStyle,
+      onPressed: () {
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (_, __, ___) => Scaffold(
+              appBar: AppBar(title: const Text('New Page')),
+              body: const Center(child: Text('New Page Content')),
+            ), // Replace Scaffold With Desired Page
+            transitionsBuilder: (_, animation, __, child) {
+              return FadeTransition(
+                  opacity: animation,
+                  child: child); //Replace with any other type of transition
+            },
+          ),
+        );
+      },
+      child: const Text('Transition to New Page'),
+    );
+  }
+}
+
+class SlideTransitionExample2 extends StatelessWidget {
+  final ButtonStyle buttonStyle;
+  const SlideTransitionExample2({super.key, required this.buttonStyle});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: buttonStyle,
+      onPressed: () {
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (_, __, ___) => Scaffold(
+              appBar: AppBar(title: const Text('New Page')),
+              body: const Center(child: Text('New Page Content')),
+            ), // Replace Scaffold With Desired Page
+            transitionsBuilder: (_, animation, __, child) {
+              return SlideTransition(
+                  position: animation.drive(
+                      Tween(begin: const Offset(1.0, 0.0), end: Offset.zero)
+                          .chain(CurveTween(curve: Curves.ease))),
+                  child: child);
+              //Replace with any other type of transition
+            },
+          ),
+        );
+      },
+      child: const Text('Transition to New Page'),
+    );
+  }
+}
+
+class ScaleTransitionExample2 extends StatelessWidget {
+  final ButtonStyle buttonStyle;
+  const ScaleTransitionExample2({super.key, required this.buttonStyle});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: buttonStyle,
+      onPressed: () {
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (_, __, ___) => Scaffold(
+              appBar: AppBar(title: const Text('New Page')),
+              body: const Center(child: Text('New Page Content')),
+            ), // Replace Scaffold With Desired Page
+            transitionsBuilder: (_, animation, __, child) {
+              return ScaleTransition(scale: animation, child: child);
+              //Replace with any other type of transition
+            },
+          ),
+        );
+      },
+      child: const Text('Transition to New Page'),
+    );
+  }
+}
+
+class RotationTransitionExample2 extends StatelessWidget {
+  final ButtonStyle buttonStyle;
+  const RotationTransitionExample2({super.key, required this.buttonStyle});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: buttonStyle,
+      onPressed: () {
+        Navigator.push(
+          context,
+          PageRouteBuilder(
+            pageBuilder: (_, __, ___) => Scaffold(
+              appBar: AppBar(title: const Text('New Page')),
+              body: const Center(child: Text('New Page Content')),
+            ), // Replace Scaffold With Desired Page
+            transitionsBuilder: (_, animation, __, child) {
+              return RotationTransition(turns: animation, child: child);
+              //Replace with any other type of transition
+            },
+          ),
+        );
+      },
+      child: const Text('Transition to New Page'),
+    );
+  }
+}

@@ -141,7 +141,9 @@ class IndicatorPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            TypeBox(
+            const TypeBoxWithSave(
+                name: "Linear Progress Indicator",
+                number: 31,
                 Heading: "1 - Linear Progress Indicator",
                 body: "A horizontal bar for linear progress.",
                 code: '''
@@ -150,7 +152,7 @@ LinearProgressIndicator(
   color: Colors.blue,
 ),
 ''',
-                widget: const LinearProgressIndicatorExample()),
+                widget: LinearProgressIndicatorExample()),
             const SizedBox(
               height: 10,
             ),
@@ -171,7 +173,9 @@ LinearProgressIndicator(
             const SizedBox(
               height: 20,
             ),
-            TypeBox(
+            const TypeBoxWithSave(
+                name: "Circular Progress Indicator",
+                number: 32,
                 Heading: "2 - Circular Progress Indicator",
                 body: "A circular spinner for circular progress.",
                 code: '''
@@ -180,7 +184,7 @@ CircularProgressIndicator(
   color: Colors.blue,
 ),
 ''',
-                widget: const CircularProgressIndicatorExample()),
+                widget: CircularProgressIndicatorExample()),
             const SizedBox(
               height: 10,
             ),
@@ -222,7 +226,7 @@ CircularProgressIndicator(
             const SizedBox(
               height: 10,
             ),
-            TypeBox(
+            const TypeBox(
                 Heading: "1 - Linear Liquid Progress Indicator",
                 body: "A horizontal bar for linear progress.",
                 code: '''
@@ -240,11 +244,11 @@ LiquidLinearProgressIndicator(
   center: Text("Loading..."),
 ),
 ''',
-                widget: const LiquidLinearProgressIndicatorExample()),
+                widget: LiquidLinearProgressIndicatorExample()),
             const SizedBox(
               height: 20,
             ),
-            TypeBox(
+            const TypeBox(
                 Heading: "2 - Circular Liquid Progress Indicator",
                 body: "A circular spinner for circular progress.",
                 code: '''
@@ -261,7 +265,7 @@ LiquidCircularProgressIndicator(
   center: Text("Loading..."),
 ),
 ''',
-                widget: const LiquidCircularProgressIndicatorExample()),
+                widget: LiquidCircularProgressIndicatorExample()),
             const SizedBox(
               height: 10,
             ),
@@ -289,10 +293,10 @@ class LinearProgressIndicatorExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       width: 300,
       height: 80,
-      child: const Card(
+      child: Card(
         elevation: 4,
         shape: RoundedRectangleBorder(
           borderRadius: ModernStyles.borderRadius,
@@ -321,10 +325,10 @@ class CircularProgressIndicatorExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       width: 160,
       height: 130,
-      child: const Card(
+      child: Card(
         color: Colors.white,
         elevation: 4,
         shape: RoundedRectangleBorder(
@@ -348,6 +352,73 @@ class CircularProgressIndicatorExample extends StatelessWidget {
   }
 }
 
+class LinearProgressIndicatorExample2 extends StatelessWidget {
+  final Color activeColor;
+  const LinearProgressIndicatorExample2({super.key, required this.activeColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 300,
+      height: 80,
+      child: Card(
+        elevation: 4,
+        shape: const RoundedRectangleBorder(
+          borderRadius: ModernStyles.borderRadius,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              const Text('Loading...'),
+              const SizedBox(height: 16),
+              LinearProgressIndicator(
+                backgroundColor: ModernStyles.baseColor,
+                color: activeColor,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// CircularProgressIndicator
+class CircularProgressIndicatorExample2 extends StatelessWidget {
+  final Color activeColor;
+  const CircularProgressIndicatorExample2(
+      {super.key, required this.activeColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 160,
+      height: 130,
+      child: Card(
+        color: Colors.white,
+        elevation: 4,
+        shape: const RoundedRectangleBorder(
+          borderRadius: ModernStyles.borderRadius,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              const Text('Loading...'),
+              const SizedBox(height: 16),
+              CircularProgressIndicator(
+                backgroundColor: Colors.white,
+                color: activeColor,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class LiquidLinearProgressIndicatorExample extends StatelessWidget {
   const LiquidLinearProgressIndicatorExample({super.key});
 
@@ -358,14 +429,14 @@ class LiquidLinearProgressIndicatorExample extends StatelessWidget {
       height: 120,
       child: Card(
         elevation: 4,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: ModernStyles.borderRadius,
         ),
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: LiquidLinearProgressIndicator(
             value: 0.25, // Defaults to 0.5.
-            valueColor: AlwaysStoppedAnimation(
+            valueColor: const AlwaysStoppedAnimation(
                 Colors.blue), // Defaults to the current Theme's accentColor.
             backgroundColor: Colors
                 .white, // Defaults to the current Theme's backgroundColor.
@@ -374,7 +445,7 @@ class LiquidLinearProgressIndicatorExample extends StatelessWidget {
             borderRadius: 12.0,
             direction: Axis
                 .vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.horizontal.
-            center: Text("Loading..."),
+            center: const Text("Loading..."),
           ),
         ),
       ),
@@ -393,14 +464,14 @@ class LiquidCircularProgressIndicatorExample extends StatelessWidget {
       height: 200,
       child: Card(
         elevation: 4,
-        shape: RoundedRectangleBorder(
+        shape: const RoundedRectangleBorder(
           borderRadius: ModernStyles.borderRadius,
         ),
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: LiquidCircularProgressIndicator(
             value: 0.25, // Defaults to 0.5.
-            valueColor: AlwaysStoppedAnimation(
+            valueColor: const AlwaysStoppedAnimation(
                 Colors.blue), // Defaults to the current Theme's accentColor.
             backgroundColor: Colors
                 .white, // Defaults to the current Theme's backgroundColor.
@@ -408,7 +479,7 @@ class LiquidCircularProgressIndicatorExample extends StatelessWidget {
             borderWidth: 5.0,
             direction: Axis
                 .vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.vertical.
-            center: Text("Loading..."),
+            center: const Text("Loading..."),
           ),
         ),
       ),

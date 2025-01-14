@@ -7,179 +7,184 @@ import 'package:grouped_checkbox/grouped_checkbox.dart';
 import '../MainScreens/CommonWidgets.dart';
 
 class CheckboxPage extends StatelessWidget {
-   CheckboxPage({super.key});
+  CheckboxPage({super.key});
   final List<Map<String, String>> properties = [
-  {
-    "Property": "value",
-    "Possible Values": "bool?",
-    "Description": "The current value of the checkbox."
-  },
-  {
-    "Property": "onChanged",
-    "Possible Values": "void Function(bool?)?",
-    "Description": "Callback triggered when the checkbox state changes."
-  },
-  {
-    "Property": "mouseCursor",
-    "Possible Values": "MouseCursor?",
-    "Description": "The mouse cursor to show when a pointer is hovering over the checkbox."
-  },
-  {
-    "Property": "activeColor",
-    "Possible Values": "Color?",
-    "Description": "The color to use for the checkmark when the checkbox is checked."
-  },
-  {
-    "Property": "fillColor",
-    "Possible Values": "WidgetStateProperty<Color?>?",
-    "Description": "The color to use for the checkbox background."
-  },
-  {
-    "Property": "checkColor",
-    "Possible Values": "Color?",
-    "Description": "The color of the checkmark."
-  },
-  {
-    "Property": "hoverColor",
-    "Possible Values": "Color?",
-    "Description": "The color to use for the checkbox when hovered."
-  },
-  {
-    "Property": "overlayColor",
-    "Possible Values": "WidgetStateProperty<Color?>?",
-    "Description": "The color to use for the checkbox overlay."
-  },
-  {
-    "Property": "splashRadius",
-    "Possible Values": "double?",
-    "Description": "The radius of the ink response."
-  },
-  {
-    "Property": "materialTapTargetSize",
-    "Possible Values": "MaterialTapTargetSize?",
-    "Description": "Defines the size of the tap target."
-  },
-  {
-    "Property": "visualDensity",
-    "Possible Values": "VisualDensity?",
-    "Description": "Controls the visual density of the checkbox."
-  },
-  {
-    "Property": "focusNode",
-    "Possible Values": "FocusNode?",
-    "Description": "The focus node for this widget."
-  },
-  {
-    "Property": "autofocus",
-    "Possible Values": "bool",
-    "Description": "Whether the checkbox should automatically focus when the screen opens."
-  },
-  {
-    "Property": "shape",
-    "Possible Values": "ShapeBorder?",
-    "Description": "The shape of the checkbox."
-  },
-  {
-    "Property": "side",
-    "Possible Values": "BorderSide?",
-    "Description": "The border of the checkbox."
-  },
-  {
-    "Property": "isError",
-    "Possible Values": "bool",
-    "Description": "Whether the checkbox is in an error state."
-  },
-  {
-    "Property": "enabled",
-    "Possible Values": "bool?",
-    "Description": "Whether the checkbox is enabled."
-  },
-  {
-    "Property": "tileColor",
-    "Possible Values": "Color?",
-    "Description": "The background color of the list tile."
-  },
-  {
-    "Property": "title",
-    "Possible Values": "Widget?",
-    "Description": "The primary content of the list tile."
-  },
-  {
-    "Property": "subtitle",
-    "Possible Values": "Widget?",
-    "Description": "The secondary content of the list tile."
-  },
-  {
-    "Property": "isThreeLine",
-    "Possible Values": "bool",
-    "Description": "Whether the list tile should be displayed with three lines."
-  },
-  {
-    "Property": "dense",
-    "Possible Values": "bool?",
-    "Description": "Whether the list tile should be displayed compactly."
-  },
-  {
-    "Property": "secondary",
-    "Possible Values": "Widget?",
-    "Description": "The widget to display after the title."
-  },
-  {
-    "Property": "selected",
-    "Possible Values": "bool",
-    "Description": "Whether the list tile is selected."
-  },
-  {
-    "Property": "controlAffinity",
-    "Possible Values": "ListTileControlAffinity?",
-    "Description": "The alignment of the checkbox within the list tile."
-  },
-  {
-    "Property": "contentPadding",
-    "Possible Values": "EdgeInsetsGeometry?",
-    "Description": "The padding of the list tile content."
-  },
-  {
-    "Property": "tristate",
-    "Possible Values": "bool",
-    "Description": "Whether the checkbox can be in an indeterminate state."
-  },
-  {
-    "Property": "checkboxShape",
-    "Possible Values": "OutlinedBorder?",
-    "Description": "The shape of the checkbox."
-  },
-  {
-    "Property": "selectedTileColor",
-    "Possible Values": "Color?",
-    "Description": "The background color of the list tile when selected."
-  },
-  {
-    "Property": "onFocusChange",
-    "Possible Values": "void Function(bool)?",
-    "Description": "Callback triggered when the checkbox focus changes."
-  },
-  {
-    "Property": "enableFeedback",
-    "Possible Values": "bool?",
-    "Description": "Whether to provide visual feedback for taps."
-  },
-  {
-    "Property": "checkboxSemanticLabel",
-    "Possible Values": "String?",
-    "Description": "The semantic label for the checkbox."
-  },
-  {
-    "Property": "checkboxScaleFactor",
-    "Possible Values": "double",
-    "Description": "The scale factor for the checkbox size."
-  },
-  {
-    "Property": "internalAddSemanticForOnTap",
-    "Possible Values": "bool",
-    "Description": "Whether to automatically add semantics for the onTap event."
-  },
-];
+    {
+      "Property": "value",
+      "Possible Values": "bool?",
+      "Description": "The current value of the checkbox."
+    },
+    {
+      "Property": "onChanged",
+      "Possible Values": "void Function(bool?)?",
+      "Description": "Callback triggered when the checkbox state changes."
+    },
+    {
+      "Property": "mouseCursor",
+      "Possible Values": "MouseCursor?",
+      "Description":
+          "The mouse cursor to show when a pointer is hovering over the checkbox."
+    },
+    {
+      "Property": "activeColor",
+      "Possible Values": "Color?",
+      "Description":
+          "The color to use for the checkmark when the checkbox is checked."
+    },
+    {
+      "Property": "fillColor",
+      "Possible Values": "WidgetStateProperty<Color?>?",
+      "Description": "The color to use for the checkbox background."
+    },
+    {
+      "Property": "checkColor",
+      "Possible Values": "Color?",
+      "Description": "The color of the checkmark."
+    },
+    {
+      "Property": "hoverColor",
+      "Possible Values": "Color?",
+      "Description": "The color to use for the checkbox when hovered."
+    },
+    {
+      "Property": "overlayColor",
+      "Possible Values": "WidgetStateProperty<Color?>?",
+      "Description": "The color to use for the checkbox overlay."
+    },
+    {
+      "Property": "splashRadius",
+      "Possible Values": "double?",
+      "Description": "The radius of the ink response."
+    },
+    {
+      "Property": "materialTapTargetSize",
+      "Possible Values": "MaterialTapTargetSize?",
+      "Description": "Defines the size of the tap target."
+    },
+    {
+      "Property": "visualDensity",
+      "Possible Values": "VisualDensity?",
+      "Description": "Controls the visual density of the checkbox."
+    },
+    {
+      "Property": "focusNode",
+      "Possible Values": "FocusNode?",
+      "Description": "The focus node for this widget."
+    },
+    {
+      "Property": "autofocus",
+      "Possible Values": "bool",
+      "Description":
+          "Whether the checkbox should automatically focus when the screen opens."
+    },
+    {
+      "Property": "shape",
+      "Possible Values": "ShapeBorder?",
+      "Description": "The shape of the checkbox."
+    },
+    {
+      "Property": "side",
+      "Possible Values": "BorderSide?",
+      "Description": "The border of the checkbox."
+    },
+    {
+      "Property": "isError",
+      "Possible Values": "bool",
+      "Description": "Whether the checkbox is in an error state."
+    },
+    {
+      "Property": "enabled",
+      "Possible Values": "bool?",
+      "Description": "Whether the checkbox is enabled."
+    },
+    {
+      "Property": "tileColor",
+      "Possible Values": "Color?",
+      "Description": "The background color of the list tile."
+    },
+    {
+      "Property": "title",
+      "Possible Values": "Widget?",
+      "Description": "The primary content of the list tile."
+    },
+    {
+      "Property": "subtitle",
+      "Possible Values": "Widget?",
+      "Description": "The secondary content of the list tile."
+    },
+    {
+      "Property": "isThreeLine",
+      "Possible Values": "bool",
+      "Description":
+          "Whether the list tile should be displayed with three lines."
+    },
+    {
+      "Property": "dense",
+      "Possible Values": "bool?",
+      "Description": "Whether the list tile should be displayed compactly."
+    },
+    {
+      "Property": "secondary",
+      "Possible Values": "Widget?",
+      "Description": "The widget to display after the title."
+    },
+    {
+      "Property": "selected",
+      "Possible Values": "bool",
+      "Description": "Whether the list tile is selected."
+    },
+    {
+      "Property": "controlAffinity",
+      "Possible Values": "ListTileControlAffinity?",
+      "Description": "The alignment of the checkbox within the list tile."
+    },
+    {
+      "Property": "contentPadding",
+      "Possible Values": "EdgeInsetsGeometry?",
+      "Description": "The padding of the list tile content."
+    },
+    {
+      "Property": "tristate",
+      "Possible Values": "bool",
+      "Description": "Whether the checkbox can be in an indeterminate state."
+    },
+    {
+      "Property": "checkboxShape",
+      "Possible Values": "OutlinedBorder?",
+      "Description": "The shape of the checkbox."
+    },
+    {
+      "Property": "selectedTileColor",
+      "Possible Values": "Color?",
+      "Description": "The background color of the list tile when selected."
+    },
+    {
+      "Property": "onFocusChange",
+      "Possible Values": "void Function(bool)?",
+      "Description": "Callback triggered when the checkbox focus changes."
+    },
+    {
+      "Property": "enableFeedback",
+      "Possible Values": "bool?",
+      "Description": "Whether to provide visual feedback for taps."
+    },
+    {
+      "Property": "checkboxSemanticLabel",
+      "Possible Values": "String?",
+      "Description": "The semantic label for the checkbox."
+    },
+    {
+      "Property": "checkboxScaleFactor",
+      "Possible Values": "double",
+      "Description": "The scale factor for the checkbox size."
+    },
+    {
+      "Property": "internalAddSemanticForOnTap",
+      "Possible Values": "bool",
+      "Description":
+          "Whether to automatically add semantics for the onTap event."
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -269,7 +274,9 @@ class CheckboxPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Check-Box",
+                              Number: 15,
                               code: '''
 CheckboxListTile(
   title: Text(
@@ -293,7 +300,9 @@ CheckboxListTile(
                                   color: ModernStyles.activeColor,
                                   bodyTextStyle: ModernStyles.bodyTextStyle,
                                   borderRadius: ModernStyles.borderRadius)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Check-Box",
+                              Number: 15,
                               code: '''
 CheckboxListTile(
   title: Text('Check this box',
@@ -315,7 +324,9 @@ CheckboxListTile(
                                   color: ClassicStyles.activeColor,
                                   bodyTextStyle: ClassicStyles.bodyTextStyle,
                                   borderRadius: ClassicStyles.borderRadius)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Check-Box",
+                              Number: 15,
                               code: '''
 CheckboxListTile(
   title: Text('Check this box',
@@ -385,7 +396,7 @@ CheckboxListTile(
             const SizedBox(
               height: 10,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreview(code: '''
 class GroupedCheckboxExample extends StatefulWidget {
   @override
   _GroupedCheckboxExampleState createState() => _GroupedCheckboxExampleState();
@@ -448,7 +459,7 @@ class _GroupedCheckboxExampleState extends State<GroupedCheckboxExample> {
             const SizedBox(
               height: 10,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreview(code: '''
 class RoundCheckboxExample extends StatefulWidget {
   @override
   _RoundCheckboxExampleState createState() => _RoundCheckboxExampleState();

@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutterwidgethub/Views/MainScreens/mainScreen.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scrollable_date_picker/scrollable_date_picker.dart';
-import 'dart:html' as html;
 import 'Models/MainWidgets/all.dart';
 
 Future<void> main() async {
    await initializeDateFormatting();
-  html.window.onBeforeUnload.listen((event) {
-    // Ensures the pointer binding doesn't mismatch the target element
-    html.document.body?.focus();
-  });
+  
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
@@ -18,10 +16,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
+    return GetMaterialApp(
+      builder: EasyLoading.init(),
       
-      title: 'Flutter Widgets Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Widgets Hub',
       theme: ThemeData(primarySwatch: Colors.blue, fontFamily: GoogleFonts.nunito().fontFamily),
       home: const MainScreen(),
     );
@@ -40,7 +39,7 @@ class WidgetsPage extends StatelessWidget {
         children: [
           widgetSection('Dropdown Menu', const DropdownExample()),
           widgetSection('Disclosure', const DisclosureExample()),
-          widgetSection('Dialog', DialogExample()),
+          widgetSection('Dialog', const DialogExample()),
           widgetSection('Popover', const PopoverExample()),
           widgetSection('Tabs', const TabsExample()),
           widgetSection('Transition', const TransitionExample()),

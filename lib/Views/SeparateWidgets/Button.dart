@@ -341,8 +341,10 @@ class ButtonPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            TypeBox(
-                Heading: "1 - TextButton",
+            const TypeBoxWithSave(
+              name: "Text Button",
+              number: 11,
+                Heading: "1 - Text Button",
                 body:
                     " A simple button with text and no background by default. Ideal for subtle actions like links.",
                 code: '''
@@ -366,7 +368,7 @@ TextButton(
   ),
 )
 ''',
-                widget: const TextButtonWidget()),
+                widget: TextButtonWidget()),
             const SizedBox(
               height: 10,
             ),
@@ -387,8 +389,10 @@ TextButton(
             const SizedBox(
               height: 20,
             ),
-            TypeBox(
-                Heading: "2 - ElevatedButton",
+            const TypeBoxWithSave(
+              name: "Elevated Button",
+              number: 12,
+                Heading: "2 - Elevated Button",
                 body:
                     "A button with a raised appearance and shadow, used for primary actions.",
                 code: '''
@@ -414,7 +418,7 @@ ElevatedButton(
   ),
 )
 ''',
-                widget: const ElevatedButtonWidget()),
+                widget: ElevatedButtonWidget()),
             const SizedBox(
               height: 10,
             ),
@@ -435,8 +439,10 @@ ElevatedButton(
             const SizedBox(
               height: 20,
             ),
-            TypeBox(
-                Heading: "3 - OutlinedButton",
+            const TypeBoxWithSave(
+              name: "Outlined Button",
+              number: 13,
+                Heading: "3 - Outlined Button",
                 body:
                     "A button with an outlined border, typically for secondary actions.",
                 code: '''
@@ -461,7 +467,7 @@ OutlinedButton(
   ),
 ),
 ''',
-                widget: const OutlinedButtonWidget()),
+                widget: OutlinedButtonWidget()),
             const SizedBox(
               height: 10,
             ),
@@ -482,8 +488,10 @@ OutlinedButton(
             const SizedBox(
               height: 20,
             ),
-            TypeBox(
-                Heading: "4 - IconButton",
+            const TypeBoxWithSave(
+              name: "Icon Button",
+              number: 14,
+                Heading: "4 - Icon Button",
                 body:
                     "A button with an icon, commonly used for actions like favorites or navigation.",
                 code: '''
@@ -498,7 +506,7 @@ IconButton(
   icon: Icon(Icons.download, color: Colors.white), // White icon color
 ),
 ''',
-                widget: const IconButtonWidget()),
+                widget: IconButtonWidget()),
                 const SizedBox(
               height: 10,
             ),
@@ -655,3 +663,125 @@ class IconButtonWidget extends StatelessWidget {
     );
   }
 }
+
+
+class ElevatedButtonWidget2 extends StatelessWidget {
+    final BorderRadius borderRadius;
+  final Color activeColor;
+  const ElevatedButtonWidget2({super.key, required this.activeColor, required this.borderRadius});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style:  ButtonStyle(
+        elevation: const WidgetStatePropertyAll(4),
+        padding: const WidgetStatePropertyAll(
+            EdgeInsets.symmetric(horizontal: 24, vertical: 16)),
+        shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+          borderRadius: borderRadius,
+        )),
+        backgroundColor: WidgetStatePropertyAll(activeColor),
+        foregroundColor: const WidgetStatePropertyAll(Colors.white), // Text color
+      ),
+      onPressed: () {},
+      child: Text(
+        'Click Me',
+        style: GoogleFonts.openSans(
+          fontSize: 16,
+          fontWeight: FontWeight.normal,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+}
+
+class TextButtonWidget2 extends StatelessWidget {
+  final BorderRadius borderRadius;
+  final Color activeColor;
+  const TextButtonWidget2({super.key, required this.activeColor, required this.borderRadius});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      style:  ButtonStyle(
+        padding: const WidgetStatePropertyAll(
+            EdgeInsets.symmetric(horizontal: 24, vertical: 16)),
+        shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+          borderRadius: borderRadius,
+        )),
+        backgroundColor:
+            const WidgetStatePropertyAll(Colors.transparent), // No background color
+        foregroundColor: WidgetStatePropertyAll(activeColor), // Text color
+      ),
+      onPressed: () {},
+      child: Text(
+        'Click Me',
+        style: TextStyle(
+          fontFamily: GoogleFonts.openSans().fontFamily,
+          fontSize: 16,
+          fontWeight: FontWeight.normal,
+          color: activeColor, // Text color should match foreground
+        ),
+      ),
+    );
+  }
+}
+
+class OutlinedButtonWidget2 extends StatelessWidget {
+    final BorderRadius borderRadius;
+  final Color activeColor;
+  const OutlinedButtonWidget2({super.key, required this.activeColor, required this.borderRadius});
+
+  @override
+  Widget build(BuildContext context) {
+    return OutlinedButton(
+      style:  ButtonStyle(
+        padding: const WidgetStatePropertyAll(
+            EdgeInsets.symmetric(horizontal: 24, vertical: 16)),
+        shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+          borderRadius: borderRadius,
+        )),
+        backgroundColor: const WidgetStatePropertyAll(
+            Colors.transparent), // Transparent background
+        foregroundColor: WidgetStatePropertyAll(activeColor), // Text color
+        side: const WidgetStatePropertyAll(
+            BorderSide(color: Colors.blue, width: 2)), // Blue border
+      ),
+      onPressed: () {},
+      child: Text(
+        'Click Me',
+        style: GoogleFonts.openSans(
+          fontSize: 16,
+          fontWeight: FontWeight.normal,
+          color: activeColor, // Text color should match foreground
+        ),
+      ),
+    );
+  }
+}
+
+class IconButtonWidget2 extends StatelessWidget {
+    final BorderRadius borderRadius;
+  final Color activeColor;
+  const IconButtonWidget2({super.key, required this.activeColor, required this.borderRadius});
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      style:  ButtonStyle(
+        elevation: const WidgetStatePropertyAll(4), // Adding elevation for depth
+        padding: const WidgetStatePropertyAll(
+            EdgeInsets.all(12)), // Icon button usually has small padding
+        backgroundColor:
+            WidgetStatePropertyAll(activeColor), // Solid background color
+        foregroundColor: const WidgetStatePropertyAll(Colors.white), // Icon color
+      ),
+      onPressed: () {},
+      icon: const Icon(Icons.download, color: Colors.white), // White icon color
+    );
+  }
+}
+
+
+

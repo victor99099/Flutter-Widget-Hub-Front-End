@@ -250,7 +250,9 @@ class DialogPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 3,
+                              name: "Dialog",
                               code: '''
 void showNormalDialog(BuildContext context) {
   showDialog(
@@ -307,7 +309,9 @@ void showNormalDialog(BuildContext context) {
                                     ModernStyles.buttonStyle,
                                     ModernStyles.buttonTextStyle),
                               )),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 3,
+                              name: "Dialog",
                               code: '''
 void showNormalDialog(BuildContext context) {
   showDialog(
@@ -364,7 +368,9 @@ void showNormalDialog(BuildContext context) {
                                     ClassicStyles.buttonStyle,
                                     ClassicStyles.buttonTextStyle),
                               )),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 3,
+                              name: "Dialog",
                               code: '''
 void showNormalDialog(BuildContext context) {
   showDialog(
@@ -630,7 +636,8 @@ void showNDialog(BuildContext context) {
 
 class DialogExample extends StatelessWidget {
   final VoidCallback func;
-  const DialogExample({super.key, 
+  const DialogExample({
+    super.key,
     required this.func,
   });
   @override
@@ -710,7 +717,8 @@ void showNDialog(BuildContext context) {
       ],
     ),
     actions: [
-      TextButton(onPressed: () => Navigator.pop(context), child: const Text("Close")),
+      TextButton(
+          onPressed: () => Navigator.pop(context), child: const Text("Close")),
     ],
   ).show(context);
 }

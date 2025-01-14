@@ -49,7 +49,10 @@ class ComboboxPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreviewWithSave(
+              name: "Combo-Box",
+              number: 16,
+              code: '''
 class ComboboxWidget extends StatefulWidget {
   const ComboboxWidget({Key? key}) : super(key: key);
 
@@ -101,7 +104,7 @@ class _ComboboxWidgetState extends State<ComboboxWidget> {
     );
   }
 }
-''', widget: const ComboboxExample()),
+''', widget: ComboboxExample()),
             const SizedBox(
               height: 10,
             ),

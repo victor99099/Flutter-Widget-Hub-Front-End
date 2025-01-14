@@ -264,7 +264,9 @@ class DisclosurePage extends StatelessWidget {
                         height: MediaQuery.of(context).size.height * 0.58,
                         child: TabBarView(
                           children: [
-                            CodeAndPreview(
+                            CodeAndPreviewWithSave(
+                                Number: 2,
+                                name: "Disclosure",
                                 code: '''
 Card(
   elevation: 4,
@@ -300,7 +302,9 @@ Card(
                                   subtitleTextStyle:
                                       ModernStyles.subtitleTextStyle,
                                 )),
-                            CodeAndPreview(
+                            CodeAndPreviewWithSave(
+                                Number: 2,
+                                name: "Disclosure",
                                 code: '''
 Card(
   elevation: 4,
@@ -337,7 +341,9 @@ Card(
                                   subtitleTextStyle:
                                       ClassicStyles.subtitleTextStyle,
                                 )),
-                            CodeAndPreview(
+                            CodeAndPreviewWithSave(
+                                Number: 2,
+                                name: "Disclosure",
                                 code: '''
 Card(
   elevation: 4,
@@ -421,7 +427,7 @@ Card(
               const SizedBox(
                 height: 10,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreview(code: '''
 Card(
   elevation: 4,
   shape: RoundedRectangleBorder(
@@ -464,7 +470,7 @@ Card(
               const SizedBox(
                 height: 10,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreview(code: '''
 class CollapsibleWidget extends StatefulWidget {
   @override
   _CollapsibleWidgetState createState() => _CollapsibleWidgetState();
@@ -549,7 +555,7 @@ class _CollapsibleWidgetState extends State<CollapsibleWidget> {
               const SizedBox(
                 height: 10,
               ),
-              SingleCodeAndPreview(code: '''
+              const SingleCodeAndPreview(code: '''
 Card(
   elevation: 4,
   shape: RoundedRectangleBorder(
@@ -594,9 +600,9 @@ Card(
                   "accordion",
                 ],
                 body: [
-                  ["Multi-Level Support", "❌", "✅","✅"],
-                  ["Animation Options", "✅", "✅","✅"],
-                  ["Card/Panel Style", "✅", "❌","❌"],
+                  ["Multi-Level Support", "❌", "✅", "✅"],
+                  ["Animation Options", "✅", "✅", "✅"],
+                  ["Card/Panel Style", "✅", "❌", "❌"],
                 ],
               ),
               const SizedBox(
@@ -607,7 +613,6 @@ Card(
         ));
   }
 }
-
 
 class DisclosureExample extends StatelessWidget {
   final BorderRadius borderRadius; // Accept the border radius directly

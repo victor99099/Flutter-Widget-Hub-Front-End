@@ -195,7 +195,9 @@ class NotificationPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Toast Notification",
+                              Number: 27,
                               code: '''
 class ToastNotification extends StatelessWidget {
   const ToastNotification({Key? key}) : super(key: key);
@@ -241,7 +243,9 @@ class ToastNotification extends StatelessWidget {
                               swidget: ToastNotificationExample(
                                   buttonTextStyle: ModernStyles.buttonTextStyle,
                                   activeColor: ModernStyles.activeColor)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Toast Notification",
+                              Number: 27,
                               code: '''
 class Popover extends StatelessWidget {
   const Popover({
@@ -284,7 +288,9 @@ class Popover extends StatelessWidget {
                                   buttonTextStyle:
                                       ClassicStyles.buttonTextStyle,
                                   activeColor: ClassicStyles.activeColor)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Toast Notification",
+                              Number: 27,
                               code: '''
 class ToastNotification extends StatelessWidget {
   const ToastNotification({Key? key}) : super(key: key);
@@ -379,7 +385,7 @@ class ToastNotification extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreview(code: '''
 class CustomNotification extends StatelessWidget {
   const CustomNotification({Key? key}) : super(key: key);
 
@@ -418,7 +424,7 @@ class CustomNotification extends StatelessWidget {
     );
   }
 }
-''', widget: const CustomNotification()),
+''', widget: CustomNotification()),
             const SizedBox(
               height: 10,
             ),
@@ -441,7 +447,7 @@ class CustomNotification extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            TypeBoxNoBody(
+            const TypeBoxNoBody(
                 Heading: "1 - Information",
                 code: '''
 class InfoNotification extends StatelessWidget {
@@ -482,8 +488,8 @@ class InfoNotification extends StatelessWidget {
   }
 }
 ''',
-                widget: const InfoNotification()),
-            TypeBoxNoBody(
+                widget: InfoNotification()),
+            const TypeBoxNoBody(
                 Heading: "2 - Success",
                 code: '''
 class SuccessNotification extends StatelessWidget {
@@ -527,8 +533,8 @@ class SuccessNotification extends StatelessWidget {
   }
 }
 ''',
-                widget: const SuccessNotification()),
-            TypeBoxNoBody(
+                widget: SuccessNotification()),
+            const TypeBoxNoBody(
                 Heading: "3 - Error",
                 code: '''
 class ErrorNotification extends StatelessWidget {
@@ -568,7 +574,7 @@ class ErrorNotification extends StatelessWidget {
   }
 }
 ''',
-                widget: const ErrorNotification()),
+                widget: ErrorNotification()),
             const SizedBox(
               height: 50,
             ),
@@ -670,7 +676,8 @@ class CustomNotification extends StatelessWidget {
       onPressed: () {
         ElegantNotification(
           title: const Text("New version"),
-          description: const Text("A new version is available to you please update."),
+          description:
+              const Text("A new version is available to you please update."),
           icon: const Icon(
             Icons.access_alarm,
             color: Colors.orange,

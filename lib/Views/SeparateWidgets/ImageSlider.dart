@@ -51,7 +51,9 @@ class ImagesliderPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            TypeBoxNoBody(
+            const TypeBoxNoBodyWithSave(
+              name: "Button Image Slider",
+              number: 34,
                 Heading: "With Left Right Buttons",
                 code: '''
 class ButtonImageSlider extends StatefulWidget {
@@ -200,7 +202,9 @@ class _ButtonImageSliderState extends State<ButtonImageSlider> {
             const SizedBox(
               height: 20,
             ),
-            TypeBoxNoBody(
+            const TypeBoxNoBodyWithSave(
+              name: "Automatic Image Slider",
+              number: 35,
                 Heading: "Automatic",
                 code: '''
 class AutoImageSlider extends StatefulWidget {
@@ -349,7 +353,7 @@ class _AutoImageSliderState extends State<AutoImageSlider> {
             const SizedBox(
               height: 20,
             ),
-            TypeBoxNoBody(
+            const TypeBoxNoBody(
                 Heading: "1 - Type 1",
                 code: '''
 class FanImageSliderButtons extends StatelessWidget {
@@ -381,8 +385,8 @@ class FanImageSliderButtons extends StatelessWidget {
   }
 }
 ''',
-                widget: const FanImageSliderButtons()),
-            TypeBoxNoBody(
+                widget: FanImageSliderButtons()),
+            const TypeBoxNoBody(
                 Heading: "2 - Type 2",
                 code: '''
 class FanImageSliderSwipe extends StatelessWidget {
@@ -417,7 +421,7 @@ class FanImageSliderSwipe extends StatelessWidget {
   }
 }
 ''',
-                widget: const FanImageSliderSwipe()),
+                widget: FanImageSliderSwipe()),
             const SizedBox(
               height: 10,
             ),
@@ -687,6 +691,258 @@ class _AutoImageSliderExampleState extends State<AutoImageSliderExample> {
     );
   }
 }
+class ButtonImageSliderExample2 extends StatefulWidget {
+  final Color activeColor;
+  final BorderRadius borderRadius;
+  const ButtonImageSliderExample2({super.key, required this.activeColor, required this.borderRadius});
+
+  @override
+  State<ButtonImageSliderExample2> createState() =>
+      _ButtonImageSliderExample2State();
+}
+
+class _ButtonImageSliderExample2State extends State<ButtonImageSliderExample2> {
+  final PageController _controller = PageController();
+  final List<String> images = [
+    'assets/eample.jpg',
+    'assets/example2.jpg',
+    'assets/example3.jpg',
+  ];
+  int _currentPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // Add listener to detect changes in the page
+    _controller.addListener(() {
+      if (_controller.page != null) {
+        setState(() {
+          _currentPage = _controller.page!.round();
+        });
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    // Dispose the controller when the widget is disposed
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _navigateToPage(int page) {
+    _controller.animateToPage(
+      page,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4,
+      shape:  RoundedRectangleBorder(
+        borderRadius: widget.borderRadius,
+      ),
+      child: Container(
+        width: 500,
+        height: 250, // Set height for the image slider
+        decoration:  BoxDecoration(
+          borderRadius: widget.borderRadius,
+        ),
+        child: Stack(
+          children: [
+            PageView.builder(
+              controller: _controller,
+              itemCount: images.length,
+              itemBuilder: (context, index) {
+                return ClipRRect(
+                  borderRadius: widget.borderRadius,
+                  child: Image.asset(
+                    images[index],
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                  ),
+                );
+              },
+            ),
+            // Left Button
+            Positioned(
+              top: 100,
+              left: 10,
+              child: IconButton(
+                icon: const Icon(
+                  Icons.arrow_left,
+                  color: Colors.white,
+                  size: 30,
+                ),
+                onPressed: () {
+                  if (_currentPage > 0) {
+                    _navigateToPage(_currentPage - 1);
+                  }
+                },
+              ),
+            ),
+            // Right Button
+            Positioned(
+              top: 100,
+              right: 10,
+              child: IconButton(
+                icon: const Icon(
+                  Icons.arrow_right,
+                  color: Colors.white,
+                  size: 30,
+                ),
+                onPressed: () {
+                  if (_currentPage < images.length - 1) {
+                    _navigateToPage(_currentPage + 1);
+                  }
+                },
+              ),
+            ),
+            // Pagination Indicator
+            Positioned(
+              bottom: 10,
+              left: 10,
+              child: Row(
+                children: List.generate(images.length, (index) {
+                  return Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 4),
+                    width: 8,
+                    height: 8,
+                    decoration: BoxDecoration(
+                      color: _currentPage == index
+                          ? widget.activeColor
+                          : const Color.fromARGB(255, 194, 194, 194),
+                      shape: BoxShape.circle,
+                    ),
+                  );
+                }),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class AutoImageSliderExample2 extends StatefulWidget {
+    final Color activeColor;
+  final BorderRadius borderRadius;
+  const AutoImageSliderExample2({super.key, required this.activeColor, required this.borderRadius});
+
+  @override
+  State<AutoImageSliderExample2> createState() => _AutoImageSliderExample2State();
+}
+
+class _AutoImageSliderExample2State extends State<AutoImageSliderExample2> {
+  final PageController _controller = PageController();
+  final List<String> images = [
+    'assets/eample.jpg',
+    'assets/example2.jpg',
+    'assets/example3.jpg',
+  ];
+  int _currentPage = 0;
+  late Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    // Add listener to detect changes in the page
+    _controller.addListener(() {
+      if (_controller.page != null) {
+        setState(() {
+          _currentPage = _controller.page!.round();
+        });
+      }
+    });
+
+    // Start a timer to automatically change the page every 3 seconds
+    _timer = Timer.periodic(const Duration(seconds: 3), _autoChangePage);
+  }
+
+  @override
+  void dispose() {
+    // Dispose the controller and cancel the timer when the widget is disposed
+    _controller.dispose();
+    _timer.cancel();
+    super.dispose();
+  }
+
+  void _navigateToPage(int page) {
+    _controller.animateToPage(
+      page,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  // Method to automatically change the page
+  void _autoChangePage(Timer timer) {
+    if (_currentPage < images.length - 1) {
+      _navigateToPage(_currentPage + 1);
+    } else {
+      _navigateToPage(0); // Loop back to the first image
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 4,
+      shape:  RoundedRectangleBorder(
+        borderRadius: widget.borderRadius,
+      ),
+      child: Container(
+        width: 500,
+        height: 250, // Set height for the image slider
+        decoration:  BoxDecoration(
+          borderRadius: widget.borderRadius,
+        ),
+        child: Stack(
+          children: [
+            PageView.builder(
+              controller: _controller,
+              itemCount: images.length,
+              itemBuilder: (context, index) {
+                return ClipRRect(
+                  borderRadius: widget.borderRadius,
+                  child: Image.asset(
+                    images[index],
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                  ),
+                );
+              },
+            ),
+            // Pagination Indicator
+            Positioned(
+              bottom: 10,
+              left: 10,
+              child: Row(
+                children: List.generate(images.length, (index) {
+                  return Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 4),
+                    width: 8,
+                    height: 8,
+                    decoration: BoxDecoration(
+                      color: _currentPage == index
+                          ? widget.activeColor
+                          : const Color.fromARGB(255, 194, 194, 194),
+                      shape: BoxShape.circle,
+                    ),
+                  );
+                }),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 class FanImageSliderButtons extends StatelessWidget {
   const FanImageSliderButtons({super.key});
@@ -702,7 +958,7 @@ class FanImageSliderButtons extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: FanCarouselImageSlider.sliderType1(
-          imagesLink: [
+          imagesLink: const [
             'assets/eample.jpg',
             'assets/example2.jpg',
             'assets/example3.jpg',
@@ -731,7 +987,7 @@ class FanImageSliderSwipe extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: FanCarouselImageSlider.sliderType2(
-          imagesLink: [
+          imagesLink: const [
             'assets/eample.jpg',
             'assets/example2.jpg',
             'assets/example3.jpg',

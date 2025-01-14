@@ -150,7 +150,10 @@ class TooltipPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreviewWithSave(
+                name: "ToolTip",
+                number: 29,
+                code: '''
 class TooltipExample extends StatelessWidget {
   const TooltipExample({Key? key}) : super(key: key);
 
@@ -162,7 +165,8 @@ class TooltipExample extends StatelessWidget {
     );
   }
 }
-''', widget: const TooltipExample()),
+''',
+                widget: TooltipExample()),
             const SizedBox(
               height: 20,
             ),
@@ -197,7 +201,28 @@ class TooltipExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Tooltip(
       message: 'This is a tooltip!',
-      child: Icon(Icons.info, color: ModernStyles.activeColor,size: 50,),
+      child: Icon(
+        Icons.info,
+        color: ModernStyles.activeColor,
+        size: 50,
+      ),
+    );
+  }
+}
+
+class TooltipExample2 extends StatelessWidget {
+  final Color activeColor;
+  const TooltipExample2({super.key, required this.activeColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return Tooltip(
+      message: 'This is a tooltip!',
+      child: Icon(
+        Icons.info,
+        color: activeColor,
+        size: 50,
+      ),
     );
   }
 }

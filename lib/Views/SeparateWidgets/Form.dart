@@ -137,7 +137,9 @@ class FormPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Form",
+                              Number: 10,
                               code: '''
 class FormWidget extends StatelessWidget {
   @override
@@ -216,7 +218,9 @@ class FormWidget extends StatelessWidget {
                                   borderRadius: ModernStyles.borderRadius,
                                   inputDecoration: ModernStyles.inputDecoration,
                                   buttonStyle: ModernStyles.buttonStyle)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Form",
+                              Number: 10,
                               code: '''
 class FormWidget extends StatelessWidget {
   @override
@@ -297,7 +301,9 @@ class FormWidget extends StatelessWidget {
                                   inputDecoration:
                                       ClassicStyles.inputDecoration,
                                   buttonStyle: ClassicStyles.buttonStyle)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Form",
+                              Number: 10,
                               code: '''
 class FormWidget extends StatelessWidget {
   @override

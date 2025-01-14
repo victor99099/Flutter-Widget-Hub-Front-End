@@ -292,7 +292,9 @@ class SwitchPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 24,
+                              name: "Switch",
                               code: '''
 class SwitchTile extends StatefulWidget {
   SwitchTile({Key? key}) : super(key: key);
@@ -336,7 +338,9 @@ class _SwitchTileState extends State<SwitchTile> {
                                   activeColor: ModernStyles.activeColor,
                                   bodyTextStyle: ModernStyles.bodyTextStyle,
                                   borderRadius: ModernStyles.borderRadius)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 24,
+                              name: "Switch",
                               code: '''
 class SwitchTile extends StatefulWidget {
   SwitchTile({Key? key}) : super(key: key);
@@ -380,7 +384,9 @@ class _SwitchTileState extends State<SwitchTile> {
                                   activeColor: ClassicStyles.activeColor,
                                   bodyTextStyle: ClassicStyles.bodyTextStyle,
                                   borderRadius: ClassicStyles.borderRadius)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 24,
+                              name: "Switch",
                               code: '''
 class SwitchTile extends StatefulWidget {
   SwitchTile({Key? key}) : super(key: key);
@@ -472,7 +478,7 @@ class _SwitchTileState extends State<SwitchTile> {
             const SizedBox(
               height: 10,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreview(code: '''
 class SlideSwitcherExample extends StatefulWidget {
   @override
   _SlideSwitcherExampleState createState() => _SlideSwitcherExampleState();
@@ -543,7 +549,7 @@ class _SlideSwitcherExampleState extends State<SlideSwitcherExample> {
             const SizedBox(
               height: 10,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreview(code: '''
 class AnimatedToggleSwitchWidget extends StatefulWidget {
   @override
   _AnimatedToggleSwitchWidgetState createState() =>
@@ -601,7 +607,8 @@ class _AnimatedToggleSwitchWidgetState
               height: 10,
             ),
             const ImportCopyContainer(
-              code: "import 'package:animated_toggle_switch/animated_toggle_switch.dart';",
+              code:
+                  "import 'package:animated_toggle_switch/animated_toggle_switch.dart';",
             ),
             const SizedBox(
               height: 50,
@@ -638,7 +645,8 @@ class _SwitchExampleState extends State<SwitchExample> {
         borderRadius: widget.borderRadius,
       ),
       child: SwitchListTile(
-        trackOutlineColor: const WidgetStatePropertyAll(Colors.black),
+        trackOutlineColor:
+            const WidgetStatePropertyAll(Color.fromARGB(255, 209, 209, 209)),
         activeColor: Colors.white,
         thumbColor: WidgetStatePropertyAll(widget.activeColor),
         title: Text(
@@ -769,7 +777,7 @@ class _SlideSwitcherExampleState extends State<SlideSwitcherExample> {
             onSelect: (index) => setState(() => switcherIndex1 = index),
             containerHeight: 40,
             containerWight: 350,
-            children: [
+            children: const [
               Text('First'),
               Text('Second'),
             ],
@@ -790,6 +798,6 @@ class _SlideSwitcherExampleState extends State<SlideSwitcherExample> {
           ],
         ],
       ),
-    ).paddingOnly(top:100, bottom: 70);
+    ).paddingOnly(top: 100, bottom: 70);
   }
 }

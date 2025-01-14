@@ -162,7 +162,9 @@ class InputPage extends StatelessWidget {
                   fontSize: 22,
                   fontWeight: FontWeight.w800),
             ),
-            TypeBox(
+            const TypeBoxWithSave(
+              name: "TextField",
+              number: 17,
                 Heading: "1 - TextField",
                 body:
                     "A simple widget for entering a single line of text. It provides various properties like controller, keyboardType, and obscureText to customize behavior and appearance.",
@@ -190,7 +192,7 @@ class BasicTextField extends StatelessWidget {
   }
 }
 ''',
-                widget: const BasicTextFieldExample()),
+                widget: BasicTextFieldExample()),
             const SizedBox(
               height: 10,
             ),
@@ -211,7 +213,9 @@ class BasicTextField extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            TypeBox(
+            const TypeBoxWithSave(
+              name: "TextFormField",
+              number: 18,
                 Heading: "2 - TextFormField",
                 body:
                     "A form-aware version of TextField, ideal for form validation.",
@@ -247,7 +251,7 @@ class TextFormFieldWidget extends StatelessWidget {
   }
 }
 ''',
-                widget: const TextFormFieldExample()),
+                widget: TextFormFieldExample()),
             const SizedBox(
               height: 10,
             ),
@@ -268,7 +272,9 @@ class TextFormFieldWidget extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            TypeBox(
+            const TypeBoxWithSave(
+              name: "Password Field",
+              number: 19,
                 Heading: "3 - Password Input",
                 body:
                     "A TextField configured to obscure characters for secure inputs like passwords.",
@@ -314,11 +320,13 @@ class _PasswordInputState extends State<PasswordInput> {
   }
 }
 ''',
-                widget: const PasswordInputExample()),
+                widget: PasswordInputExample()),
             const SizedBox(
               height: 20,
             ),
-            TypeBox(
+            const TypeBoxWithSave(
+              name: "Multiline Text Field",
+              number: 20,
                 Heading: "4 - Multiline Text Input",
                 body:
                     "A TextField allowing multiple lines for long inputs like comments or addresses.",
@@ -348,11 +356,13 @@ class MultilineTextInput extends StatelessWidget {
 }
 
 ''',
-                widget: const MultilineTextInputExample()),
+                widget: MultilineTextInputExample()),
             const SizedBox(
               height: 20,
             ),
-            TypeBox(
+            const TypeBoxWithSave(
+              name: "Number Field",
+              number: 21,
                 Heading: "5 - Number Input",
                 body:
                     "A TextField with keyboardType set to accept only numeric values.",
@@ -381,7 +391,7 @@ class NumberInputExample extends StatelessWidget {
   }
 }
 ''',
-                widget: const NumberInputExample()),
+                widget: NumberInputExample()),
             const SizedBox(
               height: 20,
             ),
@@ -539,3 +549,150 @@ class NumberInputExample extends StatelessWidget {
     );
   }
 }
+// class BasicTextFieldExample2 extends StatelessWidget {
+//   final InputDecoration inputDecoration;
+//   const BasicTextFieldExample2({super.key, required this.inputDecoration});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       elevation: 4,
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(12),
+//       ),
+//       child: const Padding(
+//         padding: EdgeInsets.all(8.0),
+//         child: TextField(
+//           decoration: InputDecoration(
+//             labelText: 'Enter text',
+//             border: OutlineInputBorder(),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class TextFormFieldExample2 extends StatelessWidget {
+//     final InputDecoration inputDecoration;
+//   const TextFormFieldExample2({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Form(
+//       child: Card(
+//         elevation: 4,
+//         shape: RoundedRectangleBorder(
+//           borderRadius: BorderRadius.circular(12),
+//         ),
+//         child: Padding(
+//           padding: const EdgeInsets.all(8.0),
+//           child: TextFormField(
+//             decoration: const InputDecoration(
+//               labelText: 'Enter text',
+//               border: OutlineInputBorder(),
+//             ),
+//             validator: (value) {
+//               if (value == null || value.isEmpty) {
+//                 return 'Please enter some text';
+//               }
+//               return null;
+//             },
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class PasswordInputExample2 extends StatefulWidget {
+//     final InputDecoration inputDecoration;
+//   const PasswordInputExample2({super.key});
+
+//   @override
+//   State<PasswordInputExample2> createState() => _PasswordInputExample2State();
+// }
+
+// class _PasswordInputExample2State extends State<PasswordInputExample2> {
+//   bool _obscureText = true;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       elevation: 4,
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(12),
+//       ),
+//       child: Padding(
+//         padding: const EdgeInsets.all(8.0),
+//         child: TextField(
+//           obscureText: _obscureText,
+//           decoration: InputDecoration(
+//             labelText: 'Enter password',
+//             border: const OutlineInputBorder(),
+//             suffixIcon: IconButton(
+//               icon: Icon(
+//                 _obscureText ? Icons.visibility : Icons.visibility_off,
+//               ),
+//               onPressed: () {
+//                 setState(() {
+//                   _obscureText = !_obscureText;
+//                 });
+//               },
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class MultilineTextInputExample2 extends StatelessWidget {
+//     final InputDecoration inputDecoration;
+//    MultilineTextInputExample2({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       elevation: 4,
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(12),
+//       ),
+//       child: const Padding(
+//         padding: EdgeInsets.all(8.0),
+//         child: TextField(
+//           maxLines: 5,
+//           decoration: InputDecoration(
+//             labelText: 'Enter multiline text',
+//             border: OutlineInputBorder(),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class NumberInputExample2 extends StatelessWidget {
+//     final InputDecoration inputDecoration;
+//    NumberInputExample2({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Card(
+//       elevation: 4,
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(12),
+//       ),
+//       child: const Padding(
+//         padding: EdgeInsets.all(8.0),
+//         child: TextField(
+//           keyboardType: TextInputType.number,
+//           decoration: InputDecoration(
+//             labelText: 'Enter number',
+//             border: OutlineInputBorder(),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

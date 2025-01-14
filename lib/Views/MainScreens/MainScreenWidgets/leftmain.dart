@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutterwidgethub/Models/MainWidgets/WidgetTilesData.dart';
@@ -41,32 +40,32 @@ class _LeftMainState extends State<LeftMain> {
       children: [
         TextFormField(
           onChanged: (query) => filterWidgets(query),
-          style: TextStyle(color: Colors.white, fontSize: 20),
+          style: const TextStyle(color: Colors.white, fontSize: 20),
           controller: search,
           decoration: InputDecoration(
-              labelStyle: TextStyle(color: Colors.white, fontSize: 20),
+              labelStyle: const TextStyle(color: Colors.white, fontSize: 20),
               hintText: "Search Widget",
-              hintStyle: TextStyle(
-                  color: const Color.fromARGB(255, 214, 214, 214),
+              hintStyle: const TextStyle(
+                  color: Color.fromARGB(255, 214, 214, 214),
                   fontSize: 18),
-              prefixIcon: Icon(
+              prefixIcon: const Icon(
                 Iconsax.search_normal,
                 color: Colors.white,
               ),
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
-                      color: const Color.fromARGB(255, 168, 207, 233),
+                  borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 168, 207, 233),
                       width: 1)),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
-                      color: const Color.fromARGB(255, 168, 207, 233),
+                  borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 168, 207, 233),
                       width: 3)),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
-                      color: const Color.fromARGB(255, 168, 207, 233)))),
+                  borderSide: const BorderSide(
+                      color: Color.fromARGB(255, 168, 207, 233)))),
         ),
         Expanded(
           child: Obx(

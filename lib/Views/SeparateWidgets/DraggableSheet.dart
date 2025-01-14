@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../../Styles/styles.dart';
 import '../MainScreens/CommonWidgets.dart';
@@ -262,7 +260,9 @@ class DraggablesheetPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Draggable Scrollable Sheet",
+                              Number: 30,
                               code: '''
 class ModernDraggableScrollableSheet extends StatelessWidget {
   @override
@@ -365,7 +365,9 @@ class ModernDraggableScrollableSheet extends StatelessWidget {
                                       ModernStyles.subtitleTextStyle,
                                   buttonTextStyle: ModernStyles.buttonTextStyle,
                                   activeColor: ModernStyles.activeColor)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Draggable Scrollable Sheet",
+                              Number: 30,
                               code: '''
 class ClassicDraggableScrollableSheet extends StatelessWidget {
   @override
@@ -461,7 +463,9 @@ class ClassicDraggableScrollableSheet extends StatelessWidget {
                                   buttonTextStyle:
                                       ClassicStyles.buttonTextStyle,
                                   activeColor: ClassicStyles.activeColor)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Draggable Scrollable Sheet",
+                              Number: 30,
                               code: '''
 class ElegantDraggableScrollableSheet extends StatelessWidget {
   @override
@@ -570,7 +574,8 @@ class ElegantDraggableScrollableSheet extends StatelessWidget {
                                   bodyTextStyle: ElegantStyles.bodyTextStyle,
                                   subtitleTextStyle:
                                       ElegantStyles.subtitleTextStyle,
-                                  buttonTextStyle: ElegantStyles.buttonTextStyle,
+                                  buttonTextStyle:
+                                      ElegantStyles.buttonTextStyle,
                                   activeColor: ElegantStyles.activeColor)),
                         ],
                       ),
@@ -721,11 +726,11 @@ class _DraggableScrollableSheetExampleState
     return Center(
       child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.blue),
-          foregroundColor: MaterialStateProperty.all(Colors.white),
-          padding: MaterialStateProperty.all(
+          backgroundColor: WidgetStateProperty.all(Colors.blue),
+          foregroundColor: WidgetStateProperty.all(Colors.white),
+          padding: WidgetStateProperty.all(
               const EdgeInsets.symmetric(horizontal: 16, vertical: 12)),
-          shape: MaterialStateProperty.all(
+          shape: WidgetStateProperty.all(
             const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(12)),
             ),

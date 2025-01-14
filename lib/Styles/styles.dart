@@ -32,11 +32,11 @@ class ModernStyles {
   );
 
   // Button Style
-  static final ButtonStyle buttonStyle = ButtonStyle(
+  static const ButtonStyle buttonStyle = ButtonStyle(
     backgroundColor: WidgetStatePropertyAll(activeColor),
     foregroundColor: WidgetStatePropertyAll(Colors.white),
-    padding: const WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 16, vertical: 12)),
-    shape: const WidgetStatePropertyAll(RoundedRectangleBorder(
+    padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 16, vertical: 12)),
+    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
       borderRadius: borderRadius,
     )),
   );
@@ -110,11 +110,11 @@ class ClassicStyles {
   );
 
   // Button Style
-  static final ButtonStyle buttonStyle = ButtonStyle(
+  static const ButtonStyle buttonStyle = ButtonStyle(
     backgroundColor: WidgetStatePropertyAll(activeColor),
     foregroundColor: WidgetStatePropertyAll(Colors.white),
-    padding: const WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 16, vertical: 8)),
-    shape: const WidgetStatePropertyAll(RoundedRectangleBorder(
+    padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 16, vertical: 8)),
+    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
       borderRadius: borderRadius,
     )),
   );
@@ -188,11 +188,11 @@ class ElegantStyles {
   );
 
   // Button Style
-  static final ButtonStyle buttonStyle = ButtonStyle(
+  static const ButtonStyle buttonStyle = ButtonStyle(
     backgroundColor: WidgetStatePropertyAll(activeColor),
     foregroundColor: WidgetStatePropertyAll(Colors.white),
-    padding: const WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 20, vertical: 12)),
-    shape: const WidgetStatePropertyAll(RoundedRectangleBorder(
+    padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 20, vertical: 12)),
+    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
       borderRadius: borderRadius,
     )),
     elevation: WidgetStatePropertyAll(5),

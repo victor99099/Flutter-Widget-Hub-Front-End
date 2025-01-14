@@ -190,7 +190,10 @@ class DatepickerPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreviewWithSave(
+              name: "Date Picker",
+              number: 25,
+              code: '''
 class DatePicker extends StatefulWidget {
   const DatePicker({Key? key}) : super(key: key);
 
@@ -247,7 +250,7 @@ class _DatePickerState extends State<DatePicker> {
     );
   }
 }
-''', widget: const DatePickerExample()),
+''', widget: DatePickerExample()),
             const SizedBox(
               height: 20,
             ),
@@ -289,7 +292,7 @@ class _DatePickerState extends State<DatePicker> {
             const SizedBox(
               height: 10,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreview(code: '''
 class ScrollDatePickerWidget extends StatefulWidget {
   @override
   _ScrollDatePickerWidgetState createState() => _ScrollDatePickerWidgetState();

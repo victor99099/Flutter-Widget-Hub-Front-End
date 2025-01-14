@@ -253,7 +253,9 @@ class PopoverPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 4,
+                              name: "PopOver",
                               code: '''
 class Popover extends StatelessWidget {
   const Popover({
@@ -300,7 +302,9 @@ class Popover extends StatelessWidget {
                                   bodyTextStyle: ModernStyles.bodyTextStyle,
                                   borderRadius: ModernStyles.borderRadius,
                                   color: ModernStyles.activeColor)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 4,
+                              name: "PopOver",
                               code: '''
 class Popover extends StatelessWidget {
   const Popover({
@@ -343,7 +347,9 @@ class Popover extends StatelessWidget {
                                   bodyTextStyle: ClassicStyles.bodyTextStyle,
                                   borderRadius: ClassicStyles.borderRadius,
                                   color: ClassicStyles.activeColor)),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              Number: 4,
+                              name: "PopOver",
                               code: '''
 class Popover extends StatelessWidget {
   const Popover({
@@ -434,7 +440,7 @@ class Popover extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreview(code: '''
 class PopoverCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -544,8 +550,6 @@ class PopoverExample extends StatelessWidget {
     );
   }
 }
-
-
 
 class PopoverCardExample extends StatelessWidget {
   const PopoverCardExample({super.key});
@@ -667,7 +671,8 @@ class _PortalCardExampleState extends State<PortalCardExample> {
                   ],
                 ),
               ),
-              child: const SizedBox.shrink(), // Empty space for portal placement
+              child:
+                  const SizedBox.shrink(), // Empty space for portal placement
             ),
           ],
         ),

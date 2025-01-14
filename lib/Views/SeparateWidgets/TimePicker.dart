@@ -140,7 +140,10 @@ class TimepickerPage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreviewWithSave(
+              number: 26,
+              name: "Time Picker",
+              code: '''
 class TimePickerExample extends StatefulWidget {
   const TimePickerExample({Key? key}) : super(key: key);
 
@@ -194,7 +197,7 @@ class _TimePickerExampleState extends State<TimePickerExample> {
     );
   }
 }
-''', widget: const TimePickerExample()),
+''', widget: TimePickerExample()),
             const SizedBox(
               height: 20,
             ),
@@ -236,7 +239,7 @@ class _TimePickerExampleState extends State<TimePickerExample> {
             const SizedBox(
               height: 10,
             ),
-            SingleCodeAndPreview(code: '''
+            const SingleCodeAndPreview(code: '''
 class WheelPickerExample extends StatefulWidget {
   const WheelPickerExample({super.key});
 
@@ -346,7 +349,7 @@ class _WheelPickerExampleState extends State<WheelPickerExample> {
     );
   }
 }
-''', widget: const WheelPickerExample()),
+''', widget: WheelPickerExample()),
             const SizedBox(
               height: 10,
             ),

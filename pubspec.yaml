@@ -85,7 +85,12 @@ dependencies:
   spincircle_bottom_bar: ^2.0.0
   pandabar: ^0.1.2
   ionicons: ^0.2.2
+  url_launcher: ^6.3.1
+  shared_preferences: ^2.3.5
+  google_sign_in: ^6.2.2
+  flutter_easyloading: ^3.0.5
 
+  http: any
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -119,6 +124,8 @@ flutter:
     - assets/Background.jpeg
     - assets/WidgetHubLogo.png
     - assets/shortLogoWhite.png
+    - assets/MicrosoftLogo.png
+    - assets/google.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

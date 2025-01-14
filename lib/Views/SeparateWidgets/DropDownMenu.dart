@@ -1,6 +1,5 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_dropdown/flutter_dropdown.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -189,7 +188,9 @@ class _DropDownPageState extends State<DropDownPage> {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                            Number: 1,
+                            name: "Drop-Down Menu",
                             swidget: DropdownExample(
                               borderRadius: ModernStyles.borderRadius,
                               textStyle: ModernStyles.bodyTextStyle,
@@ -254,7 +255,9 @@ class _DropdownMenuState extends State<DropdownMenu> {
   }
 }''',
                           ),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                            Number: 1,
+                            name: "Drop-Down Menu",
                             swidget: DropdownExample(
                               borderRadius: ClassicStyles.borderRadius,
                               textStyle: ClassicStyles.bodyTextStyle,
@@ -307,7 +310,9 @@ class _DropdownMenuState extends State<DropdownMenu> {
   }
 }''',
                           ),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                            Number: 1,
+                            name: "Drop-Down Menu",
                             swidget: DropdownExample(
                               borderRadius: ElegantStyles.borderRadius,
                               textStyle: ElegantStyles.bodyTextStyle,
@@ -408,7 +413,7 @@ class _DropdownMenuState extends State<DropdownMenu> {
             const SizedBox(
               height: 10,
             ),
-            SingleCodeAndPreview(
+            const SingleCodeAndPreview(
                 code:
                     '''import 'package:flutter_dropdown/flutter_dropdown.dart';
 class FlutterDropdownExample extends StatelessWidget {
@@ -488,7 +493,7 @@ class FlutterDropdownExample extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            SingleCodeAndPreview(
+            const SingleCodeAndPreview(
                 code:
                     '''import 'package:dropdown_button2/dropdown_button2.dart';
 class DropdownButton_2 extends StatefulWidget {
@@ -584,7 +589,6 @@ class _DropdownButton_2State extends State<DropdownButton_2> {
                   fontSize: 20,
                   fontWeight: FontWeight.w500),
             ),
-
             const SizedBox(
               height: 20,
             ),
@@ -601,7 +605,6 @@ class _DropdownButton_2State extends State<DropdownButton_2> {
                 ["Dropdown Animation", "❌", "✅"],
               ],
             ),
-           
             const SizedBox(
               height: 50,
             ),

@@ -247,7 +247,9 @@ class RadioPage extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.58,
                       child: TabBarView(
                         children: [
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Radio Group",
+                              Number: 23,
                               code: '''
 class RadioGroup extends StatefulWidget {
   const RadioGroup({Key? key}) : super(key: key);
@@ -313,7 +315,9 @@ class _RadioGroupState extends State<RadioGroup> {
                                 borderRadius: ModernStyles.borderRadius,
                                 bodyTextStyle: ModernStyles.bodyTextStyle,
                               )),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Radio Group",
+                              Number: 23,
                               code: '''
 class RadioGroup extends StatefulWidget {
   const RadioGroup({Key? key}) : super(key: key);
@@ -379,7 +383,9 @@ class _RadioGroupState extends State<RadioGroup> {
                                 borderRadius: ClassicStyles.borderRadius,
                                 bodyTextStyle: ClassicStyles.bodyTextStyle,
                               )),
-                          CodeAndPreview(
+                          CodeAndPreviewWithSave(
+                              name: "Radio Group",
+                              Number: 23,
                               code: '''
 class RadioGroup extends StatefulWidget {
   const RadioGroup({Key? key}) : super(key: key);
@@ -532,7 +538,7 @@ class _RadioGroupExampleState extends State<RadioGroupExample> {
           ),
         ],
       ),
-    ).paddingOnly(top: 100,left: 50,right: 150, bottom : 50);
+    ).paddingOnly(top: 100, left: 50, right: 150, bottom: 50);
   }
 }
 
