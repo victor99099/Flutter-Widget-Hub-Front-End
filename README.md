@@ -1,7 +1,9 @@
 <<<<<<< HEAD
 # flutterwidgethub
 
-A new Flutter project.
+flutter Widget Hub is a Flutter-based application that allows users to explore, preview, and copy the code of specific Flutter built-in widgets. Additionally, it supports previewing and viewing code for widgets from select external packages. Currently, in Beta Version 1 (Test Mode), the project aims to expand its functionality by enabling user authentication, project creation, and the ability to save favorite widgets for future reference.
+
+The front-end is developed entirely in Flutter and deployed on Firebase. Stay tuned for more updates as we enhance the app to deliver an even better experience!
 
 ## Getting Started
 
