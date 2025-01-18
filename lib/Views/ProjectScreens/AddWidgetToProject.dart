@@ -155,6 +155,55 @@ class AddWidgetToProject extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10.0),
                       child: ElevatedButton(
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              content: AddProjectWidget(),
+                              backgroundColor: Colors.transparent,
+                            ),
+                          );
+                        },
+                        style: ButtonStyle(
+                          elevation: WidgetStateProperty.all(0),
+                          shape: WidgetStateProperty.all(
+                            RoundedRectangleBorder(
+                              side: BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          backgroundColor: WidgetStateProperty.all(
+                            const Color.fromARGB(255, 166, 201, 228)
+                                .withOpacity(0),
+                          ),
+                        ),
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.add_box_rounded,
+                                size: 25,
+                                color: Colors.white,
+                              ),
+                              SizedBox(width: 10),
+                              Text(
+                                "Create New Project",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10.0),
+                      child: ElevatedButton(
                         onPressed: () async {
                           await projectController.addWidget(
                             projectController
@@ -191,7 +240,7 @@ class AddWidgetToProject extends StatelessWidget {
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
-                                  fontSize: 20,
+                                  fontSize: 16,
                                 ),
                               ),
                             ],

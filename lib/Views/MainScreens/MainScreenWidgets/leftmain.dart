@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutterwidgethub/Models/MainWidgets/WidgetTilesData.dart';
 import 'package:get/get.dart';
@@ -46,8 +45,7 @@ class _LeftMainState extends State<LeftMain> {
               labelStyle: const TextStyle(color: Colors.white, fontSize: 20),
               hintText: "Search Widget",
               hintStyle: const TextStyle(
-                  color: Color.fromARGB(255, 214, 214, 214),
-                  fontSize: 18),
+                  color: Color.fromARGB(255, 214, 214, 214), fontSize: 18),
               prefixIcon: const Icon(
                 Iconsax.search_normal,
                 color: Colors.white,
@@ -55,13 +53,11 @@ class _LeftMainState extends State<LeftMain> {
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
-                      color: Color.fromARGB(255, 168, 207, 233),
-                      width: 1)),
+                      color: Color.fromARGB(255, 168, 207, 233), width: 1)),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
-                      color: Color.fromARGB(255, 168, 207, 233),
-                      width: 3)),
+                      color: Color.fromARGB(255, 168, 207, 233), width: 3)),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
@@ -70,21 +66,25 @@ class _LeftMainState extends State<LeftMain> {
         Expanded(
           child: Obx(
             () => ListView.builder(
-              // physics: NeverScrollableScrollPhysics(),
-                itemCount: filteredWidgets.length,
+                // physics: NeverScrollableScrollPhysics(),
+                itemCount: filteredWidgets.length, // Use filteredWidgets length
                 shrinkWrap: true,
                 itemBuilder: (BuildContext context, index) {
+                  final filteredWidget = filteredWidgets[index];
+                  final originalIndex = allWidgets
+                      .indexOf(filteredWidget); // Get the original index
                   return GestureDetector(
                     onTap: () {
-                      pageController.SelectedPage.value = index;
+                      pageController.SelectedPage.value =
+                          originalIndex; // Use the original index for selection
                     },
                     child: HoverableRow(
-                      index: index,
-                      title: filteredWidgets[index],
-                      icon:
-                          widgetIcons[filteredWidgets[index]] ?? Icons.widgets,
-                      iconColor: widgetIconColors[filteredWidgets[index]] ??
-                          Colors.black,
+                      index:
+                          originalIndex, // Use the original index for HoverableRow
+                      title: filteredWidget,
+                      icon: widgetIcons[filteredWidget] ?? Icons.widgets,
+                      iconColor:
+                          widgetIconColors[filteredWidget] ?? Colors.black,
                     ),
                   );
                 }),

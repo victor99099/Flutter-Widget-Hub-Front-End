@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutterwidgethub/Ccontrollers/GoogleSignInController.dart';
+import 'package:flutterwidgethub/Ccontrollers/HelpController.dart';
 import 'package:flutterwidgethub/Ccontrollers/UserDataController.dart';
 import 'package:flutterwidgethub/Views/MainScreens/MainScreenWidgets/LoginWidget.dart';
 import 'package:flutterwidgethub/Views/MainScreens/MainScreenWidgets/leftmain.dart';
@@ -149,8 +150,12 @@ class _MainScreenState extends State<MainScreen> {
                                   position: PopupMenuPosition.under,
                                   color: const Color.fromARGB(255, 3, 14, 24),
                                   onSelected: (String value) async {
-                                    await googleAuthService.logout();
-                                    
+                                    if(value == "Item 1"){
+                                      askQuestionOnWhatsapp();
+                                    }
+                                    else{
+                                      await googleAuthService.logout();
+                                    }     
                                   },
                                   icon: CircleAvatar(
                                     backgroundColor: Colors.white,
@@ -171,13 +176,36 @@ class _MainScreenState extends State<MainScreen> {
                                     return [
                                       PopupMenuItem<String>(
                                         value: 'Item 1',
-                                        child: Text(
-                                          'Log Out',
-                                          style: GoogleFonts.openSans(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.white,
-                                          ),
+                                        child: Row(
+                                          spacing: 5,
+                                          children: [
+                                            Icon(Icons.support_agent, color: Colors.white,),
+                                            Text(
+                                              'Help',
+                                              style: GoogleFonts.openSans(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      PopupMenuItem<String>(
+                                        value: 'Item 2',
+                                        child: Row(
+                                          spacing: 5,
+                                          children: [
+                                            Icon(Icons.logout_outlined, color: Colors.white,),
+                                            Text(
+                                              'Log Out',
+                                              style: GoogleFonts.openSans(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ];
@@ -291,37 +319,6 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ],
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class Popover extends StatelessWidget {
-  const Popover({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(12)),
-      ),
-      child: PopupMenuButton<String>(
-        icon: const Icon(Icons.more_vert, color: Colors.blue),
-        itemBuilder: (context) => [
-          PopupMenuItem(
-              value: 'Item 1',
-              child: Text(
-                'Item 1',
-                style: GoogleFonts.openSans(
-                  fontSize: 16,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.black87,
-                ),
-              )),
         ],
       ),
     );

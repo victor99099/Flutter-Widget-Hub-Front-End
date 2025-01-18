@@ -1,83 +1,83 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class Style {
-  // General Styling
-  static const BorderRadius borderRadius = BorderRadius.all(Radius.circular(12));
-  static const Color baseColor = Colors.grey;
-  static const Color activeColor = Colors.blue;
-  static const Color backgroundColor = Colors.white;
 
-  // Text Styles with Google Fonts
-  static final TextStyle headingTextStyle = GoogleFonts.roboto(
-    fontSize: 24,
-    fontWeight: FontWeight.bold,
-    color: Colors.blue,
-  );
-  static final TextStyle bodyTextStyle = GoogleFonts.openSans(
-    fontSize: 16,
-    fontWeight: FontWeight.normal,
-    color: Colors.black87,
-  );
-  static final TextStyle buttonTextStyle = GoogleFonts.openSans(
-    fontSize: 16,
-    fontWeight: FontWeight.normal,
-    color: Colors.white,
-  );
-  static final TextStyle subtitleTextStyle = 
-  GoogleFonts.lato(
-    fontSize: 14,
-    fontWeight: FontWeight.w400,
-    color: Colors.grey,
-  );
 
-  // Button Style
-  static const ButtonStyle buttonStyle = ButtonStyle(
-    backgroundColor: WidgetStatePropertyAll(activeColor),
-    foregroundColor: WidgetStatePropertyAll(Colors.white),
-    padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 16, vertical: 12)),
-    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-      borderRadius: borderRadius,
-    )),
-  );
+// class Style {
+//   // General Styling
+//   static const BorderRadius borderRadius = BorderRadius.all(Radius.circular(12));
+//   static const Color baseColor = Colors.grey;
+//   static const Color activeColor = Colors.blue;
+//   static const Color backgroundColor = Colors.white;
 
-  // Input Decoration
-  static const InputDecoration inputDecoration = InputDecoration(
-    filled: true,
-    fillColor: Color(0xFFF0F0F0),
-    border: OutlineInputBorder(
-      borderRadius: borderRadius,
-      borderSide: BorderSide(color: baseColor),
-    ),
-    enabledBorder: OutlineInputBorder(
-      borderRadius: borderRadius,
-      borderSide: BorderSide(color: baseColor),
-    ),
-    focusedBorder: OutlineInputBorder(
-      borderRadius: borderRadius,
-      borderSide: BorderSide(color: activeColor,width: 4),
-    ),
-    hintStyle: TextStyle(color: Colors.grey),
-    hintText: "Enter",
-    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-  );
+//   // Text Styles with Google Fonts
+//   static final TextStyle headingTextStyle = GoogleFonts.roboto(
+//     fontSize: 24,
+//     fontWeight: FontWeight.bold,
+//     color: Colors.blue,
+//   );
+//   static final TextStyle bodyTextStyle = GoogleFonts.openSans(
+//     fontSize: 16,
+//     fontWeight: FontWeight.normal,
+//     color: Colors.black87,
+//   );
+//   static final TextStyle buttonTextStyle = GoogleFonts.openSans(
+//     fontSize: 16,
+//     fontWeight: FontWeight.normal,
+//     color: Colors.white,
+//   );
+//   static final TextStyle subtitleTextStyle = 
+//   GoogleFonts.lato(
+//     fontSize: 14,
+//     fontWeight: FontWeight.w400,
+//     color: Colors.grey,
+//   );
 
-  // Shadows
-  static const List<BoxShadow> boxShadow = [
-    BoxShadow(
-      color: Colors.black12,
-      blurRadius: 8,
-      offset: Offset(0, 4),
-    ),
-  ];
+//   // Button Style
+//   static const ButtonStyle buttonStyle = ButtonStyle(
+//     backgroundColor: WidgetStatePropertyAll(activeColor),
+//     foregroundColor: WidgetStatePropertyAll(Colors.white),
+//     padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 16, vertical: 12)),
+//     shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+//       borderRadius: borderRadius,
+//     )),
+//   );
 
-  // Card Style
-  static const BoxDecoration cardDecoration = BoxDecoration(
-    color: backgroundColor,
-    borderRadius: borderRadius,
-    boxShadow: boxShadow,
-  );
-}
+//   // Input Decoration
+//   static const InputDecoration inputDecoration = InputDecoration(
+//     filled: true,
+//     fillColor: Color(0xFFF0F0F0),
+//     border: OutlineInputBorder(
+//       borderRadius: borderRadius,
+//       borderSide: BorderSide(color: baseColor),
+//     ),
+//     enabledBorder: OutlineInputBorder(
+//       borderRadius: borderRadius,
+//       borderSide: BorderSide(color: baseColor),
+//     ),
+//     focusedBorder: OutlineInputBorder(
+//       borderRadius: borderRadius,
+//       borderSide: BorderSide(color: activeColor,width: 4),
+//     ),
+//     hintStyle: TextStyle(color: Colors.grey),
+//     hintText: "Enter",
+//     contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+//   );
+
+//   // Shadows
+//   static const List<BoxShadow> boxShadow = [
+//     BoxShadow(
+//       color: Colors.black12,
+//       blurRadius: 8,
+//       offset: Offset(0, 4),
+//     ),
+//   ];
+
+//   // Card Style
+//   static const BoxDecoration cardDecoration = BoxDecoration(
+//     color: backgroundColor,
+//     borderRadius: borderRadius,
+//     boxShadow: boxShadow,
+//   );
+// }
 
 // class Style {
 //   // General Styling

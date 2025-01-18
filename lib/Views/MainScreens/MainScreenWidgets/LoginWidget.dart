@@ -324,7 +324,7 @@ class PasswordField extends StatelessWidget {
 
 class MicrosoftLogin extends StatelessWidget {
   MicrosoftLogin({super.key});
-  MicrosoftLoginController microsoftLoginController =
+  final MicrosoftLoginController microsoftLoginController =
       Get.put(MicrosoftLoginController());
 
   @override
@@ -363,7 +363,7 @@ class MicrosoftLogin extends StatelessWidget {
 }
 class GoogleLogin extends StatelessWidget {
   GoogleLogin({super.key});
-  GoogleAuthService googleAuthService = GoogleAuthService();
+  final GoogleAuthService googleAuthService = GoogleAuthService();
 
   @override
   Widget build(BuildContext context) {

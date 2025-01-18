@@ -286,35 +286,39 @@ class _StepperExampleState extends State<StepperExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      shape: const RoundedRectangleBorder(
-        borderRadius: ModernStyles.borderRadius,
-      ),
-      child: Stepper(
-        currentStep: currentStep,
-        onStepContinue:
-            currentStep < 2 ? () => setState(() => currentStep += 1) : null,
-        onStepCancel:
-            currentStep > 0 ? () => setState(() => currentStep -= 1) : null,
-        steps: [
-          Step(
-            title: const Text('Step 1'),
-            content: const Text('This is step 1 content'),
-            isActive: currentStep >= 0,
-          ),
-          Step(
-            title: const Text('Step 2'),
-            content: const Text('This is step 2 content'),
-            isActive: currentStep >= 1,
-          ),
-          Step(
-            title: const Text('Step 3'),
-            content: const Text('This is step 3 content'),
-            isActive: currentStep >= 2,
-          ),
-        ],
-      ),
-    ).paddingOnly(right: 200);
+    return SizedBox(
+      // width: Get.width * 0.3,
+      height: Get.height * 0.55,
+      child: Card(
+        elevation: 4,
+        shape: const RoundedRectangleBorder(
+          borderRadius: ModernStyles.borderRadius,
+        ),
+        child: Stepper(
+          currentStep: currentStep,
+          onStepContinue:
+              currentStep < 2 ? () => setState(() => currentStep += 1) : null,
+          onStepCancel:
+              currentStep > 0 ? () => setState(() => currentStep -= 1) : null,
+          steps: [
+            Step(
+              title: const Text('Step 1'),
+              content: const Text('This is step 1 content'),
+              isActive: currentStep >= 0,
+            ),
+            Step(
+              title: const Text('Step 2'),
+              content: const Text('This is step 2 content'),
+              isActive: currentStep >= 1,
+            ),
+            Step(
+              title: const Text('Step 3'),
+              content: const Text('This is step 3 content'),
+              isActive: currentStep >= 2,
+            ),
+          ],
+        ),
+      ).paddingOnly(right: 200, top: 80),
+    );
   }
 }

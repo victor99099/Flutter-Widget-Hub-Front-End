@@ -1,12 +1,15 @@
+import 'package:archive/archive_io.dart';
 import 'package:elegant_notification/elegant_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutterwidgethub/Models/Constants/AppConstant.dart';
+import 'package:flutterwidgethub/Models/Entities/Widgets.dart';
 import 'package:get/get.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../Models/Entities/Projects.dart';
 import 'UserDataController.dart';
+import 'dart:html' as html;
 // import 'models.dart'; // Import your models
 
 class ProjectController extends GetxController {
@@ -124,13 +127,68 @@ class ProjectController extends GetxController {
     } finally {}
   }
 
+  Future<void> updateProject(int projId, int userId, String name, String style,
+      BuildContext context) async {
+    try {
+      // API endpoint
+      EasyLoading.show();
+      final url = Uri.parse('http://${Appconstant.Domain}/projects/$projId');
+      final response = await http.put(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({
+          'user_id': userId,
+          'name': name,
+          'style': style,
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        fetchProjects(userId);
+        EasyLoading.dismiss();
+        ElegantNotification.success(
+          title: const Text("Success"),
+          description: const Text("Project Updated Successfully"),
+          onDismiss: () {
+            print('Message when the notification is dismissed');
+          },
+          onNotificationPressed: () {
+            print('Message when the notification is pressed');
+          },
+          isDismissable: true,
+        ).show(context);
+      } else {
+        // Handle error response
+        final error = json.decode(response.body)['error'];
+        EasyLoading.dismiss();
+        ElegantNotification.error(
+          width: 360,
+          position: Alignment.topRight,
+          title: const Text('Error'),
+          description: Text('$error'),
+          onDismiss: () {},
+        ).show(context);
+        print(error);
+      }
+    } catch (e) {
+      EasyLoading.dismiss();
+      ElegantNotification.error(
+        width: 360,
+        position: Alignment.topRight,
+        title: const Text('Error'),
+        description: Text('$e'),
+        onDismiss: () {},
+      ).show(context);
+      print(e);
+    } finally {}
+  }
+
   Future<void> deleteProject(
       int userId, int projectId, BuildContext context) async {
     try {
       // API endpoint
       EasyLoading.show();
-      final url =
-          Uri.parse('http://${Appconstant.Domain}/projects/$projectId');
+      final url = Uri.parse('http://${Appconstant.Domain}/projects/$projectId');
       final response = await http.delete(
         url,
         headers: {'Content-Type': 'application/json'},
@@ -241,29 +299,112 @@ class ProjectController extends GetxController {
     } finally {}
   }
 
-  // Fetch a single project by project ID for a specific user
-  // Future<void> fetchProject(int userId, int projectId) async {
-  //   final url = Uri.parse('http://${Appconstant.Domain}/$userId/projects/$projectId'); // Replace with actual URL
-  //   try {
-  //     final response = await http.get(url);
-  //     if (response.statusCode == 200) {
-  //       Map<String, dynamic> projectData = json.decode(response.body);
-  //       // Add the fetched project to the projects list
-  //       Project project = Project.fromMap(projectData);
-  //       var existingProjectIndex = projects.indexWhere(
-  //         (proj) => proj.projectId == project.projectId,
-  //       );
-  //       if (existingProjectIndex != -1) {
-  //         projects[existingProjectIndex] = project; // Update existing project
-  //       } else {
-  //         projects.add(project); // Add new project
-  //       }
-  //     } else {
-  //       throw Exception('Failed to load project');
-  //     }
-  //   } catch (error) {
-  //     print('Error fetching project: $error');
-  //     // Handle the error (e.g., show a message to the user)
-  //   }
-  // }
+  Future<void> deleteWidget(int widgetId, BuildContext context) async {
+    try {
+      // API endpoint
+      EasyLoading.show();
+
+      final url = Uri.parse('http://${Appconstant.Domain}/widgets/$widgetId');
+      final response = await http.delete(
+        url,
+        headers: {'Content-Type': 'application/json'},
+      );
+
+      if (response.statusCode == 200) {
+        fetchProjects(int.parse(Get.find<UserController>().user.value!.id));
+        EasyLoading.dismiss();
+        ElegantNotification.success(
+          title: const Text("Success"),
+          description: const Text("Widget Removed Successfully"),
+          onDismiss: () {
+            print('Message when the notification is dismissed');
+          },
+          onNotificationPressed: () {
+            print('Message when the notification is pressed');
+          },
+          isDismissable: true,
+        ).show(context);
+        // Navigator.pop(context);
+      } else {
+        // Handle error response
+        final error = json.decode(response.body)['error'];
+        EasyLoading.dismiss();
+        ElegantNotification.error(
+          width: 360,
+          position: Alignment.topRight,
+          title: const Text('Error'),
+          description: Text('$error'),
+          onDismiss: () {},
+        ).show(context);
+      }
+    } catch (e) {
+      EasyLoading.dismiss();
+      ElegantNotification.error(
+        width: 360,
+        position: Alignment.topRight,
+        title: const Text('Error'),
+        description: Text('$e'),
+        onDismiss: () {},
+      ).show(context);
+    } finally {}
+  }
+
+  Future<void> downloadWidgetCodesByIndex(
+      int projectIndex, String styleCode) async {
+    try {
+      // Retrieve the project directly using the index
+      if (projectIndex < 0 || projectIndex >= projects.length) {
+        throw Exception('Invalid project index: $projectIndex');
+      }
+      final project = projects[projectIndex];
+
+      // Create a ZIP archive
+      final archive = Archive();
+
+      for (var widget in project.widgets) {
+        final widgetCode =
+            "import 'package:flutter/material.dart'; \nimport 'Style.dart'; \n\n${widgetsCodeNumber[widget.widgetCode - 1]}";
+        // final widgetCode =
+        //     widget.widgetCode.toString(); // Assuming widgetCode is the code
+        final widgetFileName =
+            '${widget.widgetName}_${widget.widgetNumber}.dart';
+
+        // Add each widget's code as a file in the archive
+        archive.addFile(
+          ArchiveFile(
+              widgetFileName, widgetCode.length, utf8.encode(widgetCode)),
+        );
+      }
+
+      // Add style code as a separate file
+      final styleCodeFile = "import 'package:flutter/material.dart'; \nimport 'package:google_fonts/google_fonts.dart'; \n\n${styleCode}";
+      final styleFileName = 'Style.dart';
+      archive.addFile(
+        ArchiveFile(
+            styleFileName, styleCodeFile.length, utf8.encode(styleCodeFile)),
+      );
+
+      // Encode the archive as a ZIP file
+      final zipBytes = ZipEncoder().encode(archive);
+      final zipBase64 = base64Encode(zipBytes!);
+
+      // Create a downloadable link
+      final zipFileName = '${project.projectName}_widget_codes.zip';
+      final anchor = html.AnchorElement(
+        href: 'data:application/zip;base64,$zipBase64',
+      )
+        ..target = 'blank'
+        ..download = zipFileName;
+
+      // Trigger the download
+      anchor.click();
+      anchor.remove();
+
+      print(
+          'Widget codes for project "${project.projectName}" downloaded as $zipFileName.');
+    } catch (error) {
+      print(
+          'Error downloading widget codes for project at index $projectIndex: $error');
+    }
+  }
 }

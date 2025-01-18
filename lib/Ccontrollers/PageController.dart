@@ -24,34 +24,33 @@ import 'package:flutterwidgethub/Views/SeparateWidgets/ToolTip.dart';
 import 'package:flutterwidgethub/Views/SeparateWidgets/Transition.dart';
 import 'package:get/get.dart';
 
-class CustomPageController extends GetxController{
+class CustomPageController extends GetxController {
   RxInt SelectedPage = 0.obs;
 
   final screens = [
-      const DropDownPage(),
-      DisclosurePage(),
-      DialogPage(),
-      PopoverPage(),
-      TabsPage(),
-      const TransitionPage(),
-      FormPage(),
-      ButtonPage(),
-      CheckboxPage(),
-      const ComboboxPage(),
-      InputPage(),
-      ListboxPage(),
-      RadioPage(),
-      SwitchPage(),
-      DatepickerPage(),
-      TimepickerPage(),
-      NotificationPage(),
-      StepperPage(),
-      TooltipPage(),
-       DraggablesheetPage(),
-       IndicatorPage(),
-       SliderPage(),
-      const ImagesliderPage(),
-       NavigationPage()
-
+    const DropDownPage(),
+    DisclosurePage(),
+    DialogPage(),
+    PopoverPage(),
+    TabsPage(),
+    const TransitionPage(),
+    FormPage(),
+    ButtonPage(),
+    CheckboxPage(),
+    const ComboboxPage(),
+    InputPage(),
+    ListboxPage(),
+    RadioPage(),
+    SwitchPage(),
+    DatepickerPage(),
+    TimepickerPage(),
+    NotificationPage(),
+    StepperPage(),
+    TooltipPage(),
+    DraggablesheetPage(),
+    IndicatorPage(),
+    SliderPage(),
+    const ImagesliderPage(),
+    NavigationPage()
   ];
 }

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterwidgethub/Views/MainScreens/CommonWidgets.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../Styles/styles.dart';
@@ -574,7 +575,7 @@ class _ButtonImageSliderExampleState extends State<ButtonImageSliderExample> {
           ],
         ),
       ),
-    );
+    ).paddingOnly(top: 70);
   }
 }
 
@@ -688,7 +689,7 @@ class _AutoImageSliderExampleState extends State<AutoImageSliderExample> {
           ],
         ),
       ),
-    );
+    ).paddingOnly(top: 70);
   }
 }
 class ButtonImageSliderExample2 extends StatefulWidget {

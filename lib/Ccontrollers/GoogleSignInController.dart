@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:elegant_notification/elegant_notification.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutterwidgethub/Views/MainScreens/mainScreen.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
@@ -21,7 +22,9 @@ class GoogleAuthService {
 
   Future<User?> initiateGoogleSignIn(BuildContext context) async {
     try {
+
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      EasyLoading.show();
       if (googleUser == null) {
         print('User canceled the sign-in process.');
         ElegantNotification.error(
@@ -31,6 +34,7 @@ class GoogleAuthService {
           description: const Text('No Account Selected'),
           onDismiss: () {},
         ).show(context);
+        EasyLoading.dismiss();
         return null;
       }
 
@@ -47,9 +51,10 @@ class GoogleAuthService {
           description: const Text('No Account Selected'),
           onDismiss: () {},
         ).show(context);
+        EasyLoading.dismiss();
         return null;
       }
-
+      EasyLoading.dismiss();
       return await sendTokenToBackend(accessToken, context);
     } catch (error) {
       print('$error');
@@ -60,6 +65,7 @@ class GoogleAuthService {
         description: Text('$error'),
         onDismiss: () {},
       ).show(context);
+      EasyLoading.dismiss();
       return null;
     }
   }
@@ -67,6 +73,7 @@ class GoogleAuthService {
   Future<User?> sendTokenToBackend(
       String accessToken, BuildContext context) async {
     try {
+      EasyLoading.show();
       final response = await http.post(
         Uri.parse('http://${Appconstant.Domain}/users/google-signin'),
         headers: {'Content-Type': 'application/json'},
@@ -79,6 +86,7 @@ class GoogleAuthService {
         if (responseData is! Map<String, dynamic> ||
             responseData['user'] == null) {
           print('Invalid response format or missing user data.');
+          EasyLoading.dismiss();
           return null;
         }
 
@@ -99,6 +107,7 @@ class GoogleAuthService {
           isDismissable: true,
         ).show(context);
         Get.offAll(() => const MainScreen());
+        EasyLoading.dismiss();
         return user;
       } else {
         print(
@@ -111,11 +120,12 @@ class GoogleAuthService {
               'Google Sign-in Failed: ${response.statusCode} - ${response.body}'),
           onDismiss: () {},
         ).show(context);
+        EasyLoading.dismiss();
         return null;
       }
     } catch (error) {
       print('Error sending token to backend: $error');
-
+      EasyLoading.dismiss();
       return null;
     }
   }
