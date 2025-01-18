@@ -1,3 +1,3 @@
 class Appconstant {
-  static const String Domain = "192.168.18.8:3000";
+  static const String Domain = "20.198.19.54:3000";
 }
