@@ -1,21 +1,24 @@
-2025/01/18-12:51:25.956 3358 Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.d4fa33f\flutter_tools_chrome_device.4a0629cf\Default\shared_proto_db/MANIFEST-000001
-2025/01/18-12:51:25.957 3358 Recovering log #32
-2025/01/18-12:51:25.958 3358 Reusing old log C:\Users\user\AppData\Local\Temp\flutter_tools.d4fa33f\flutter_tools_chrome_device.4a0629cf\Default\shared_proto_db/000032.log 
-2025/01/18-12:51:25.959 3358 Delete type=0 #3
-2025/01/18-12:51:25.960 3358 Delete type=0 #4
-2025/01/18-12:51:25.960 3358 Delete type=0 #7
-2025/01/18-12:51:25.961 3358 Delete type=2 #8
-2025/01/18-12:51:25.961 3358 Delete type=0 #10
-2025/01/18-12:51:25.961 3358 Delete type=2 #11
-2025/01/18-12:51:25.961 3358 Delete type=0 #13
-2025/01/18-12:51:25.961 3358 Delete type=2 #14
-2025/01/18-12:51:25.962 3358 Delete type=0 #16
-2025/01/18-12:51:25.962 3358 Delete type=2 #17
-2025/01/18-12:51:25.962 3358 Delete type=0 #19
-2025/01/18-12:51:25.962 3358 Delete type=2 #21
-2025/01/18-12:51:25.962 3358 Delete type=0 #23
-2025/01/18-12:51:25.962 3358 Delete type=2 #24
-2025/01/18-12:51:25.962 3358 Delete type=0 #26
-2025/01/18-12:51:25.962 3358 Delete type=2 #27
-2025/01/18-12:51:25.962 3358 Delete type=0 #29
-2025/01/18-12:51:25.963 3358 Delete type=2 #30
+2025/01/19-16:52:02.981 359c Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.7dd87af4\flutter_tools_chrome_device.749cb124\Default\shared_proto_db/MANIFEST-000001
+2025/01/19-16:52:02.982 359c Recovering log #32
+2025/01/19-16:52:02.986 359c Reusing old log C:\Users\user\AppData\Local\Temp\flutter_tools.7dd87af4\flutter_tools_chrome_device.749cb124\Default\shared_proto_db/000032.log 
+2025/01/19-16:52:02.986 359c Delete type=0 #3
+2025/01/19-16:52:02.987 359c Delete type=0 #4
+2025/01/19-16:52:02.987 359c Delete type=0 #7
+2025/01/19-16:52:02.987 359c Delete type=2 #8
+2025/01/19-16:52:02.987 359c Delete type=0 #10
+2025/01/19-16:52:02.987 359c Delete type=2 #11
+2025/01/19-16:52:02.988 359c Delete type=0 #13
+2025/01/19-16:52:02.988 359c Delete type=2 #14
+2025/01/19-16:52:02.988 359c Delete type=0 #16
+2025/01/19-16:52:02.988 359c Delete type=2 #17
+2025/01/19-16:52:02.988 359c Delete type=0 #19
+2025/01/19-16:52:02.988 359c Delete type=2 #21
+2025/01/19-16:52:02.989 359c Delete type=0 #23
+2025/01/19-16:52:02.989 359c Delete type=2 #24
+2025/01/19-16:52:02.989 359c Delete type=0 #26
+2025/01/19-16:52:02.989 359c Delete type=2 #27
+2025/01/19-16:52:02.989 359c Delete type=0 #29
+2025/01/19-16:52:02.989 359c Delete type=2 #30
+2025/01/19-16:52:16.961 2314 Level-0 table #37: started
+2025/01/19-16:52:16.968 2314 Level-0 table #37: 246985 bytes OK
+2025/01/19-16:52:16.970 2314 Delete type=0 #32

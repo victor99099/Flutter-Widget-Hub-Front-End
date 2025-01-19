@@ -19,7 +19,7 @@ class UserController extends GetxController {
       
       // Call your API to check login status
       final response = await http.get(Uri.parse(
-          'http://${Appconstant.Domain}/users/check-session?email=$email'));
+          '${Appconstant.DomainUrl}users/check-session?email=$email'));
 
       if (response.statusCode == 200) {
         EasyLoading.show();

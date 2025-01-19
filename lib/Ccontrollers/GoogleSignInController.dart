@@ -75,7 +75,7 @@ class GoogleAuthService {
     try {
       EasyLoading.show();
       final response = await http.post(
-        Uri.parse('http://${Appconstant.Domain}/users/google-signin'),
+        Uri.parse('${Appconstant.DomainUrl}users/google-signin'),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({'accessToken': accessToken}),
       );
@@ -136,7 +136,7 @@ class GoogleAuthService {
       print('User signed out from Google.');
 
       await http.get(Uri.parse(
-          'http://${Appconstant.Domain}/users/logout?email=${userController.user.value!.email}'));
+          '${Appconstant.DomainUrl}users/logout?email=${userController.user.value!.email}'));
 
       userController.clearUser();
 

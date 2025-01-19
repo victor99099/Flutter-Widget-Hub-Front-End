@@ -14,7 +14,7 @@ class MicrosoftLoginController extends GetxController {
     try {
       EasyLoading.show();
       final response = await http
-          .get(Uri.parse("http://${Appconstant.Domain}/users/Microsoftlogin"));
+          .get(Uri.parse("${Appconstant.DomainUrl}users/Microsoftlogin"));
       final responseData = jsonDecode(response.body);
 
       if (response.statusCode == 200) {

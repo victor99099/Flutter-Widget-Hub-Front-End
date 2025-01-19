@@ -46,7 +46,7 @@ class ProjectController extends GetxController {
     EasyLoading.show();
     projects.value = [];
     final url = Uri.parse(
-        'http://${Appconstant.Domain}/projectwidgets/$userId/projects'); // Replace with actual URL
+        '${Appconstant.DomainUrl}projectwidgets/$userId/projects'); // Replace with actual URL
 
     try {
       // EasyLoading.show();
@@ -78,7 +78,7 @@ class ProjectController extends GetxController {
     try {
       // API endpoint
       EasyLoading.show();
-      final url = Uri.parse('http://${Appconstant.Domain}/projects');
+      final url = Uri.parse('${Appconstant.DomainUrl}projects');
       final response = await http.post(
         url,
         headers: {'Content-Type': 'application/json'},
@@ -132,7 +132,7 @@ class ProjectController extends GetxController {
     try {
       // API endpoint
       EasyLoading.show();
-      final url = Uri.parse('http://${Appconstant.Domain}/projects/$projId');
+      final url = Uri.parse('${Appconstant.DomainUrl}projects/$projId');
       final response = await http.put(
         url,
         headers: {'Content-Type': 'application/json'},
@@ -188,7 +188,7 @@ class ProjectController extends GetxController {
     try {
       // API endpoint
       EasyLoading.show();
-      final url = Uri.parse('http://${Appconstant.Domain}/projects/$projectId');
+      final url = Uri.parse('${Appconstant.DomainUrl}projects/$projectId');
       final response = await http.delete(
         url,
         headers: {'Content-Type': 'application/json'},
@@ -248,7 +248,7 @@ class ProjectController extends GetxController {
         ).show(context);
         return;
       }
-      final url = Uri.parse('http://${Appconstant.Domain}/widgets');
+      final url = Uri.parse('${Appconstant.DomainUrl}widgets');
       final response = await http.post(
         url,
         headers: {'Content-Type': 'application/json'},
@@ -304,7 +304,7 @@ class ProjectController extends GetxController {
       // API endpoint
       EasyLoading.show();
 
-      final url = Uri.parse('http://${Appconstant.Domain}/widgets/$widgetId');
+      final url = Uri.parse('${Appconstant.DomainUrl}widgets/$widgetId');
       final response = await http.delete(
         url,
         headers: {'Content-Type': 'application/json'},

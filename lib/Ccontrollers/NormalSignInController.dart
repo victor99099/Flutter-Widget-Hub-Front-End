@@ -15,7 +15,7 @@ class NormalSignInController extends GetxController {
       String email, String password, BuildContext context) async {
     try {
       final response = await http.post(
-        Uri.parse("http://${Appconstant.Domain}/users/signin"),
+        Uri.parse("${Appconstant.DomainUrl}users/signin"),
         headers: {'Content-Type': 'application/json'},
         body: json.encode({'email': email, 'password': password}),
       );
