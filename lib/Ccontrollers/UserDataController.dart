@@ -3,7 +3,6 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../Models/Constants/AppConstant.dart';
 import '../Models/Entities/User.dart';
 
@@ -19,6 +18,7 @@ class UserController extends GetxController {
       
       // Call your API to check login status
       final response = await http.get(Uri.parse(
+          // 'http://localhost:3000/users/check-session?email=$email'));
           '${Appconstant.DomainUrl}users/check-session?email=$email'));
 
       if (response.statusCode == 200) {

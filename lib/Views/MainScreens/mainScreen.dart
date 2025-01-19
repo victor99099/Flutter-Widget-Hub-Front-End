@@ -9,6 +9,7 @@ import 'package:flutterwidgethub/Views/ProjectScreens/ProjectsMainScreen.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ionicons/ionicons.dart';
+import '../../Ccontrollers/MicrosoftLoginController.dart';
 import '../../Ccontrollers/PageController.dart';
 
 class MainScreen extends StatefulWidget {
@@ -22,9 +23,9 @@ class _MainScreenState extends State<MainScreen> {
   bool isMenuOpen = false; // State to track menu visibility
   UserController userController = Get.put(UserController());
   // Sessioncontroller sessioncontroller = Get.put(Sessioncontroller());
-  
+  WebSocketController webSocketController = Get.put(WebSocketController());
   GoogleAuthService googleAuthService = GoogleAuthService();
-  
+
   @override
   void initState() {
     super.initState();
@@ -33,6 +34,7 @@ class _MainScreenState extends State<MainScreen> {
 
   void _initializeLoginStatus() async {
     userController.isLoggedIn.value = await userController.checkLoginStatus();
+    await webSocketController.connectWebSocket(context);
     setState(() {}); // Update the UI after retrieving the login status
   }
 
@@ -70,7 +72,6 @@ class _MainScreenState extends State<MainScreen> {
                 width: double.infinity,
                 // height: MediaQuery.of(context).size.height * 0.1,
                 child: Obx(() {
-                  
                   return Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -116,8 +117,7 @@ class _MainScreenState extends State<MainScreen> {
                                   "Sign In",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color:
-                                          Color.fromARGB(255, 3, 14, 24)),
+                                      color: Color.fromARGB(255, 3, 14, 24)),
                                 ),
                               ).paddingOnly(right: 20),
                             )
@@ -141,8 +141,8 @@ class _MainScreenState extends State<MainScreen> {
                                       "Projects",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          color: Color.fromARGB(
-                                              255, 3, 14, 24)),
+                                          color:
+                                              Color.fromARGB(255, 3, 14, 24)),
                                     ),
                                   ).paddingOnly(right: 20),
                                 ),
@@ -150,12 +150,11 @@ class _MainScreenState extends State<MainScreen> {
                                   position: PopupMenuPosition.under,
                                   color: const Color.fromARGB(255, 3, 14, 24),
                                   onSelected: (String value) async {
-                                    if(value == "Item 1"){
+                                    if (value == "Item 1") {
                                       askQuestionOnWhatsapp();
-                                    }
-                                    else{
+                                    } else {
                                       await googleAuthService.logout();
-                                    }     
+                                    }
                                   },
                                   icon: CircleAvatar(
                                     backgroundColor: Colors.white,
@@ -167,8 +166,7 @@ class _MainScreenState extends State<MainScreen> {
                                               .toUpperCase()
                                           : 'U',
                                       style: const TextStyle(
-                                          color: Color.fromARGB(
-                                              255, 3, 14, 24),
+                                          color: Color.fromARGB(255, 3, 14, 24),
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ),
@@ -179,7 +177,10 @@ class _MainScreenState extends State<MainScreen> {
                                         child: Row(
                                           spacing: 5,
                                           children: [
-                                            Icon(Icons.support_agent, color: Colors.white,),
+                                            Icon(
+                                              Icons.support_agent,
+                                              color: Colors.white,
+                                            ),
                                             Text(
                                               'Help',
                                               style: GoogleFonts.openSans(
@@ -196,7 +197,10 @@ class _MainScreenState extends State<MainScreen> {
                                         child: Row(
                                           spacing: 5,
                                           children: [
-                                            Icon(Icons.logout_outlined, color: Colors.white,),
+                                            Icon(
+                                              Icons.logout_outlined,
+                                              color: Colors.white,
+                                            ),
                                             Text(
                                               'Log Out',
                                               style: GoogleFonts.openSans(

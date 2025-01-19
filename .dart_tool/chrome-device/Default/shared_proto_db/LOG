@@ -1,22 +1,25 @@
-2025/01/19-21:16:06.477 3c6c Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.fc551924\flutter_tools_chrome_device.d127c638\Default\shared_proto_db/MANIFEST-000001
-2025/01/19-21:16:06.478 3c6c Recovering log #36
-2025/01/19-21:16:06.495 3c6c Reusing old log C:\Users\user\AppData\Local\Temp\flutter_tools.fc551924\flutter_tools_chrome_device.d127c638\Default\shared_proto_db/000036.log 
-2025/01/19-21:16:06.507 3c6c Delete type=0 #3
-2025/01/19-21:16:06.508 3c6c Delete type=0 #4
-2025/01/19-21:16:06.508 3c6c Delete type=0 #7
-2025/01/19-21:16:06.508 3c6c Delete type=2 #8
-2025/01/19-21:16:06.508 3c6c Delete type=0 #10
-2025/01/19-21:16:06.508 3c6c Delete type=2 #11
-2025/01/19-21:16:06.508 3c6c Delete type=0 #13
-2025/01/19-21:16:06.508 3c6c Delete type=2 #14
-2025/01/19-21:16:06.540 3c6c Delete type=0 #16
-2025/01/19-21:16:06.540 3c6c Delete type=2 #17
-2025/01/19-21:16:06.541 3c6c Delete type=0 #19
-2025/01/19-21:16:06.541 3c6c Delete type=2 #21
-2025/01/19-21:16:06.541 3c6c Delete type=0 #23
-2025/01/19-21:16:06.541 3c6c Delete type=2 #24
-2025/01/19-21:16:06.541 3c6c Delete type=0 #26
-2025/01/19-21:16:06.541 3c6c Delete type=2 #27
-2025/01/19-21:16:06.541 3c6c Delete type=0 #29
-2025/01/19-21:16:06.542 3c6c Delete type=2 #30
-2025/01/19-21:16:06.542 3c6c Delete type=0 #32
+2025/01/20-00:41:53.179 3440 Reusing MANIFEST C:\Users\user\AppData\Local\Temp\flutter_tools.9e59ba76\flutter_tools_chrome_device.a7da9b65\Default\shared_proto_db/MANIFEST-000001
+2025/01/20-00:41:53.180 3440 Recovering log #36
+2025/01/20-00:41:53.183 3440 Reusing old log C:\Users\user\AppData\Local\Temp\flutter_tools.9e59ba76\flutter_tools_chrome_device.a7da9b65\Default\shared_proto_db/000036.log 
+2025/01/20-00:41:53.184 3440 Delete type=0 #3
+2025/01/20-00:41:53.185 3440 Delete type=0 #4
+2025/01/20-00:41:53.185 3440 Delete type=0 #7
+2025/01/20-00:41:53.185 3440 Delete type=2 #8
+2025/01/20-00:41:53.185 3440 Delete type=0 #10
+2025/01/20-00:41:53.186 3440 Delete type=2 #11
+2025/01/20-00:41:53.186 3440 Delete type=0 #13
+2025/01/20-00:41:53.186 3440 Delete type=2 #14
+2025/01/20-00:41:53.186 3440 Delete type=0 #16
+2025/01/20-00:41:53.186 3440 Delete type=2 #17
+2025/01/20-00:41:53.186 3440 Delete type=0 #19
+2025/01/20-00:41:53.186 3440 Delete type=2 #21
+2025/01/20-00:41:53.187 3440 Delete type=0 #23
+2025/01/20-00:41:53.187 3440 Delete type=2 #24
+2025/01/20-00:41:53.187 3440 Delete type=0 #26
+2025/01/20-00:41:53.187 3440 Delete type=2 #27
+2025/01/20-00:41:53.187 3440 Delete type=0 #29
+2025/01/20-00:41:53.187 3440 Delete type=2 #30
+2025/01/20-00:41:53.187 3440 Delete type=0 #32
+2025/01/20-00:42:07.462 3440 Level-0 table #40: started
+2025/01/20-00:42:07.466 3440 Level-0 table #40: 131576 bytes OK
+2025/01/20-00:42:07.467 3440 Delete type=0 #36
