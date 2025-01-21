@@ -67,6 +67,7 @@ class WebSocketController extends GetxController {
     try {
       _socket = html.WebSocket(
           'wss://flutterhub.centralindia.cloudapp.azure.com/ws/'); // Replace with your backend URL
+          // 'ws://localhost:8080'); // Replace with your backend URL
 
       print('Connecting to WebSocket...');
 
@@ -80,6 +81,7 @@ class WebSocketController extends GetxController {
 
       // Listen to messages from the backend
       _socket.onMessage.listen((event) {
+        print("ws message recieved");
         final data = jsonDecode(event.data);
         if (data['message'] == 'login Successful') {
           final userData = data['user'];

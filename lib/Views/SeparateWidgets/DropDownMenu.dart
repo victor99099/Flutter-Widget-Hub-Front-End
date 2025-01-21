@@ -605,6 +605,15 @@ class _DropdownButton_2State extends State<DropdownButton_2> {
                 ["Dropdown Animation", "❌", "✅"],
               ],
             ),
+            // Center(
+            //   child: Padding(
+            //     padding: const EdgeInsets.all(8.0),
+            //     child: SizedBox(
+            //         width:  double.infinity,
+            //         height: MediaQuery.of(context).size.height * 0.7,
+            //         child: GoogleAdWidget()),
+            //   ),
+            // ),
             const SizedBox(
               height: 50,
             ),

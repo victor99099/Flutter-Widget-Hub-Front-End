@@ -1,0 +1,28 @@
+^D:\FLUTTER\PROJECT\WIDGETPREVIEWER\FLUTTERWIDGETHUB\BUILD\WINDOWS\X64\CMAKEFILES\92F04BAA1B4E0F7D2AFC90FDA05B25A9\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=D:\Flutter\SDK\flutter PROJECT_DIR=D:\Flutter\project\WidgetPreviewer\flutterwidgethub FLUTTER_ROOT=D:\Flutter\SDK\flutter FLUTTER_EPHEMERAL_DIR=D:\Flutter\project\WidgetPreviewer\flutterwidgethub\windows\flutter\ephemeral PROJECT_DIR=D:\Flutter\project\WidgetPreviewer\flutterwidgethub FLUTTER_TARGET=D:\Flutter\project\WidgetPreviewer\flutterwidgethub\lib\main.dart DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=D:\Flutter\project\WidgetPreviewer\flutterwidgethub\.dart_tool\package_config.json D:/Flutter/SDK/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\FLUTTER\PROJECT\WIDGETPREVIEWER\FLUTTERWIDGETHUB\BUILD\WINDOWS\X64\CMAKEFILES\E6B7201C9C14FA7018E6B00F84555D31\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\FLUTTER\PROJECT\WIDGETPREVIEWER\FLUTTERWIDGETHUB\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/Flutter/project/WidgetPreviewer/flutterwidgethub/windows -BD:/Flutter/project/WidgetPreviewer/flutterwidgethub/build/windows/x64 --check-stamp-file D:/Flutter/project/WidgetPreviewer/flutterwidgethub/build/windows/x64/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

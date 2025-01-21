@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutterwidgethub/Ccontrollers/UserDataController.dart';
-
 import 'package:flutterwidgethub/Views/ProjectScreens/AddWidgetToProject.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -386,7 +386,7 @@ class ProjectController extends GetxController {
 
       // Encode the archive as a ZIP file
       final zipBytes = ZipEncoder().encode(archive);
-      final zipBase64 = base64Encode(zipBytes!);
+      final zipBase64 = base64Encode(zipBytes);
 
       // Create a downloadable link
       final zipFileName = '${project.projectName}_widget_codes.zip';

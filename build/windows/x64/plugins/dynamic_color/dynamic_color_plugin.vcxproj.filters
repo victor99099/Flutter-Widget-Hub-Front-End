@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Flutter\project\WidgetPreviewer\flutterwidgethub\windows\flutter\ephemeral\.plugin_symlinks\dynamic_color\windows\dynamic_color_plugin_c_api.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Flutter\project\WidgetPreviewer\flutterwidgethub\windows\flutter\ephemeral\.plugin_symlinks\dynamic_color\windows\dynamic_color_plugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Flutter\project\WidgetPreviewer\flutterwidgethub\windows\flutter\ephemeral\.plugin_symlinks\dynamic_color\windows\include\dynamic_color\dynamic_color_plugin_c_api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Flutter\project\WidgetPreviewer\flutterwidgethub\windows\flutter\ephemeral\.plugin_symlinks\dynamic_color\windows\dynamic_color_plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Flutter\project\WidgetPreviewer\flutterwidgethub\windows\flutter\ephemeral\.plugin_symlinks\dynamic_color\windows\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{83B22FB3-B256-3E4D-A248-5288C9C64E76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{F41D3468-B290-3589-8878-DA74BC0343B0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

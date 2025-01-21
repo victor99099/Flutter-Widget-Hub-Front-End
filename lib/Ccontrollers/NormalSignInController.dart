@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:elegant_notification/elegant_notification.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutterwidgethub/Ccontrollers/UserDataController.dart';
 import 'package:flutterwidgethub/Models/Constants/AppConstant.dart';
 import 'package:flutterwidgethub/Models/Entities/User.dart';
@@ -14,6 +15,7 @@ class NormalSignInController extends GetxController {
   Future<void> normalSignIn(
       String email, String password, BuildContext context) async {
     try {
+      EasyLoading.show();
       final response = await http.post(
         Uri.parse("${Appconstant.DomainUrl}users/signin"),
         headers: {'Content-Type': 'application/json'},
@@ -58,6 +60,9 @@ class NormalSignInController extends GetxController {
         onDismiss: () {},
       ).show(context);
       print('Error during login : $e');
+    }
+    finally{
+      EasyLoading.dismiss();
     }
   }
 }
