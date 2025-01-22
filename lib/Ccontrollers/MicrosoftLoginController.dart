@@ -54,7 +54,7 @@ class MicrosoftLoginController extends GetxController {
         description: Text('$e'),
         onDismiss: () {},
       ).show(context);
-      print('Error during login: ${e.toString()}');
+      // print('Error during login: ${e.toString()}');
       EasyLoading.dismiss();
     }
   }
@@ -69,11 +69,11 @@ class WebSocketController extends GetxController {
           'wss://flutterhub.centralindia.cloudapp.azure.com/ws/'); // Replace with your backend URL
           // 'ws://localhost:8080'); // Replace with your backend URL
 
-      print('Connecting to WebSocket...');
+      // print('Connecting to WebSocket...');
 
       // Listen for the WebSocket connection to open
       _socket.onOpen.listen((event) {
-        print('WebSocket connected.');
+        // print('WebSocket connected.');
 
         // Notify backend to wait for login updates
         _socket.send('waitingForLogin');
@@ -81,22 +81,22 @@ class WebSocketController extends GetxController {
 
       // Listen to messages from the backend
       _socket.onMessage.listen((event) {
-        print("ws message recieved");
+        // print("ws message recieved");
         final data = jsonDecode(event.data);
         if (data['message'] == 'login Successful') {
           final userData = data['user'];
           final user = User.fromJson(userData);
           Get.find<UserController>().setUser(user);
-          print('Microsoft Sign-In Successful: ${data['message']}');
+          // print('Microsoft Sign-In Successful: ${data['message']}');
           ElegantNotification.success(
             title: const Text("Success"),
             description:
                 Text("Microsoft Sign-In Successful: ${data['message']}"),
             onDismiss: () {
-              print('Message when the notification is dismissed');
+              // print('Message when the notification is dismissed');
             },
             onNotificationPressed: () {
-              print('Message when the notification is pressed');
+              // print('Message when the notification is pressed');
             },
             isDismissable: true,
           ).show(context);
@@ -104,7 +104,7 @@ class WebSocketController extends GetxController {
         }
       });
     } catch (e) {
-      print('Error connecting to WebSocket: $e');
+      // print('Error connecting to WebSocket: $e');
     }
   }
 }

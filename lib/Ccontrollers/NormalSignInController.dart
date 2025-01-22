@@ -26,18 +26,18 @@ class NormalSignInController extends GetxController {
         final userData = responseData['user'];
         User loggedInUser = User.fromJson(userData);
         userController.setUser(loggedInUser);
-        print(userController.user.value);
-        print("User logged in");
+        // print(userController.user.value);
+        // print("User logged in");
         // await sessioncontroller.CheckSession();
         Navigator.pop(context);
         ElegantNotification.success(
           title: const Text("Success"),
           description: const Text("User Signed In Successfully"),
           onDismiss: () {
-            print('Message when the notification is dismissed');
+            // print('Message when the notification is dismissed');
           },
           onNotificationPressed: () {
-            print('Message when the notification is pressed');
+            // print('Message when the notification is pressed');
           },
           isDismissable: true,
         ).show(context);
@@ -49,7 +49,7 @@ class NormalSignInController extends GetxController {
           description: Text('${responseData["error"]}'),
           onDismiss: () {},
         ).show(context);
-        print("login failed : ${response.statusCode} - ${response.body}");
+        // print("login failed : ${response.statusCode} - ${response.body}");
       }
     } catch (e) {
       ElegantNotification.error(
@@ -59,7 +59,7 @@ class NormalSignInController extends GetxController {
         description: Text('$e'),
         onDismiss: () {},
       ).show(context);
-      print('Error during login : $e');
+      // print('Error during login : $e');
     }
     finally{
       EasyLoading.dismiss();

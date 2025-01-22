@@ -80,12 +80,14 @@ class _MainScreenState extends State<MainScreen> {
                         children: [
                           Padding(
                               padding: const EdgeInsets.only(top: 10, left: 10),
+                              // child: Icon(Icons.),
                               child: Image.asset(
                                 "assets/shortLogoWhite.png",
                                 fit: BoxFit.contain,
                                 width: 80,
                                 height: 50,
-                              )),
+                              )
+                              ),
                           const Text(
                             "Flutter Widget Hub",
                             style: TextStyle(

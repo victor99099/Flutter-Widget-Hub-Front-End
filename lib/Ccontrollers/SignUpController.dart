@@ -21,7 +21,7 @@ class SignUpController extends GetxController {
       final responseData = jsonDecode(response.body);
       if (response.statusCode == 200) {
         Navigator.pop(context);
-        print("User Signed Up");
+        // print("User Signed Up");
         showDialog(
           context: context,
           builder: (context) => const AlertDialog(
@@ -33,10 +33,10 @@ class SignUpController extends GetxController {
           title: const Text("Success"),
           description: const Text("User Signed Up Successfully"),
           onDismiss: () {
-            print('Message when the notification is dismissed');
+            // print('Message when the notification is dismissed');
           },
           onNotificationPressed: () {
-            print('Message when the notification is pressed');
+            // print('Message when the notification is pressed');
           },
           isDismissable: true,
         ).show(context);
@@ -48,7 +48,7 @@ class SignUpController extends GetxController {
           description: Text('${responseData["error"]}'),
           onDismiss: () {},
         ).show(context);
-        print("Sign Up failed : ${response.statusCode} - ${response.body}");
+        // print("Sign Up failed : ${response.statusCode} - ${response.body}");
       }
     } catch (e) {
       ElegantNotification.error(
@@ -58,7 +58,7 @@ class SignUpController extends GetxController {
           description: Text('$e'),
           onDismiss: () {},
         ).show(context);
-      print('Error during SignUp : $e');
+      // print('Error during SignUp : $e');
     }
   }
 }

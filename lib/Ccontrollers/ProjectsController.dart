@@ -68,7 +68,7 @@ class ProjectController extends GetxController {
     } catch (error) {
       EasyLoading.dismiss();
       isFetching.value = false;
-      print('Error fetching projects: $error');
+      // print('Error fetching projects: $error');
       // Handle the error (e.g., show a message to the user)
     }
   }
@@ -96,10 +96,10 @@ class ProjectController extends GetxController {
           title: const Text("Success"),
           description: const Text("Project Created Successfully"),
           onDismiss: () {
-            print('Message when the notification is dismissed');
+            // print('Message when the notification is dismissed');
           },
           onNotificationPressed: () {
-            print('Message when the notification is pressed');
+            // print('Message when the notification is pressed');
           },
           isDismissable: true,
         ).show(context);
@@ -150,10 +150,10 @@ class ProjectController extends GetxController {
           title: const Text("Success"),
           description: const Text("Project Updated Successfully"),
           onDismiss: () {
-            print('Message when the notification is dismissed');
+            // print('Message when the notification is dismissed');
           },
           onNotificationPressed: () {
-            print('Message when the notification is pressed');
+            // print('Message when the notification is pressed');
           },
           isDismissable: true,
         ).show(context);
@@ -168,7 +168,7 @@ class ProjectController extends GetxController {
           description: Text('$error'),
           onDismiss: () {},
         ).show(context);
-        print(error);
+        // print(error);
       }
     } catch (e) {
       EasyLoading.dismiss();
@@ -179,7 +179,7 @@ class ProjectController extends GetxController {
         description: Text('$e'),
         onDismiss: () {},
       ).show(context);
-      print(e);
+      // print(e);
     } finally {}
   }
 
@@ -200,10 +200,10 @@ class ProjectController extends GetxController {
           title: const Text("Success"),
           description: const Text("Project Deleted Successfully"),
           onDismiss: () {
-            print('Message when the notification is dismissed');
+            // print('Message when the notification is dismissed');
           },
           onNotificationPressed: () {
-            print('Message when the notification is pressed');
+            // print('Message when the notification is pressed');
           },
           isDismissable: true,
         ).show(context);
@@ -218,7 +218,7 @@ class ProjectController extends GetxController {
           description: Text('$error'),
           onDismiss: () {},
         ).show(context);
-        print(error);
+        // print(error);
       }
     } catch (e) {
       EasyLoading.dismiss();
@@ -267,10 +267,10 @@ class ProjectController extends GetxController {
           title: const Text("Success"),
           description: const Text("Widget Added Successfully"),
           onDismiss: () {
-            print('Message when the notification is dismissed');
+            // print('Message when the notification is dismissed');
           },
           onNotificationPressed: () {
-            print('Message when the notification is pressed');
+            // print('Message when the notification is pressed');
           },
           isDismissable: true,
         ).show(context);
@@ -317,10 +317,10 @@ class ProjectController extends GetxController {
           title: const Text("Success"),
           description: const Text("Widget Removed Successfully"),
           onDismiss: () {
-            print('Message when the notification is dismissed');
+            // print('Message when the notification is dismissed');
           },
           onNotificationPressed: () {
-            print('Message when the notification is pressed');
+            // print('Message when the notification is pressed');
           },
           isDismissable: true,
         ).show(context);
@@ -400,11 +400,11 @@ class ProjectController extends GetxController {
       anchor.click();
       anchor.remove();
 
-      print(
-          'Widget codes for project "${project.projectName}" downloaded as $zipFileName.');
+      // print(
+          // 'Widget codes for project "${project.projectName}" downloaded as $zipFileName.');
     } catch (error) {
-      print(
-          'Error downloading widget codes for project at index $projectIndex: $error');
+      // print(
+          // 'Error downloading widget codes for project at index $projectIndex: $error');
     }
   }
 }

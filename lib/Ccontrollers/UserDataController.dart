@@ -13,7 +13,7 @@ class UserController extends GetxController {
   Future<bool> checkLoginStatus() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? email = prefs.getString('email');
-    print(email);
+    // print(email);
 
     if (email != null) {
       try {
@@ -28,20 +28,20 @@ class UserController extends GetxController {
           
           final data = json.decode(response.body);
           if (data['isLoggedIn']) {
-            print("User logged in :${data['isLoggedIn']} ");
+            // print("User logged in :${data['isLoggedIn']} ");
             user.value = User.fromJson(data['user']);
             isLoggedIn.value = true;
 
             return true;
           } else {
-            print("User Not logged in :${data['isLoggedIn']} ");
+            // print("User Not logged in :${data['isLoggedIn']} ");
             user.value = null;
 
             return false;
           }
         } else {
           final data = json.decode(response.body);
-          print("Failed Response ${data['error']} ");
+          // print("Failed Response ${data['error']} ");
           user.value = null;
 
           return false;

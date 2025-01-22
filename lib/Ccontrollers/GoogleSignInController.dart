@@ -124,7 +124,7 @@ class GoogleAuthService {
         return null;
       }
     } catch (error) {
-      print('Error sending token to backend: $error');
+      // print('Error sending token to backend: $error');
       EasyLoading.dismiss();
       return null;
     }
@@ -133,7 +133,7 @@ class GoogleAuthService {
   Future<void> logout() async {
     try {
       await _googleSignIn.signOut();
-      print('User signed out from Google.');
+      // print('User signed out from Google.');
 
       await http.get(Uri.parse(
           '${Appconstant.DomainUrl}users/logout?email=${userController.user.value!.email}'));
@@ -141,7 +141,7 @@ class GoogleAuthService {
       userController.clearUser();
 
     } catch (error) {
-      print('Error during logout: $error');
+      // print('Error during logout: $error');
     }
   }
 }
