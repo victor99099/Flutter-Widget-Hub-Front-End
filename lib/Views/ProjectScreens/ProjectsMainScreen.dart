@@ -68,8 +68,9 @@ class _ProjectsScreenState extends State<ProjectsScreen>
                   padding: const EdgeInsets.only(
                       top: 10, bottom: 10, left: 20, right: 20),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)),
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.white)),
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     spacing: 10,
@@ -78,13 +79,13 @@ class _ProjectsScreenState extends State<ProjectsScreen>
                       Icon(
                         Icons.add_box_rounded,
                         weight: 10,
-                        color: Color.fromARGB(255, 3, 14, 24),
+                        color: Colors.white,
                       ),
                       Text(
                         "Add Project",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 3, 14, 24),
+                            color: Colors.white,
                             fontSize: 20),
                       )
                     ],
@@ -106,13 +107,14 @@ class _ProjectsScreenState extends State<ProjectsScreen>
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.transparent,
+                        border: Border.all(color: Colors.white),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(10)),
                     padding: const EdgeInsets.all(8),
                     child: const Icon(
                       Icons.arrow_back,
-                      color: Color.fromARGB(255, 3, 14, 24),
+                      color: Colors.white,
                       size: 30,
                     ),
                   ),

@@ -19,7 +19,7 @@ class AddProjectWidget extends StatelessWidget {
             padding: const EdgeInsets.only(top: 50, left: 30, right: 30),
             decoration: BoxDecoration(
                 border: Border.all(color: Colors.white, width: 3),
-                color: const Color.fromARGB(255, 7, 41, 71),
+                color: const Color.fromARGB(255, 7, 41, 71).withOpacity(0.9),
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(10)),
             width: MediaQuery.of(context).size.height,

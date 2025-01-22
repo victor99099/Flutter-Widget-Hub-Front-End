@@ -12,6 +12,6 @@ Future<void> askQuestionOnWhatsapp() async {
       throw "Could not launch $url";
     }
   } catch (e) {
-    print("Error: $e");
+    // print("Error: $e");
   }
 }

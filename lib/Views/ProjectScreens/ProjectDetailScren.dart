@@ -80,13 +80,14 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        border: Border.all(color: Colors.white),
+                        color: Colors.transparent,
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(10)),
                     padding: const EdgeInsets.all(8),
                     child: const Icon(
                       Icons.arrow_back,
-                      color: Color.fromARGB(255, 3, 14, 24),
+                      color: Colors.white,
                       size: 30,
                     ),
                   ),
@@ -344,20 +345,21 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                                     }),
                               ),
                             ),
-                       projectController
+                      projectController
                                   .projects[widget.projIndex].widgets.length ==
                               0
-                          ? SizedBox.shrink() :
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 16.0, bottom: 16, right: 32, left: 32),
-                        child: Obx(
-                          () => UserStyleBox(
-                              Heading: "Style Code (Must Copy)",
-                              code: styles[getStyleCode(projectController
-                                  .projects[widget.projIndex].projectStyle)]),
-                        ),
-                      )
+                          ? SizedBox.shrink()
+                          : Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 16.0, bottom: 16, right: 32, left: 32),
+                              child: Obx(
+                                () => UserStyleBox(
+                                    Heading: "Style Code (Must Copy)",
+                                    code: styles[getStyleCode(projectController
+                                        .projects[widget.projIndex]
+                                        .projectStyle)]),
+                              ),
+                            )
                     ],
                   ),
                 ),

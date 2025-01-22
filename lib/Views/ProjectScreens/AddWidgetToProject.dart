@@ -22,7 +22,7 @@ class AddWidgetToProject extends StatelessWidget {
             decoration: BoxDecoration(
               border: Border.all(
                   color: const Color.fromARGB(255, 255, 255, 255), width: 3),
-              color: const Color.fromARGB(255, 7, 41, 71),
+              color: const Color.fromARGB(255, 7, 41, 71).withOpacity(0.9),
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(10),
             ),
